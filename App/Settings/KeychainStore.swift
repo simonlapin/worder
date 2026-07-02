@@ -27,7 +27,7 @@ final class KeychainStore: APIKeyStore {
     private let service: String
     private let account = "anthropic-api-key"
 
-    init(service: String = Bundle.main.bundleIdentifier ?? "dev.lsa.worder") {
+    init(service: String = Bundle.main.bundleIdentifier ?? "am.bfg.worder") {
         self.service = service
     }
 

@@ -4,8 +4,10 @@
 <dict>
 	<key>method</key>
 	<string>app-store-connect</string>
+	<key>destination</key>
+	<string>upload</string>
 	<key>teamID</key>
-	<string>7427PD678R</string>
+	<string>83H5R53PZT</string>
 	<key>uploadSymbols</key>
 	<true/>
 </dict>

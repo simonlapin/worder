@@ -40,7 +40,7 @@ xcodebuild build -project Worder.xcodeproj -scheme Worder -configuration Release
 
 1. `xcodegen generate && open Worder.xcodeproj`.
 2. Подключите iPhone кабелем (или по Wi-Fi, если включена беспроводная отладка) и выберите его как destination.
-3. Подпись настроена в `project.yml`: `CODE_SIGN_STYLE: Automatic`, `DEVELOPMENT_TEAM: 7427PD678R`. Для другой команды поменяйте `DEVELOPMENT_TEAM` и перегенерируйте проект.
+3. Подпись настроена в `project.yml`: `CODE_SIGN_STYLE: Automatic`, `DEVELOPMENT_TEAM: 83H5R53PZT`. Для другой команды поменяйте `DEVELOPMENT_TEAM` и перегенерируйте проект.
 4. Нажмите Run. При первой установке подтвердите доверие разработчику на устройстве: Настройки → Основные → VPN и управление устройством.
 5. Если iOS на устройстве новее SDK Xcode (например, устройство 26.5 при SDK 26.1), Xcode может попросить скачать файлы поддержки устройства — согласитесь; если сборка не встаёт, обновите Xcode.
 
@@ -77,7 +77,7 @@ xcodebuild -exportArchive -archivePath build/Worder.xcarchive \
   -allowProvisioningUpdates
 ```
 
-Экспорт-комплаенс уже отвечен в коде (`ITSAppUsesNonExemptEncryption = NO` в `App/Info.plist`). Перед сабмитом: создать приложение в App Store Connect (bundle id `dev.lsa.worder`), заполнить метаданные из `docs/appstore.md`, приложить скриншоты 6.9" и Privacy Policy URL. Для установки близким без ревью подойдёт TestFlight (internal testing) — тот же архив.
+Экспорт-комплаенс уже отвечен в коде (`ITSAppUsesNonExemptEncryption = NO` в `App/Info.plist`). Перед сабмитом: создать приложение в App Store Connect (bundle id `am.bfg.worder`), заполнить метаданные из `docs/appstore.md`, приложить скриншоты 6.9" и Privacy Policy URL. Для установки близким без ревью подойдёт TestFlight (internal testing) — тот же архив.
 
 ## Как добавить новую пачку слов
 

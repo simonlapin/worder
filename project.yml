@@ -10,7 +10,7 @@ settings:
   base:
     SWIFT_VERSION: "6.0"
     CODE_SIGN_STYLE: Automatic
-    DEVELOPMENT_TEAM: 7427PD678R
+    DEVELOPMENT_TEAM: 83H5R53PZT
 targets:
   Worder:
     type: application
@@ -23,7 +23,7 @@ targets:
       - package: WorderCore
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: dev.lsa.worder
+        PRODUCT_BUNDLE_IDENTIFIER: am.bfg.worder
         GENERATE_INFOPLIST_FILE: YES
         # Merged into the generated Info.plist (export compliance, display name).
         INFOPLIST_FILE: App/Info.plist
