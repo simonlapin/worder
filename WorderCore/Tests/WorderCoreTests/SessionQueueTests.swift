@@ -359,3 +359,40 @@ private func promote(
         #expect(SessionQueue.spacingSameWords(items, minGap: 3) == items)
     }
 }
+
+@Suite struct SessionQueueUnlimitedNewWordsTests {
+    @Test func nilLimitPlansEveryNewWord() throws {
+        let context = try makeContext()
+        try importWords(context, count: 40)
+
+        let queue = try SessionQueue(
+            context: context,
+            configuration: .init(dailyNewWordLimit: nil),
+            calendar: utcCalendar,
+            now: now
+        )
+        #expect(queue.plannedNewWords.count == 40)
+    }
+
+    @Test func nilLimitIgnoresWordsAlreadyIntroducedToday() throws {
+        let context = try makeContext()
+        let words = try importWords(context, count: 3)
+        let log = ReviewLog(reviewedAt: now.addingTimeInterval(-60), direction: .enToRu, grade: .good)
+        context.insert(log)
+        log.word = words[0]
+        let state = try #require(words[0].directionState(for: .enToRu))
+        state.state = .learning
+        state.due = now.addingTimeInterval(day)
+        try context.save()
+
+        let queue = try SessionQueue(
+            context: context,
+            configuration: .init(dailyNewWordLimit: nil),
+            calendar: utcCalendar,
+            now: now
+        )
+        // Word 1 is partially started: not a "new word" anymore, its
+        // remaining direction resumes as a regular exercise.
+        #expect(queue.plannedNewWords.map(\.wordId) == [2, 3])
+    }
+}

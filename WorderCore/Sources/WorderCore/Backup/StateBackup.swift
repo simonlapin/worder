@@ -7,12 +7,13 @@ public struct StateBackup: Codable, Equatable, Sendable {
     public static let currentVersion = 1
 
     public struct Settings: Codable, Equatable, Sendable {
-        public var dailyNewWordLimit: Int
+        /// nil = no daily limit on new words.
+        public var dailyNewWordLimit: Int?
         public var remindersEnabled: Bool
         /// Minutes since midnight.
         public var reminderTimes: [Int]
 
-        public init(dailyNewWordLimit: Int, remindersEnabled: Bool, reminderTimes: [Int]) {
+        public init(dailyNewWordLimit: Int?, remindersEnabled: Bool, reminderTimes: [Int]) {
             self.dailyNewWordLimit = dailyNewWordLimit
             self.remindersEnabled = remindersEnabled
             self.reminderTimes = reminderTimes

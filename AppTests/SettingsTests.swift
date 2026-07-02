@@ -128,15 +128,29 @@ struct AppSettingsTests {
         #expect(AppSettings(defaults: defaults).dailyNewWordLimit == 5)
     }
 
-    @Test func limitIsClampedToAllowedRange() {
+    @Test func negativeLimitIsClampedToZero() {
         let defaults = makeDefaults()
         let settings = AppSettings(defaults: defaults)
-        settings.dailyNewWordLimit = 999
-        #expect(settings.dailyNewWordLimit == 50)
         settings.dailyNewWordLimit = -3
         #expect(settings.dailyNewWordLimit == 0)
 
-        defaults.set(200, forKey: AppSettings.dailyNewWordLimitKey)
-        #expect(AppSettings(defaults: defaults).dailyNewWordLimit == 50)
+        defaults.set(-7, forKey: AppSettings.dailyNewWordLimitKey)
+        #expect(AppSettings(defaults: defaults).dailyNewWordLimit == 0)
+    }
+
+    @Test func unlimitedPersistsAsSentinelAndReadsBackAsNil() {
+        let defaults = makeDefaults()
+        let settings = AppSettings(defaults: defaults)
+        settings.dailyNewWordLimit = nil
+        #expect(defaults.integer(forKey: AppSettings.dailyNewWordLimitKey)
+            == AppSettings.dailyNewWordLimitUnlimitedSentinel)
+        #expect(AppSettings(defaults: defaults).dailyNewWordLimit == nil)
+    }
+
+    @Test func largeCustomLimitIsKept() {
+        let defaults = makeDefaults()
+        let settings = AppSettings(defaults: defaults)
+        settings.dailyNewWordLimit = 999
+        #expect(AppSettings(defaults: defaults).dailyNewWordLimit == 999)
     }
 }

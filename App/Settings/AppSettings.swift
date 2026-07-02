@@ -8,7 +8,9 @@ import Observation
 final class AppSettings {
     static let dailyNewWordLimitKey = "dailyNewWordLimit"
     static let dailyNewWordLimitDefault = 20
-    static let dailyNewWordLimitRange = 0...50
+    /// Sentinel stored in UserDefaults for "no limit" (nil in the API).
+    static let dailyNewWordLimitUnlimitedSentinel = -1
+    static let dailyNewWordLimitPresets: [Int?] = [0, 5, 10, 20, 30, 50, 100, 200, 500, nil]
 
     static let remindersEnabledKey = "remindersEnabled"
     static let reminderTimesKey = "reminderTimes"
@@ -18,14 +20,17 @@ final class AppSettings {
 
     private let defaults: UserDefaults
 
-    var dailyNewWordLimit: Int {
+    /// Maximum new words introduced per day; nil = no limit.
+    var dailyNewWordLimit: Int? {
         didSet {
-            let clamped = dailyNewWordLimit.clamped(to: Self.dailyNewWordLimitRange)
-            if clamped != dailyNewWordLimit {
-                dailyNewWordLimit = clamped
+            if let limit = dailyNewWordLimit, limit < 0 {
+                dailyNewWordLimit = 0
                 return
             }
-            defaults.set(dailyNewWordLimit, forKey: Self.dailyNewWordLimitKey)
+            defaults.set(
+                dailyNewWordLimit ?? Self.dailyNewWordLimitUnlimitedSentinel,
+                forKey: Self.dailyNewWordLimitKey
+            )
         }
     }
 
@@ -49,9 +54,14 @@ final class AppSettings {
 
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
-        let storedLimit = defaults.object(forKey: Self.dailyNewWordLimitKey) as? Int
-        self.dailyNewWordLimit = (storedLimit ?? Self.dailyNewWordLimitDefault)
-            .clamped(to: Self.dailyNewWordLimitRange)
+        switch defaults.object(forKey: Self.dailyNewWordLimitKey) as? Int {
+        case Self.dailyNewWordLimitUnlimitedSentinel:
+            self.dailyNewWordLimit = nil
+        case let stored?:
+            self.dailyNewWordLimit = max(0, stored)
+        case nil:
+            self.dailyNewWordLimit = Self.dailyNewWordLimitDefault
+        }
         self.remindersEnabled = defaults.bool(forKey: Self.remindersEnabledKey)
         let storedTimes = defaults.object(forKey: Self.reminderTimesKey) as? [Int]
         self.reminderTimes = (storedTimes ?? [Self.reminderTimeDefault])

@@ -32,7 +32,8 @@ public struct SessionItem: Equatable {
 /// is the caller's job.
 public final class SessionQueue {
     public struct Configuration: Equatable, Sendable {
-        public var dailyNewWordLimit: Int
+        /// Maximum new words introduced per day; nil removes the limit.
+        public var dailyNewWordLimit: Int?
         public var intraSessionSteps: [TimeInterval]
         /// Minimum number of other items between two items of the same word,
         /// so an answer cannot be replayed from short-term memory. Best
@@ -40,11 +41,11 @@ public final class SessionQueue {
         public var sameWordSpacing: Int
 
         public init(
-            dailyNewWordLimit: Int = 20,
+            dailyNewWordLimit: Int? = 20,
             intraSessionSteps: [TimeInterval] = [60, 600],
             sameWordSpacing: Int = 3
         ) {
-            precondition(dailyNewWordLimit >= 0, "dailyNewWordLimit must be non-negative")
+            precondition(dailyNewWordLimit.map { $0 >= 0 } ?? true, "dailyNewWordLimit must be non-negative")
             precondition(!intraSessionSteps.isEmpty, "intraSessionSteps must not be empty")
             precondition(intraSessionSteps.allSatisfy { $0 > 0 }, "intraSessionSteps must be positive")
             precondition(sameWordSpacing >= 0, "sameWordSpacing must be non-negative")
@@ -111,12 +112,15 @@ public final class SessionQueue {
             ($0.batch?.importedAt ?? .distantPast, $0.wordId)
                 < ($1.batch?.importedAt ?? .distantPast, $1.wordId)
         }
-        let introducedToday = try Self.wordsIntroducedCount(
-            context: context,
-            since: calendar.startOfDay(for: now)
-        )
-        let allowance = max(0, configuration.dailyNewWordLimit - introducedToday)
-        self.plannedNewWords = Array(newWords.prefix(allowance))
+        if let limit = configuration.dailyNewWordLimit {
+            let introducedToday = try Self.wordsIntroducedCount(
+                context: context,
+                since: calendar.startOfDay(for: now)
+            )
+            self.plannedNewWords = Array(newWords.prefix(max(0, limit - introducedToday)))
+        } else {
+            self.plannedNewWords = newWords
+        }
 
         let ordered = Self.spacingSameWords(
             reviews.map(\.item),

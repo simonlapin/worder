@@ -20,13 +20,17 @@ struct SettingsView: View {
         @Bindable var settings = settings
         Form {
             Section {
-                Stepper(
-                    "Новых слов в день: \(settings.dailyNewWordLimit)",
-                    value: $settings.dailyNewWordLimit,
-                    in: AppSettings.dailyNewWordLimitRange
-                )
+                Picker("Новых слов в день", selection: $settings.dailyNewWordLimit) {
+                    ForEach(newWordLimitOptions, id: \.self) { option in
+                        Text(limitLabel(option)).tag(option)
+                    }
+                }
             } header: {
                 Text("Занятия")
+            } footer: {
+                if settings.dailyNewWordLimit == nil {
+                    Text("Без лимита каждое занятие подмешивает новые слова, пока они не закончатся. Все начатые слова попадают в расписание повторений — объём ежедневных ревью быстро вырастет.")
+                }
             }
 
             remindersSection
@@ -201,6 +205,24 @@ struct SettingsView: View {
 
     private func syncReminders() {
         Task { await reminderScheduler.sync() }
+    }
+
+    /// Presets plus the current value when it is not one of them (e.g. set
+    /// before the presets existed), so the picker always shows a selection.
+    private var newWordLimitOptions: [Int?] {
+        var options = AppSettings.dailyNewWordLimitPresets
+        if let current = settings.dailyNewWordLimit, !options.contains(current) {
+            options.append(current)
+        }
+        return options.sorted { ($0 ?? .max) < ($1 ?? .max) }
+    }
+
+    private func limitLabel(_ option: Int?) -> String {
+        switch option {
+        case nil: "Без лимита"
+        case 0: "0 — только повторения"
+        case let value?: "\(value)"
+        }
     }
 
     private var isGenerating: Bool {

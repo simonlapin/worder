@@ -188,3 +188,18 @@ private let day: TimeInterval = 86_400
         #expect(text.contains("\"backupVersion\" : 1"))
     }
 }
+
+@Suite struct StateBackupUnlimitedSettingsTests {
+    @Test func nilDailyLimitSurvivesRoundTrip() throws {
+        let context = ModelContext(try WorderModelContainer.make(inMemory: true))
+        let unlimited = StateBackup.Settings(
+            dailyNewWordLimit: nil,
+            remindersEnabled: false,
+            reminderTimes: []
+        )
+        let data = try StateExporter().export(from: context, settings: unlimited, now: now)
+        let restored = try StateImporter().decode(data)
+        #expect(restored.settings.dailyNewWordLimit == nil)
+        #expect(restored.settings == unlimited)
+    }
+}
