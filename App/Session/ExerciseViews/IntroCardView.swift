@@ -8,7 +8,7 @@ struct IntroCardView: View {
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
-            Text("Новое слово")
+            Text(card.leechHint == nil ? "Новое слово" : "Трудное слово")
                 .font(.caption)
                 .textCase(.uppercase)
                 .foregroundStyle(.secondary)
@@ -32,6 +32,18 @@ struct IntroCardView: View {
             Text(card.translations.joined(separator: ", "))
                 .font(.title2)
                 .multilineTextAlignment(.center)
+            if let hint = card.leechHint {
+                Label {
+                    Text(hint)
+                        .font(.callout)
+                        .multilineTextAlignment(.leading)
+                } icon: {
+                    Image(systemName: "lightbulb.fill")
+                        .foregroundStyle(.yellow)
+                }
+                .padding(12)
+                .background(.yellow.opacity(0.12), in: RoundedRectangle(cornerRadius: 12))
+            }
             Spacer()
             Button {
                 onContinue()

@@ -11,6 +11,9 @@ public final class Word {
     public var note: String?
     public var category: String?
     public var isLeech: Bool
+    /// Cached AI-generated help for leeches (mnemonic / difference from
+    /// confusable words). Nil until generated; survives leech flag resets.
+    public var leechHint: String?
 
     public var batch: Batch?
 
@@ -29,7 +32,8 @@ public final class Word {
         translations: [String],
         note: String? = nil,
         category: String? = nil,
-        isLeech: Bool = false
+        isLeech: Bool = false,
+        leechHint: String? = nil
     ) {
         self.wordId = wordId
         self.text = text
@@ -37,6 +41,7 @@ public final class Word {
         self.note = note
         self.category = category
         self.isLeech = isLeech
+        self.leechHint = leechHint
         self.directionStates = []
         self.reviewLogs = []
         self.sentences = []

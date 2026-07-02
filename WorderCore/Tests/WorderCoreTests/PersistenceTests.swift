@@ -47,7 +47,12 @@ private func insertWord(
         #expect(word.translations == ["кольцо", "звонить"])
         #expect(word.note == nil)
         #expect(!word.isLeech)
+        #expect(word.leechHint == nil)
         #expect(word.batch?.batchId == "core-1500")
+
+        word.leechHint = "Кольцо на пальце — ring, звонок — тоже ring."
+        try context.save()
+        #expect(batches[0].words.first?.leechHint?.isEmpty == false)
     }
 
     @Test func directionStatesRoundTripEnumsAndFSRSFields() throws {

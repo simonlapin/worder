@@ -34,6 +34,9 @@ final class SessionViewModel {
         let text: String
         let translations: [String]
         let note: String?
+        /// Cached leech help; present only on the re-introduction card
+        /// a leech gets before its first exercise of the session.
+        var leechHint: String?
     }
 
     struct Exercise: Equatable {
@@ -96,6 +99,7 @@ final class SessionViewModel {
     private var currentCorrectOption: String?
     private var sessionStartedAt: Date?
     private var studiedWordIds: Set<PersistentIdentifier> = []
+    private var leechIntrosShown: Set<PersistentIdentifier> = []
 
     private(set) var phase: Phase = .loading
     private(set) var sessionRecord: StudySession?
@@ -157,9 +161,16 @@ final class SessionViewModel {
 
     func completeIntroduction(now: Date = .now) {
         guard case .introduction = phase, let item = currentItem, let queue else { return }
-        queue.markCompleted(item, now: now)
-        completedCount += 1
-        advance(now: now)
+        switch item.kind {
+        case .introduction:
+            queue.markCompleted(item, now: now)
+            completedCount += 1
+            advance(now: now)
+        case .exercise(let direction):
+            // Leech re-introduction shown on top of an exercise item:
+            // the queue item is untouched, proceed to the exercise itself.
+            presentExercise(item: item, direction: direction, now: now)
+        }
     }
 
     func submitChoice(_ option: String, now: Date = .now) {
@@ -217,6 +228,18 @@ final class SessionViewModel {
                 note: item.word.note
             ))
         case .exercise(let direction):
+            if let hint = item.word.leechHint, item.word.isLeech,
+               leechIntrosShown.insert(item.word.persistentModelID).inserted {
+                // A leech gets one re-introduction with its hint per session
+                // before the first exercise on it.
+                phase = .introduction(IntroCard(
+                    text: item.word.text,
+                    translations: item.word.translations,
+                    note: item.word.note,
+                    leechHint: hint
+                ))
+                return
+            }
             presentExercise(item: item, direction: direction, now: now)
         }
     }

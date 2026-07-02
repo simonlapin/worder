@@ -432,6 +432,34 @@ struct SessionViewModelTests {
         }
     }
 
+    @Test func leechGetsOneReintroductionWithHintBeforeItsFirstExercise() throws {
+        let (container, configuration) = try makeMatureSetup(direction: .ruToEn)
+        let setup = ModelContext(container)
+        let shop = try #require(setup.fetch(FetchDescriptor<Word>(
+            predicate: #Predicate { $0.wordId == 1 }
+        )).first)
+        shop.isLeech = true
+        shop.leechHint = "Шоп — шоппинг происходит в магазине."
+        try setup.save()
+
+        let model = makeModel(context: ModelContext(container), configuration: configuration)
+        model.start(now: t0)
+
+        let card = try introCard(model)
+        #expect(card.text == "shop")
+        #expect(card.leechHint == "Шоп — шоппинг происходит в магазине.")
+
+        model.completeIntroduction(now: t0)
+        let first = try exercise(model)
+        #expect(first.direction == .ruToEn)
+
+        // A failed answer requeues the exercise — the re-introduction must not repeat.
+        model.submitTypedAnswer("чепуха", now: t0.addingTimeInterval(5))
+        model.continueAfterFeedback(now: t0.addingTimeInterval(10))
+        let retried = try exercise(model)
+        #expect(retried.direction == .ruToEn)
+    }
+
     @Test func sessionSoftFinishesWhenDurationElapses() throws {
         let container = try makeContainer(importing: sixWordsJSON)
         var configuration = SessionViewModel.Configuration()
