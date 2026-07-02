@@ -127,6 +127,31 @@ struct FreeSessionTests {
         }
     }
 
+    @Test func freeSessionExposesWordStatusForBadge() throws {
+        let container = try makeContainer()
+        let model = makeFreeModel(context: ModelContext(container))
+
+        model.start(now: t0)
+        #expect(model.currentWordStatus == WordStatus.new)
+        #expect(!model.currentWordIsLeech)
+    }
+
+    @Test func scheduledSessionShowsNoStatusBadge() throws {
+        let container = try makeContainer()
+        var configuration = SessionViewModel.Configuration()
+        configuration.queue.sameWordSpacing = 0
+        let model = SessionViewModel(
+            context: ModelContext(container),
+            configuration: configuration,
+            speech: MockSpeechService(isAvailable: false),
+            rng: SplitMix64(seed: 1),
+            calendar: Calendar(identifier: .gregorian)
+        )
+
+        model.start(now: t0)
+        #expect(model.currentWordStatus == nil)
+    }
+
     @Test func scheduledSessionAfterFreePracticeStillIntroducesTheWord() throws {
         let container = try makeContainer()
         let free = makeFreeModel(context: ModelContext(container))

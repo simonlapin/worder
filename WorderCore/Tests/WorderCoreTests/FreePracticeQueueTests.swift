@@ -44,6 +44,7 @@ private struct SplitMix64: RandomNumberGenerator {
         return try FreePracticeQueue(
             context: context,
             configuration: .init(sameWordSpacing: spacing),
+            now: now,
             using: &rng
         )
     }
@@ -203,5 +204,147 @@ private struct SplitMix64: RandomNumberGenerator {
             now: now
         )
         #expect(queue.plannedNewWords.count == 2)
+    }
+}
+
+@Suite struct FreePracticeWeightTests {
+    private func makeContext() throws -> ModelContext {
+        ModelContext(try WorderModelContainer.make(inMemory: true))
+    }
+
+    private func makeWord(_ context: ModelContext, id: Int, isLeech: Bool = false) -> Word {
+        let word = Word(wordId: id, text: "word\(id)", translations: ["слово\(id)"], isLeech: isLeech)
+        context.insert(word)
+        for direction in Direction.allCases {
+            let state = DirectionState(direction: direction, due: now)
+            context.insert(state)
+            state.word = word
+        }
+        return word
+    }
+
+    private func logAnswer(_ context: ModelContext, word: Word, grade: ReviewGrade, daysAgo: Double, free: Bool = false) {
+        let log = ReviewLog(
+            reviewedAt: now.addingTimeInterval(-daysAgo * 86_400),
+            direction: .enToRu,
+            grade: grade,
+            isFreePractice: free
+        )
+        context.insert(log)
+        log.word = word
+    }
+
+    private let configuration = FreePracticeQueue.Configuration()
+
+    @Test func leechesAndRecentFailuresWeighMoreThanFreshWords() throws {
+        let context = try makeContext()
+        let plain = makeWord(context, id: 1)
+        let leech = makeWord(context, id: 2, isLeech: true)
+        let failed = makeWord(context, id: 3)
+        logAnswer(context, word: failed, grade: .again, daysAgo: 1, free: true)
+
+        let plainWeight = FreePracticeQueue.weight(of: plain, now: now, configuration: configuration)
+        #expect(FreePracticeQueue.weight(of: leech, now: now, configuration: configuration) > plainWeight)
+        #expect(FreePracticeQueue.weight(of: failed, now: now, configuration: configuration) > plainWeight)
+    }
+
+    @Test func oldFailuresOutsideWindowDoNotCount() throws {
+        let context = try makeContext()
+        let word = makeWord(context, id: 1)
+        logAnswer(context, word: word, grade: .again, daysAgo: 30)
+
+        let fresh = makeWord(context, id: 2)
+        #expect(FreePracticeQueue.weight(of: word, now: now, configuration: configuration)
+            == FreePracticeQueue.weight(of: fresh, now: now, configuration: configuration))
+        #expect(!FreePracticeQueue.hasRecentFailure(word, now: now, configuration: configuration))
+    }
+
+    @Test func solidlyLearnedWordsWeighLessThanFragileOnes() throws {
+        let context = try makeContext()
+        let solid = makeWord(context, id: 1)
+        for state in solid.directionStates {
+            state.state = .review
+            state.stability = 30
+        }
+        let fragile = makeWord(context, id: 2)
+        for state in fragile.directionStates {
+            state.state = .review
+            state.stability = 2
+        }
+
+        #expect(FreePracticeQueue.weight(of: solid, now: now, configuration: configuration)
+            < FreePracticeQueue.weight(of: fragile, now: now, configuration: configuration))
+    }
+
+    @Test func recentlyFailedWordGetsASecondExercisePass() throws {
+        let context = try makeContext()
+        let entries = (1...4).map {
+            WordBatchFile.Entry(id: $0, word: "word\($0)", translations: ["слово\($0)"])
+        }
+        try BatchImporter(context: context)
+            .importBatch(WordBatchFile(batchId: "b", title: "t", words: entries), now: now)
+        let words = try context.fetch(FetchDescriptor<Word>(sortBy: [SortDescriptor(\.wordId)]))
+        // Word 1 was answered before (so no intro) and failed recently.
+        let state = try #require(words[0].directionState(for: .enToRu))
+        state.state = .learning
+        logAnswer(context, word: words[0], grade: .again, daysAgo: 1, free: true)
+        try context.save()
+
+        var rng = SplitMix64(seed: 3)
+        let queue = try FreePracticeQueue(context: context, now: now, using: &rng)
+
+        var counts: [Int: Int] = [:]
+        var clock = now
+        while let item = queue.nextItem(now: clock) {
+            if case .exercise = item.kind {
+                counts[item.word.wordId, default: 0] += 1
+            }
+            queue.markCompleted(item, now: clock)
+            clock = clock.addingTimeInterval(10)
+        }
+        #expect(counts[1] == 4)
+        #expect(counts.filter { $0.key != 1 }.allSatisfy { $0.value == 2 })
+    }
+
+    @Test func weakWordSurfacesEarlierOnAverageAcrossSeeds() throws {
+        let context = try makeContext()
+        let entries = (1...20).map {
+            WordBatchFile.Entry(id: $0, word: "word\($0)", translations: ["слово\($0)"])
+        }
+        try BatchImporter(context: context)
+            .importBatch(WordBatchFile(batchId: "b", title: "t", words: entries), now: now)
+        let words = try context.fetch(FetchDescriptor<Word>(sortBy: [SortDescriptor(\.wordId)]))
+        // Word 1: leech with a fresh failure — maximum weight.
+        words[0].isLeech = true
+        let state = try #require(words[0].directionState(for: .enToRu))
+        state.state = .learning
+        state.stability = 1
+        logAnswer(context, word: words[0], grade: .again, daysAgo: 1, free: true)
+        try context.save()
+
+        var weakPositions = 0
+        var referencePositions = 0
+        for seed in 1...20 {
+            var rng = SplitMix64(seed: UInt64(seed))
+            let queue = try FreePracticeQueue(context: context, now: now, using: &rng)
+            var position = 0
+            var weakSeen = false
+            var referenceSeen = false
+            var clock = now
+            while let item = queue.nextItem(now: clock), !(weakSeen && referenceSeen) {
+                if item.word.wordId == 1, !weakSeen {
+                    weakPositions += position
+                    weakSeen = true
+                }
+                if item.word.wordId == 10, !referenceSeen {
+                    referencePositions += position
+                    referenceSeen = true
+                }
+                queue.markCompleted(item, now: clock)
+                clock = clock.addingTimeInterval(10)
+                position += 1
+            }
+        }
+        #expect(weakPositions < referencePositions)
     }
 }

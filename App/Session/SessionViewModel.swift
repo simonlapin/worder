@@ -108,6 +108,10 @@ final class SessionViewModel {
     private(set) var sessionRecord: StudySession?
     private(set) var summary: Summary?
     private(set) var completedCount = 0
+    /// Mastery status of the word on screen; free practice only, so the
+    /// trainee sees what kind of word they are dealing with.
+    private(set) var currentWordStatus: WordStatus?
+    private(set) var currentWordIsLeech = false
 
     var progressFraction: Double {
         let total = completedCount + (queue?.remainingCount ?? 0)
@@ -146,6 +150,7 @@ final class SessionViewModel {
                 try FreePracticeQueue(
                     context: context,
                     configuration: configuration.freeQueue,
+                    now: now,
                     using: &rng
                 )
             }
@@ -233,6 +238,10 @@ final class SessionViewModel {
         }
         currentItem = item
         currentCorrectOption = nil
+        if configuration.mode == .free {
+            currentWordStatus = MasteryPolicy().status(of: item.word, now: now)
+            currentWordIsLeech = item.word.isLeech
+        }
         switch item.kind {
         case .introduction:
             phase = .introduction(IntroCard(

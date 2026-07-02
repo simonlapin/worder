@@ -24,6 +24,10 @@ struct SessionView: View {
                 ProgressView(value: model.progressFraction)
                     .padding(.horizontal)
             }
+            if showsProgress, mode == .free, let status = model.currentWordStatus {
+                statusBadge(status)
+                    .padding(.top, 8)
+            }
             content
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
@@ -80,6 +84,41 @@ struct SessionView: View {
 
     private var listenAction: (() -> Void)? {
         model.canSpeakCurrentWord ? { model.speakCurrentWord() } : nil
+    }
+
+    private func statusBadge(_ status: WordStatus) -> some View {
+        HStack(spacing: 6) {
+            Text(statusLabel(status))
+                .font(.caption)
+                .padding(.horizontal, 8)
+                .padding(.vertical, 3)
+                .background(statusColor(status).opacity(0.15), in: Capsule())
+                .foregroundStyle(statusColor(status))
+            if model.currentWordIsLeech {
+                Label("трудное", systemImage: "exclamationmark.triangle.fill")
+                    .font(.caption)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 3)
+                    .background(.yellow.opacity(0.2), in: Capsule())
+                    .foregroundStyle(.orange)
+            }
+        }
+    }
+
+    private func statusLabel(_ status: WordStatus) -> String {
+        switch status {
+        case .new: "новое"
+        case .learning: "изучается"
+        case .learned: "выучено"
+        }
+    }
+
+    private func statusColor(_ status: WordStatus) -> Color {
+        switch status {
+        case .new: .secondary
+        case .learning: .orange
+        case .learned: .green
+        }
     }
 
     @ViewBuilder
