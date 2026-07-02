@@ -2,7 +2,7 @@ import Foundation
 import Testing
 @testable import WorderCore
 
-/// Validates the real reference batch produced by scripts/convert_pdf.py.
+/// Validates the real reference batch (data/core-1500.json).
 /// The file is resolved relative to this source file (tests run on the host),
 /// so the repo's data/core-1500.json is checked directly without a copy.
 @Suite struct Core1500Tests {
@@ -15,7 +15,7 @@ import Testing
             .appendingPathComponent("data/core-1500.json")
         guard let data = try? Data(contentsOf: url),
               let batch = try? WordBatchFile.decode(from: data) else {
-            fatalError("data/core-1500.json is missing or invalid — run scripts/convert_pdf.py")
+            fatalError("data/core-1500.json is missing or invalid")
         }
         return batch
     }()
