@@ -6,8 +6,10 @@ struct SessionView: View {
     @State private var model: SessionViewModel
     @Environment(\.dismiss) private var dismiss
 
-    init(context: ModelContext) {
-        _model = State(initialValue: SessionViewModel(context: context))
+    init(context: ModelContext, settings: AppSettings) {
+        var configuration = SessionViewModel.Configuration()
+        configuration.queue = SessionQueue.Configuration(dailyNewWordLimit: settings.dailyNewWordLimit)
+        _model = State(initialValue: SessionViewModel(context: context, configuration: configuration))
     }
 
     var body: some View {

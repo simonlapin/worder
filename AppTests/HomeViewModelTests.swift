@@ -23,12 +23,25 @@ struct HomeViewModelTests {
         ModelContext(try WorderModelContainer.make(inMemory: true))
     }
 
+    private func makeSettings(limit: Int = AppSettings.dailyNewWordLimitDefault) -> AppSettings {
+        let suiteName = "HomeViewModelTests-\(UUID().uuidString)"
+        let defaults = UserDefaults(suiteName: suiteName)!
+        defaults.removePersistentDomain(forName: suiteName)
+        let settings = AppSettings(defaults: defaults)
+        settings.dailyNewWordLimit = limit
+        return settings
+    }
+
+    private func makeModel(context: ModelContext, limit: Int = AppSettings.dailyNewWordLimitDefault, calendar: Calendar = .current) -> HomeViewModel {
+        HomeViewModel(context: context, settings: makeSettings(limit: limit), calendar: calendar)
+    }
+
     @Test func freshImportCountsAllWordsAsNewAndNoneAsDue() throws {
         let context = try makeContext()
         let now = Date(timeIntervalSince1970: 1_750_000_000)
         try BatchImporter(context: context).importBatch(from: fixtureJSON, now: now)
 
-        let model = HomeViewModel(context: context)
+        let model = makeModel(context: context)
         model.refresh(now: now)
 
         #expect(model.dueReviewCount == 0)
@@ -51,17 +64,32 @@ struct HomeViewModelTests {
         }
         try context.save()
 
-        let model = HomeViewModel(context: context)
+        let model = makeModel(context: context)
         model.refresh(now: now)
 
         #expect(model.dueReviewCount == 2)
         #expect(model.newWordsTodayCount == 2)
     }
 
+    @Test func newWordCountRespectsSettingsLimit() throws {
+        let context = try makeContext()
+        let now = Date(timeIntervalSince1970: 1_750_000_000)
+        try BatchImporter(context: context).importBatch(from: fixtureJSON, now: now)
+
+        let model = makeModel(context: context, limit: 2)
+        model.refresh(now: now)
+        #expect(model.newWordsTodayCount == 2)
+
+        let zeroModel = makeModel(context: context, limit: 0)
+        zeroModel.refresh(now: now)
+        #expect(zeroModel.newWordsTodayCount == 0)
+        #expect(!zeroModel.hasWorkAvailable)
+    }
+
     @Test func emptyDatabaseHasNoWorkAvailable() throws {
         let context = try makeContext()
 
-        let model = HomeViewModel(context: context)
+        let model = makeModel(context: context)
         model.refresh(now: Date(timeIntervalSince1970: 1_750_000_000))
 
         #expect(model.dueReviewCount == 0)
@@ -78,7 +106,7 @@ struct HomeViewModelTests {
         }
         try context.save()
 
-        let model = HomeViewModel(context: context, calendar: calendar)
+        let model = makeModel(context: context, calendar: calendar)
         model.refresh(now: now)
 
         #expect(model.streakDays == 3)
@@ -92,7 +120,7 @@ struct HomeViewModelTests {
         insertFinishedSession(into: context, daysAgo: 2, from: now, calendar: calendar)
         try context.save()
 
-        let model = HomeViewModel(context: context, calendar: calendar)
+        let model = makeModel(context: context, calendar: calendar)
         model.refresh(now: now)
 
         #expect(model.streakDays == 2)
@@ -106,7 +134,7 @@ struct HomeViewModelTests {
         insertFinishedSession(into: context, daysAgo: 3, from: now, calendar: calendar)
         try context.save()
 
-        let model = HomeViewModel(context: context, calendar: calendar)
+        let model = makeModel(context: context, calendar: calendar)
         model.refresh(now: now)
 
         #expect(model.streakDays == 0)
@@ -119,7 +147,7 @@ struct HomeViewModelTests {
         context.insert(StudySession(startedAt: now))
         try context.save()
 
-        let model = HomeViewModel(context: context, calendar: calendar)
+        let model = makeModel(context: context, calendar: calendar)
         model.refresh(now: now)
 
         #expect(model.streakDays == 0)

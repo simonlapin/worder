@@ -7,6 +7,7 @@ import WorderCore
 @Observable
 final class HomeViewModel {
     private let context: ModelContext
+    private let settings: AppSettings
     private let calendar: Calendar
 
     private(set) var dueReviewCount = 0
@@ -16,14 +17,20 @@ final class HomeViewModel {
 
     var hasWorkAvailable: Bool { dueReviewCount + newWordsTodayCount > 0 }
 
-    init(context: ModelContext, calendar: Calendar = .current) {
+    init(context: ModelContext, settings: AppSettings, calendar: Calendar = .current) {
         self.context = context
+        self.settings = settings
         self.calendar = calendar
     }
 
     func refresh(now: Date = .now) {
         do {
-            let queue = try SessionQueue(context: context, calendar: calendar, now: now)
+            let queue = try SessionQueue(
+                context: context,
+                configuration: SessionQueue.Configuration(dailyNewWordLimit: settings.dailyNewWordLimit),
+                calendar: calendar,
+                now: now
+            )
             newWordsTodayCount = queue.plannedNewWords.count
             dueReviewCount = queue.remainingCount - newWordsTodayCount
             streakDays = try StreakCalculator(calendar: calendar).currentStreak(in: context, now: now)

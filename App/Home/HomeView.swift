@@ -10,12 +10,14 @@ enum HomeRoute: Hashable {
 
 struct HomeView: View {
     private let context: ModelContext
+    private let settings: AppSettings
     @State private var model: HomeViewModel
     @State private var path: [HomeRoute] = []
 
-    init(context: ModelContext) {
+    init(context: ModelContext, settings: AppSettings) {
         self.context = context
-        _model = State(initialValue: HomeViewModel(context: context))
+        self.settings = settings
+        _model = State(initialValue: HomeViewModel(context: context, settings: settings))
     }
 
     var body: some View {
@@ -43,11 +45,11 @@ struct HomeView: View {
             .navigationDestination(for: HomeRoute.self) { route in
                 switch route {
                 case .session:
-                    SessionView(context: context)
+                    SessionView(context: context, settings: settings)
                 case .stats:
                     NotBuiltYetView(title: "Статистика")
                 case .settings:
-                    NotBuiltYetView(title: "Настройки")
+                    SettingsView(store: KeychainStore())
                 }
             }
             .task { model.refresh() }

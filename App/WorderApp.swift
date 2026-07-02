@@ -5,6 +5,7 @@ import WorderCore
 @main
 struct WorderApp: App {
     private let container: ModelContainer
+    @State private var settings = AppSettings()
 
     init() {
         do {
@@ -19,6 +20,7 @@ struct WorderApp: App {
             RootView()
         }
         .modelContainer(container)
+        .environment(settings)
     }
 }
 
@@ -30,6 +32,7 @@ struct RootView: View {
     }
 
     @Environment(\.modelContext) private var context
+    @Environment(AppSettings.self) private var settings
     @State private var phase: Phase = .importing
 
     var body: some View {
@@ -38,7 +41,7 @@ struct RootView: View {
             ProgressView("Подготовка словаря…")
                 .task { runBootstrap() }
         case .ready:
-            HomeView(context: context)
+            HomeView(context: context, settings: settings)
         case .failed(let message):
             ContentUnavailableView {
                 Label("Словарь не загрузился", systemImage: "exclamationmark.triangle")
