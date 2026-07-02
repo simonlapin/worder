@@ -266,3 +266,96 @@ private func promote(
         #expect(queue.nextItem(now: now.addingTimeInterval(61)) == first)
     }
 }
+
+@Suite struct SessionQueueSpacingTests {
+    /// Drains the queue by completing everything, recording word order.
+    private func drain(_ queue: SessionQueue) -> [(wordId: Int, kind: SessionItem.Kind)] {
+        var seen: [(Int, SessionItem.Kind)] = []
+        var clock = now
+        while let item = queue.nextItem(now: clock) {
+            seen.append((item.word.wordId, item.kind))
+            queue.markCompleted(item, now: clock)
+            clock = clock.addingTimeInterval(10)
+        }
+        return seen
+    }
+
+    private func assertSpacing(
+        _ sequence: [(wordId: Int, kind: SessionItem.Kind)],
+        minGap: Int,
+        allowedViolationsNearTail: Int = 0
+    ) {
+        var violations: [Int] = []
+        for (index, entry) in sequence.enumerated() {
+            let window = sequence[max(0, index - minGap)..<index]
+            if window.contains(where: { $0.wordId == entry.wordId }) {
+                violations.append(index)
+            }
+        }
+        let tailStart = sequence.count - allowedViolationsNearTail - minGap
+        let earlyViolations = violations.filter { $0 < tailStart }
+        #expect(earlyViolations.isEmpty, "same-word items too close at indices \(violations)")
+    }
+
+    @Test func reviewDirectionsOfTheSameWordAreSpacedApart() throws {
+        let context = try makeContext()
+        let words = try importWords(context, count: 8)
+        for word in words {
+            try promote(word, direction: .enToRu, due: now.addingTimeInterval(-2 * day))
+            try promote(word, direction: .ruToEn, due: now.addingTimeInterval(-2 * day))
+        }
+        try context.save()
+
+        let queue = try makeQueue(context, limit: 0)
+        #expect(queue.remainingCount == 16)
+        assertSpacing(drain(queue), minGap: 3)
+    }
+
+    @Test func introductionExercisesDoNotFollowTheIntroImmediately() throws {
+        let context = try makeContext()
+        try importWords(context, count: 6)
+        let queue = try makeQueue(context, limit: 6)
+
+        let sequence = drain(queue)
+        #expect(sequence.count == 18)
+        // Tail of the session has nothing left to interleave with; the last
+        // few items are allowed to bunch up rather than be dropped.
+        assertSpacing(sequence, minGap: 3, allowedViolationsNearTail: 4)
+        #expect(sequence.filter { $0.kind == .introduction }.count == 6)
+    }
+
+    @Test func singleNewWordSessionStillDeliversBothExercises() throws {
+        let context = try makeContext()
+        try importWords(context, count: 1)
+        let queue = try makeQueue(context, limit: 1)
+
+        let sequence = drain(queue)
+        #expect(sequence.map(\.kind) == [
+            .introduction,
+            .exercise(.enToRu),
+            .exercise(.ruToEn),
+        ])
+    }
+
+    @Test func spacingPreservesEveryItemAndPrioritisesOverdueFirst() throws {
+        let context = try makeContext()
+        let words = try importWords(context, count: 5)
+        try promote(words[4], direction: .enToRu, due: now.addingTimeInterval(-10 * day))
+        try promote(words[4], direction: .ruToEn, due: now.addingTimeInterval(-9 * day))
+        try context.save()
+
+        let queue = try makeQueue(context, limit: 4)
+        let sequence = drain(queue)
+
+        #expect(sequence.count == 2 + 4 * 3)
+        #expect(sequence.first?.wordId == 5)
+        #expect(Set(sequence.map(\.wordId)) == Set(1...5))
+    }
+
+    @Test func spacingHelperKeepsOrderWhenNoConflicts() throws {
+        let context = try makeContext()
+        let words = try importWords(context, count: 4)
+        let items = words.map { SessionItem(word: $0, kind: .exercise(.enToRu)) }
+        #expect(SessionQueue.spacingSameWords(items, minGap: 3) == items)
+    }
+}

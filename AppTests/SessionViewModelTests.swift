@@ -85,7 +85,11 @@ struct SessionViewModelTests {
         speech: MockSpeechService = MockSpeechService(isAvailable: false),
         seed: UInt64 = 1
     ) -> SessionViewModel {
-        SessionViewModel(
+        // Queue interleaving is covered by SessionQueueSpacingTests; VM tests
+        // pin adjacent same-word order so answer flows stay readable.
+        var configuration = configuration
+        configuration.queue.sameWordSpacing = 0
+        return SessionViewModel(
             context: context,
             configuration: configuration,
             speech: speech,

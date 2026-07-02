@@ -23,9 +23,10 @@ public struct SessionItem: Equatable {
 
 /// Builds and drives the work queue of one study session.
 ///
-/// Priority: overdue reviews (by due date), then introductions of new words up
-/// to the daily limit. Completing an introduction inserts exercises for both
-/// directions right after it. A failed exercise re-enters the same session
+/// Priority: overdue reviews (by due date, with same-word items interleaved
+/// apart), then introductions of new words up to the daily limit. Completing
+/// an introduction inserts exercises for both directions spaced further down
+/// the queue. A failed exercise re-enters the same session
 /// after an intra-session delay (default 1m, then 10m) until answered
 /// correctly. The queue only orders work — persisting answers and scheduling
 /// is the caller's job.
@@ -33,13 +34,23 @@ public final class SessionQueue {
     public struct Configuration: Equatable, Sendable {
         public var dailyNewWordLimit: Int
         public var intraSessionSteps: [TimeInterval]
+        /// Minimum number of other items between two items of the same word,
+        /// so an answer cannot be replayed from short-term memory. Best
+        /// effort: relaxed when the queue tail has nothing left to interleave.
+        public var sameWordSpacing: Int
 
-        public init(dailyNewWordLimit: Int = 20, intraSessionSteps: [TimeInterval] = [60, 600]) {
+        public init(
+            dailyNewWordLimit: Int = 20,
+            intraSessionSteps: [TimeInterval] = [60, 600],
+            sameWordSpacing: Int = 3
+        ) {
             precondition(dailyNewWordLimit >= 0, "dailyNewWordLimit must be non-negative")
             precondition(!intraSessionSteps.isEmpty, "intraSessionSteps must not be empty")
             precondition(intraSessionSteps.allSatisfy { $0 > 0 }, "intraSessionSteps must be positive")
+            precondition(sameWordSpacing >= 0, "sameWordSpacing must be non-negative")
             self.dailyNewWordLimit = dailyNewWordLimit
             self.intraSessionSteps = intraSessionSteps
+            self.sameWordSpacing = sameWordSpacing
         }
     }
 
@@ -107,10 +118,33 @@ public final class SessionQueue {
         let allowance = max(0, configuration.dailyNewWordLimit - introducedToday)
         self.plannedNewWords = Array(newWords.prefix(allowance))
 
-        self.pending = reviews.map { PendingItem(item: $0.item, notBefore: .distantPast, failures: 0) }
+        let ordered = Self.spacingSameWords(
+            reviews.map(\.item),
+            minGap: configuration.sameWordSpacing
+        )
+        self.pending = ordered.map { PendingItem(item: $0, notBefore: .distantPast, failures: 0) }
             + plannedNewWords.map {
                 PendingItem(item: SessionItem(word: $0, kind: .introduction), notBefore: .distantPast, failures: 0)
             }
+    }
+
+    /// Greedy pass keeping items of the same word at least `minGap` positions
+    /// apart while preserving the incoming (priority) order as much as
+    /// possible. When no candidate satisfies the gap, the earliest one is
+    /// placed anyway — spacing is best effort, losing items is not an option.
+    static func spacingSameWords(_ items: [SessionItem], minGap: Int) -> [SessionItem] {
+        guard minGap > 0 else { return items }
+        var result: [SessionItem] = []
+        result.reserveCapacity(items.count)
+        var waiting = items
+        while !waiting.isEmpty {
+            let recent = result.suffix(minGap)
+            let index = waiting.firstIndex { candidate in
+                !recent.contains { $0.word === candidate.word }
+            } ?? 0
+            result.append(waiting.remove(at: index))
+        }
+        return result
     }
 
     public var isEmpty: Bool { pending.isEmpty }
@@ -129,7 +163,9 @@ public final class SessionQueue {
     }
 
     /// Marks an introduction as shown or an exercise as answered correctly.
-    /// A completed introduction inserts exercises for both directions in its place.
+    /// A completed introduction inserts exercises for both directions, each
+    /// pushed `sameWordSpacing` further down the queue so the freshly shown
+    /// answer cannot be echoed from short-term memory.
     public func markCompleted(_ item: SessionItem, now: Date) {
         guard let index = pending.firstIndex(where: { $0.item == item }) else {
             preconditionFailure("markCompleted for an item that is not in the queue")
@@ -137,14 +173,20 @@ public final class SessionQueue {
         pending.remove(at: index)
         if item.kind == .introduction {
             plannedNewWords.removeAll { $0 === item.word }
-            let exercises = [Direction.enToRu, .ruToEn].map {
-                PendingItem(
-                    item: SessionItem(word: item.word, kind: .exercise($0)),
-                    notBefore: .distantPast,
-                    failures: 0
+            let gap = configuration.sameWordSpacing
+            for (offset, direction) in [Direction.enToRu, .ruToEn].enumerated() {
+                // +offset keeps `gap` other items between the two directions,
+                // not just between each of them and the intro position.
+                let target = min(index + gap * (offset + 1) + offset, pending.count)
+                pending.insert(
+                    PendingItem(
+                        item: SessionItem(word: item.word, kind: .exercise(direction)),
+                        notBefore: .distantPast,
+                        failures: 0
+                    ),
+                    at: target
                 )
             }
-            pending.insert(contentsOf: exercises, at: index)
         }
     }
 
