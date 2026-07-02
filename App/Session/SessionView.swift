@@ -5,6 +5,7 @@ import WorderCore
 struct SessionView: View {
     @State private var model: SessionViewModel
     @Environment(\.dismiss) private var dismiss
+    @Environment(SentenceService.self) private var sentenceService
 
     init(context: ModelContext, settings: AppSettings) {
         var configuration = SessionViewModel.Configuration()
@@ -31,6 +32,11 @@ struct SessionView: View {
             }
         }
         .task { model.start() }
+        .onChange(of: model.phase) { _, newPhase in
+            if newPhase == .finished {
+                Task { await sentenceService.generateMissingSentences() }
+            }
+        }
     }
 
     private var showsProgress: Bool {

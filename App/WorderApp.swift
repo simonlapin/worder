@@ -6,10 +6,16 @@ import WorderCore
 struct WorderApp: App {
     private let container: ModelContainer
     @State private var settings = AppSettings()
+    @State private var sentenceService: SentenceService
 
     init() {
         do {
-            container = try WorderModelContainer.make()
+            let container = try WorderModelContainer.make()
+            self.container = container
+            _sentenceService = State(initialValue: SentenceService(
+                context: container.mainContext,
+                keyStore: KeychainStore()
+            ))
         } catch {
             fatalError("Failed to create SwiftData container: \(error)")
         }
@@ -21,6 +27,7 @@ struct WorderApp: App {
         }
         .modelContainer(container)
         .environment(settings)
+        .environment(sentenceService)
     }
 }
 
@@ -33,6 +40,7 @@ struct RootView: View {
 
     @Environment(\.modelContext) private var context
     @Environment(AppSettings.self) private var settings
+    @Environment(SentenceService.self) private var sentenceService
     @State private var phase: Phase = .importing
 
     var body: some View {
@@ -59,6 +67,7 @@ struct RootView: View {
         do {
             try AppBootstrap.importBundledBatch(into: context, now: .now)
             phase = .ready
+            Task { await sentenceService.generateMissingSentences() }
         } catch {
             phase = .failed(error.localizedDescription)
         }
