@@ -1,0 +1,166 @@
+import SwiftData
+import SwiftUI
+import WorderCore
+
+struct SessionView: View {
+    @State private var model: SessionViewModel
+    @Environment(\.dismiss) private var dismiss
+
+    init(context: ModelContext) {
+        _model = State(initialValue: SessionViewModel(context: context))
+    }
+
+    var body: some View {
+        VStack(spacing: 0) {
+            if showsProgress {
+                ProgressView(value: model.progressFraction)
+                    .padding(.horizontal)
+            }
+            content
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .navigationTitle("Сессия")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            if showsProgress {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Завершить") { model.endSession() }
+                }
+            }
+        }
+        .task { model.start() }
+    }
+
+    private var showsProgress: Bool {
+        switch model.phase {
+        case .introduction, .exercise, .feedback: true
+        case .loading, .finished, .failed: false
+        }
+    }
+
+    @ViewBuilder
+    private var content: some View {
+        switch model.phase {
+        case .loading:
+            ProgressView()
+        case .introduction(let card):
+            IntroCardView(card: card) { model.completeIntroduction() }
+        case .exercise(let exercise):
+            exerciseView(exercise)
+        case .feedback(let feedback):
+            FeedbackView(feedback: feedback) { model.continueAfterFeedback() }
+        case .finished:
+            finishedView
+        case .failed(let message):
+            ContentUnavailableView {
+                Label("Сессия прервана", systemImage: "exclamationmark.triangle")
+            } description: {
+                Text(message)
+            } actions: {
+                Button("К главному экрану") { dismiss() }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func exerciseView(_ exercise: SessionViewModel.Exercise) -> some View {
+        switch exercise.input {
+        case .multipleChoice(let options):
+            MultipleChoiceView(exercise: exercise, options: options) { option in
+                model.submitChoice(option)
+            }
+        case .typedAnswer:
+            TypeAnswerView(exercise: exercise) { input in
+                model.submitTypedAnswer(input)
+            }
+        }
+    }
+
+    private var finishedView: some View {
+        VStack(spacing: 16) {
+            Image(systemName: "checkmark.seal")
+                .font(.system(size: 56))
+                .foregroundStyle(.green)
+            Text("Сессия завершена")
+                .font(.title2.bold())
+            if let record = model.sessionRecord, record.answersTotal > 0 {
+                Text("Ответов: \(record.answersTotal), верно: \(record.answersCorrect)")
+                    .foregroundStyle(.secondary)
+            }
+            Button("Готово") { dismiss() }
+                .buttonStyle(.borderedProminent)
+        }
+        .padding()
+    }
+}
+
+private struct FeedbackView: View {
+    let feedback: SessionViewModel.Feedback
+    let onContinue: () -> Void
+
+    var body: some View {
+        VStack(spacing: 20) {
+            Spacer()
+            Image(systemName: icon)
+                .font(.system(size: 56))
+                .foregroundStyle(color)
+            Text(title)
+                .font(.title2.bold())
+            Text(detail)
+                .font(.title3)
+                .multilineTextAlignment(.center)
+            if feedback.willRetry {
+                Text("Слово вернётся в этой сессии")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
+            Spacer()
+            Button {
+                onContinue()
+            } label: {
+                Text("Дальше")
+                    .font(.title3.bold())
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 8)
+            }
+            .buttonStyle(.borderedProminent)
+        }
+        .padding()
+    }
+
+    private var icon: String {
+        switch feedback.verdict {
+        case .correct, .correctSynonym: "checkmark.circle.fill"
+        case .almostCorrect: "checkmark.circle.badge.questionmark"
+        case .wrong: "xmark.circle.fill"
+        }
+    }
+
+    private var color: Color {
+        switch feedback.verdict {
+        case .correct, .correctSynonym: .green
+        case .almostCorrect: .orange
+        case .wrong: .red
+        }
+    }
+
+    private var title: String {
+        switch feedback.verdict {
+        case .correct: "Верно!"
+        case .correctSynonym: "Верно, это синоним"
+        case .almostCorrect: "Почти — опечатка"
+        case .wrong: "Неверно"
+        }
+    }
+
+    private var detail: String {
+        switch feedback.verdict {
+        case .correct:
+            feedback.correctAnswer
+        case .correctSynonym(let intended):
+            "Спрашивалось слово «\(intended)»"
+        case .almostCorrect, .wrong:
+            "Правильный ответ: \(feedback.correctAnswer)"
+        }
+    }
+}
