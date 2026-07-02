@@ -260,6 +260,34 @@ struct SessionViewModelTests {
         #expect(session.answersTotal == 1)
     }
 
+    @Test func finishedSessionExposesSummaryWithStreak() throws {
+        let container = try makeContainer(importing: sixWordsJSON)
+        let model = makeModel(context: ModelContext(container))
+
+        model.start(now: t0)
+        model.completeIntroduction(now: t0)
+        model.submitChoice("магазин", now: t0.addingTimeInterval(5))
+        model.endSession(now: t0.addingTimeInterval(10))
+
+        let summary = try #require(model.summary)
+        #expect(summary.wordsStudied == 1)
+        #expect(summary.answersTotal == 1)
+        #expect(summary.answersCorrect == 1)
+        #expect(summary.accuracyPercent == 100)
+        #expect(summary.newWordsIntroduced == 1)
+        #expect(summary.streakDays == 1)
+    }
+
+    @Test func emptyQueueLeavesNoSummary() throws {
+        let container = try makeContainer(importing: nil)
+        let model = makeModel(context: ModelContext(container))
+
+        model.start(now: t0)
+
+        #expect(model.phase == .finished)
+        #expect(model.summary == nil)
+    }
+
     @Test func endSessionEarlyKeepsRecordedAnswers() throws {
         let container = try makeContainer(importing: sixWordsJSON)
         let model = makeModel(context: ModelContext(container))

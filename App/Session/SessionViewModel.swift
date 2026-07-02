@@ -64,6 +64,19 @@ final class SessionViewModel {
         case failed(String)
     }
 
+    struct Summary: Equatable {
+        let wordsStudied: Int
+        let answersTotal: Int
+        let answersCorrect: Int
+        let newWordsIntroduced: Int
+        let streakDays: Int
+
+        var accuracyPercent: Int {
+            guard answersTotal > 0 else { return 0 }
+            return Int((Double(answersCorrect) / Double(answersTotal) * 100).rounded())
+        }
+    }
+
     private let context: ModelContext
     private let configuration: Configuration
     private let scheduler: any Scheduler
@@ -76,9 +89,11 @@ final class SessionViewModel {
     private var currentItem: SessionItem?
     private var currentCorrectOption: String?
     private var sessionStartedAt: Date?
+    private var studiedWordIds: Set<PersistentIdentifier> = []
 
     private(set) var phase: Phase = .loading
     private(set) var sessionRecord: StudySession?
+    private(set) var summary: Summary?
     private(set) var completedCount = 0
 
     var progressFraction: Double {
@@ -292,6 +307,7 @@ final class SessionViewModel {
             if isFirstAnswerEver {
                 sessionRecord.newWordsIntroduced += 1
             }
+            studiedWordIds.insert(word.persistentModelID)
             try context.save()
         } catch {
             phase = .failed(error.localizedDescription)
@@ -313,10 +329,20 @@ final class SessionViewModel {
     }
 
     private func finish(now: Date) {
-        if let sessionRecord, sessionRecord.endedAt == nil {
-            sessionRecord.endedAt = now
+        if let sessionRecord {
             do {
-                try context.save()
+                if sessionRecord.endedAt == nil {
+                    sessionRecord.endedAt = now
+                    try context.save()
+                }
+                summary = Summary(
+                    wordsStudied: studiedWordIds.count,
+                    answersTotal: sessionRecord.answersTotal,
+                    answersCorrect: sessionRecord.answersCorrect,
+                    newWordsIntroduced: sessionRecord.newWordsIntroduced,
+                    streakDays: try StreakCalculator(calendar: calendar)
+                        .currentStreak(in: context, now: now)
+                )
             } catch {
                 phase = .failed(error.localizedDescription)
                 return

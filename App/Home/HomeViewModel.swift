@@ -26,35 +26,10 @@ final class HomeViewModel {
             let queue = try SessionQueue(context: context, calendar: calendar, now: now)
             newWordsTodayCount = queue.plannedNewWords.count
             dueReviewCount = queue.remainingCount - newWordsTodayCount
-            streakDays = try currentStreak(now: now)
+            streakDays = try StreakCalculator(calendar: calendar).currentStreak(in: context, now: now)
             loadFailureMessage = nil
         } catch {
             loadFailureMessage = error.localizedDescription
         }
-    }
-
-    /// Consecutive calendar days with at least one finished session, counted
-    /// back from today (or yesterday, if today has none yet). A session
-    /// belongs to the day it started.
-    private func currentStreak(now: Date) throws -> Int {
-        let sessions = try context.fetch(FetchDescriptor<StudySession>(
-            predicate: #Predicate { $0.endedAt != nil }
-        ))
-        let days = Set(sessions.map { calendar.startOfDay(for: $0.startedAt) })
-
-        var day = calendar.startOfDay(for: now)
-        if !days.contains(day) {
-            guard let yesterday = calendar.date(byAdding: .day, value: -1, to: day),
-                  days.contains(yesterday) else { return 0 }
-            day = yesterday
-        }
-
-        var streak = 0
-        while days.contains(day) {
-            streak += 1
-            guard let previous = calendar.date(byAdding: .day, value: -1, to: day) else { break }
-            day = previous
-        }
-        return streak
     }
 }

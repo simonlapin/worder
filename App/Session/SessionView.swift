@@ -76,21 +76,19 @@ struct SessionView: View {
         }
     }
 
+    @ViewBuilder
     private var finishedView: some View {
-        VStack(spacing: 16) {
-            Image(systemName: "checkmark.seal")
-                .font(.system(size: 56))
-                .foregroundStyle(.green)
-            Text("Сессия завершена")
-                .font(.title2.bold())
-            if let record = model.sessionRecord, record.answersTotal > 0 {
-                Text("Ответов: \(record.answersTotal), верно: \(record.answersCorrect)")
-                    .foregroundStyle(.secondary)
+        if let summary = model.summary {
+            SessionSummaryView(summary: summary) { dismiss() }
+        } else {
+            ContentUnavailableView {
+                Label("Сейчас нечего повторять", systemImage: "checkmark.seal")
+            } description: {
+                Text("Все слова повторены, новые появятся по расписанию.")
+            } actions: {
+                Button("Готово") { dismiss() }
             }
-            Button("Готово") { dismiss() }
-                .buttonStyle(.borderedProminent)
         }
-        .padding()
     }
 }
 
