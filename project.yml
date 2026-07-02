@@ -43,6 +43,16 @@ targets:
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
+  WorderUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - AppUITests
+    dependencies:
+      - target: Worder
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
 schemes:
   Worder:
     build:
@@ -51,3 +61,10 @@ schemes:
     test:
       targets:
         - WorderTests
+  WorderScreenshots:
+    build:
+      targets:
+        Worder: all
+    test:
+      targets:
+        - WorderUITests
