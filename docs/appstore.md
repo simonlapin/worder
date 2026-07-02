@@ -13,6 +13,18 @@
 | Цена | Бесплатно |
 | Возрастной рейтинг | 4+ (анкета: везде «нет») |
 | Основной язык | Русский |
+| Версия | 1.0.0 |
+| Авторские права | © 2026 BFG LLC |
+| URL службы поддержки | https://simonlapin.github.io/worder/ |
+| Маркетинг (URL) | https://simonlapin.github.io/worder/ |
+| Privacy Policy URL | https://simonlapin.github.io/worder/privacy-policy |
+
+## Рекламный текст (Promotional Text, ≤170 символов)
+
+```
+1500 самых нужных английских слов — до уверенного перевода в обе стороны.
+Умные повторения, свободная тренировка, статистика. Офлайн, без рекламы и подписок.
+```
 
 ## Описание (RU)
 
@@ -53,9 +65,8 @@ Worder работает полностью офлайн. Опционально 
 
 ## Privacy Policy URL
 
-Содержимое: `docs/privacy-policy.md`. Разместить, например, на GitHub Pages репозитория
-(Settings → Pages) и указать URL вида `https://simonlapin.github.io/worder/privacy-policy`.
-Support URL: страница репозитория или тот же Pages-сайт.
+Опубликовано на GitHub Pages: `https://simonlapin.github.io/worder/privacy-policy`
+(источник — `docs/privacy-policy.md`; лендинг для Support/Marketing URL — `docs/index.md`).
 
 ## Экспорт-комплаенс
 
@@ -77,7 +88,7 @@ launch.
 
 ## Скриншоты
 
-Требуется минимум 1 (лучше 3–5) для дисплея 6.9" (iPhone 16 Pro Max — 1320×2868).
-Снять на устройстве или в симуляторе iPhone 17 Pro Max: главный экран, упражнение
-с выбором, упражнение «контекст», статистика, браузер слов.
-Симулятор: `xcrun simctl io booted screenshot shot.png` (размер совпадает с требуемым).
+Готовые 6.9" (1320×2868) лежат в `screenshots/` (01-home … 05-words) — сняты
+UI-тестом `WorderScreenshots` (перегенерация: `xcodebuild test -project Worder.xcodeproj
+-scheme WorderScreenshots -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max,OS=26.1'`,
+затем `xcrun xcresulttool export attachments`).
