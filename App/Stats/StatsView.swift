@@ -3,9 +3,11 @@ import SwiftUI
 import WorderCore
 
 struct StatsView: View {
+    private let context: ModelContext
     @State private var model: StatsViewModel
 
     init(context: ModelContext) {
+        self.context = context
         _model = State(initialValue: StatsViewModel(context: context))
     }
 
@@ -51,6 +53,11 @@ struct StatsView: View {
             .tint(.green)
             LabeledContent("Стрик") {
                 Text("\(model.snapshot.streakDays) дн.")
+            }
+            NavigationLink {
+                WordListView(context: context)
+            } label: {
+                Label("Все слова", systemImage: "list.bullet")
             }
         }
     }
