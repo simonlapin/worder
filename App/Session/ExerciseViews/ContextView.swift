@@ -13,38 +13,33 @@ struct ContextView: View {
     }
 
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 24) {
             Spacer()
-            VStack(spacing: 12) {
-                Text("Заполните пропуск")
-                    .font(.caption)
-                    .textCase(.uppercase)
-                    .foregroundStyle(.secondary)
+            VStack(spacing: 14) {
+                EyebrowText("Заполните пропуск")
                 Text(exercise.prompt)
-                    .font(.title2.bold())
+                    .font(Theme.headword(size: 26))
                     .multilineTextAlignment(.center)
+                    .minimumScaleFactor(0.7)
+                Divider()
+                    .frame(width: 64)
                 Text(translation)
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
             }
+            .wordCard()
             TextField("Слово", text: $input)
-                .textFieldStyle(.roundedBorder)
-                .font(.title3)
+                .answerField()
                 .autocorrectionDisabled()
                 .textInputAutocapitalization(.never)
                 .focused($isFocused)
                 .submitLabel(.done)
                 .onSubmit(submit)
             Spacer()
-            Button(action: submit) {
-                Text("Ответить")
-                    .font(.title3.bold())
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 8)
-            }
-            .buttonStyle(.borderedProminent)
-            .disabled(trimmedInput.isEmpty)
+            Button("Ответить", action: submit)
+                .buttonStyle(PrimaryButtonStyle())
+                .disabled(trimmedInput.isEmpty)
         }
         .padding()
         .onAppear { isFocused = true }

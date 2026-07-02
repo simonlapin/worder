@@ -13,26 +13,20 @@ struct TypeAnswerView: View {
     }
 
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 24) {
             Spacer()
             ExercisePromptView(exercise: exercise, onListen: onListen)
             TextField("Ответ", text: $input)
-                .textFieldStyle(.roundedBorder)
-                .font(.title3)
+                .answerField()
                 .autocorrectionDisabled()
                 .textInputAutocapitalization(.never)
                 .focused($isFocused)
                 .submitLabel(.done)
                 .onSubmit(submit)
             Spacer()
-            Button(action: submit) {
-                Text("Ответить")
-                    .font(.title3.bold())
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 8)
-            }
-            .buttonStyle(.borderedProminent)
-            .disabled(trimmedInput.isEmpty)
+            Button("Ответить", action: submit)
+                .buttonStyle(PrimaryButtonStyle())
+                .disabled(trimmedInput.isEmpty)
         }
         .padding()
         .onAppear { isFocused = true }

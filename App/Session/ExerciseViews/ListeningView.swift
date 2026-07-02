@@ -6,34 +6,27 @@ struct ListeningView: View {
     let onSelect: (String) -> Void
 
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 24) {
             Spacer()
-            VStack(spacing: 8) {
-                Text("Что прозвучало?")
-                    .font(.caption)
-                    .textCase(.uppercase)
-                    .foregroundStyle(.secondary)
+            VStack(spacing: 20) {
+                EyebrowText("Что прозвучало?")
                 Button(action: onReplay) {
                     Image(systemName: "speaker.wave.3.fill")
-                        .font(.system(size: 56))
-                        .padding(24)
+                        .font(.system(size: 44))
+                        .foregroundStyle(.white)
+                        .padding(32)
+                        .background(Theme.brandGradient, in: Circle())
                 }
-                .buttonStyle(.bordered)
-                .clipShape(Circle())
                 .accessibilityLabel("Прослушать ещё раз")
             }
+            .wordCard()
             Spacer()
             VStack(spacing: 12) {
                 ForEach(options, id: \.self) { option in
-                    Button {
+                    Button(option) {
                         onSelect(option)
-                    } label: {
-                        Text(option)
-                            .font(.title3)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 8)
                     }
-                    .buttonStyle(.bordered)
+                    .buttonStyle(AnswerButtonStyle())
                 }
             }
         }

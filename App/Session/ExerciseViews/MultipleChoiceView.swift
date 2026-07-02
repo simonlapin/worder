@@ -1,4 +1,5 @@
 import SwiftUI
+import WorderCore
 
 struct MultipleChoiceView: View {
     let exercise: SessionViewModel.Exercise
@@ -7,21 +8,16 @@ struct MultipleChoiceView: View {
     let onSelect: (String) -> Void
 
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 24) {
             Spacer()
             ExercisePromptView(exercise: exercise, onListen: onListen)
             Spacer()
             VStack(spacing: 12) {
                 ForEach(options, id: \.self) { option in
-                    Button {
+                    Button(option) {
                         onSelect(option)
-                    } label: {
-                        Text(option)
-                            .font(.title3)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 8)
                     }
-                    .buttonStyle(.bordered)
+                    .buttonStyle(AnswerButtonStyle())
                 }
             }
         }
@@ -34,19 +30,18 @@ struct ExercisePromptView: View {
     let onListen: (() -> Void)?
 
     var body: some View {
-        VStack(spacing: 8) {
-            Text(exercise.direction == .enToRu ? "Как переводится?" : "Какое это слово?")
-                .font(.caption)
-                .textCase(.uppercase)
-                .foregroundStyle(.secondary)
-            HStack(spacing: 12) {
+        VStack(spacing: 12) {
+            EyebrowText(exercise.direction == .enToRu ? "Как переводится?" : "Какое это слово?")
+            HStack(alignment: .firstTextBaseline, spacing: 12) {
                 Text(exercise.prompt)
-                    .font(.system(size: 36, weight: .bold, design: .rounded))
+                    .font(promptFont)
                     .multilineTextAlignment(.center)
+                    .minimumScaleFactor(0.6)
                 if let onListen {
                     Button(action: onListen) {
                         Image(systemName: "speaker.wave.2.fill")
                             .font(.title2)
+                            .foregroundStyle(Theme.brandBlue)
                     }
                     .accessibilityLabel("Прослушать")
                 }
@@ -57,5 +52,12 @@ struct ExercisePromptView: View {
                     .foregroundStyle(.secondary)
             }
         }
+        .wordCard()
+    }
+
+    /// English headwords read like a dictionary entry; Russian prompts stay
+    /// in the system sans.
+    private var promptFont: Font {
+        exercise.direction == .enToRu ? Theme.headword(size: 40) : Theme.counter(size: 34)
     }
 }

@@ -9,6 +9,7 @@ struct SessionView: View {
     @Environment(LeechHelper.self) private var leechHelper
 
     private let mode: StudySessionMode
+    @State private var transitionToken = 0
 
     init(context: ModelContext, settings: AppSettings, mode: StudySessionMode = .scheduled) {
         self.mode = mode
@@ -30,7 +31,12 @@ struct SessionView: View {
             }
             content
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .id(transitionToken)
+                .transition(ExerciseTransition.current)
         }
+        .animation(.spring(duration: 0.35), value: transitionToken)
+        .background(Color(.systemGroupedBackground))
+        .onChange(of: model.phase) { _, _ in transitionToken += 1 }
         .navigationTitle(mode == .free ? "Свободная тренировка" : "Сессия")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -57,6 +63,7 @@ struct SessionView: View {
         case .loading, .finished, .failed: false
         }
     }
+
 
     @ViewBuilder
     private var content: some View {
@@ -174,43 +181,46 @@ private struct FeedbackView: View {
     let onListen: (() -> Void)?
     let onContinue: () -> Void
 
+    @State private var appeared = false
+
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 24) {
             Spacer()
-            Image(systemName: icon)
-                .font(.system(size: 56))
-                .foregroundStyle(color)
-            Text(title)
-                .font(.title2.bold())
-            HStack(spacing: 12) {
-                Text(detail)
-                    .font(.title3)
-                    .multilineTextAlignment(.center)
-                if let onListen {
-                    Button(action: onListen) {
-                        Image(systemName: "speaker.wave.2.fill")
-                            .font(.title3)
+            VStack(spacing: 18) {
+                Image(systemName: icon)
+                    .font(.system(size: 52))
+                    .foregroundStyle(color)
+                    .padding(22)
+                    .background(color.opacity(0.12), in: Circle())
+                    .symbolEffect(.bounce, value: appeared)
+                Text(title)
+                    .font(.title2.bold())
+                HStack(spacing: 12) {
+                    Text(detail)
+                        .font(.title3)
+                        .multilineTextAlignment(.center)
+                    if let onListen {
+                        Button(action: onListen) {
+                            Image(systemName: "speaker.wave.2.fill")
+                                .font(.title3)
+                                .foregroundStyle(Theme.brandBlue)
+                        }
+                        .accessibilityLabel("Прослушать")
                     }
-                    .accessibilityLabel("Прослушать")
+                }
+                if feedback.willRetry {
+                    Text("Слово вернётся в этой сессии")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
                 }
             }
-            if feedback.willRetry {
-                Text("Слово вернётся в этой сессии")
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
-            }
+            .wordCard()
             Spacer()
-            Button {
-                onContinue()
-            } label: {
-                Text("Дальше")
-                    .font(.title3.bold())
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 8)
-            }
-            .buttonStyle(.borderedProminent)
+            Button("Дальше", action: onContinue)
+                .buttonStyle(PrimaryButtonStyle())
         }
         .padding()
+        .onAppear { appeared = true }
     }
 
     private var icon: String {
