@@ -4,45 +4,52 @@ struct SessionSummaryView: View {
     let summary: SessionViewModel.Summary
     let onDone: () -> Void
 
+    @State private var appeared = false
+
     var body: some View {
         VStack(spacing: 24) {
             Spacer()
-            Image(systemName: "checkmark.seal.fill")
-                .font(.system(size: 56))
-                .foregroundStyle(.green)
-            Text("Сессия завершена")
-                .font(.title2.bold())
-            Grid(horizontalSpacing: 24, verticalSpacing: 12) {
-                summaryRow(label: "Слов пройдено", value: "\(summary.wordsStudied)")
-                summaryRow(label: "Точность", value: "\(summary.accuracyPercent)%")
-                summaryRow(label: "Новых слов", value: "\(summary.newWordsIntroduced)")
-                summaryRow(label: "Стрик", value: "\(summary.streakDays) дн.")
+            VStack(spacing: 18) {
+                Image(systemName: "checkmark.seal.fill")
+                    .font(.system(size: 52))
+                    .foregroundStyle(.white)
+                    .padding(22)
+                    .background(Theme.brandGradient, in: Circle())
+                    .symbolEffect(.bounce, value: appeared)
+                Text("Сессия завершена")
+                    .font(.title2.bold())
+                Grid(horizontalSpacing: 24, verticalSpacing: 14) {
+                    summaryRow(label: "Слов пройдено", value: "\(summary.wordsStudied)")
+                    summaryRow(label: "Точность", value: "\(summary.accuracyPercent)%")
+                    summaryRow(label: "Новых слов", value: "\(summary.newWordsIntroduced)")
+                    summaryRow(label: "Стрик", value: "\(summary.streakDays) дн.", icon: summary.streakDays > 0 ? "flame.fill" : nil)
+                }
             }
-            .padding(.vertical, 16)
-            .padding(.horizontal, 24)
-            .background(.quaternary.opacity(0.5), in: RoundedRectangle(cornerRadius: 16))
+            .wordCard()
             Spacer()
-            Button {
-                onDone()
-            } label: {
-                Text("Готово")
-                    .font(.title3.bold())
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 8)
-            }
-            .buttonStyle(.borderedProminent)
+            Button("Готово", action: onDone)
+                .buttonStyle(PrimaryButtonStyle())
         }
         .padding()
+        .background(Color(.systemGroupedBackground))
+        .onAppear { appeared = true }
     }
 
-    private func summaryRow(label: String, value: String) -> some View {
+    private func summaryRow(label: String, value: String, icon: String? = nil) -> some View {
         GridRow {
             Text(label)
                 .foregroundStyle(.secondary)
                 .gridColumnAlignment(.leading)
-            Text(value)
-                .font(.headline)
-                .gridColumnAlignment(.trailing)
+            HStack(spacing: 4) {
+                if let icon {
+                    Image(systemName: icon)
+                        .font(.subheadline)
+                        .foregroundStyle(.orange)
+                }
+                Text(value)
+                    .font(Theme.counter(size: 17))
+            }
+            .gridColumnAlignment(.trailing)
         }
     }
 }

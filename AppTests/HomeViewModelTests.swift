@@ -86,6 +86,27 @@ struct HomeViewModelTests {
         #expect(!zeroModel.hasWorkAvailable)
     }
 
+    @Test func learnedCountsFeedTheProgressRing() throws {
+        let context = try makeContext()
+        let now = Date(timeIntervalSince1970: 1_750_000_000)
+        try BatchImporter(context: context).importBatch(from: fixtureJSON, now: now)
+
+        let words = try context.fetch(FetchDescriptor<Word>(predicate: #Predicate { $0.wordId == 1 }))
+        for state in try #require(words.first).directionStates {
+            state.state = .review
+            state.lastReviewedAt = now.addingTimeInterval(-86_400)
+            state.due = now.addingTimeInterval(29 * 86_400)
+        }
+        try context.save()
+
+        let model = makeModel(context: context)
+        model.refresh(now: now)
+
+        #expect(model.totalWordCount == 3)
+        #expect(model.learnedWordCount == 1)
+        #expect(abs(model.learnedFraction - 1.0 / 3.0) < 0.0001)
+    }
+
     @Test func emptyDatabaseHasNoWorkAvailable() throws {
         let context = try makeContext()
 
