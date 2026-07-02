@@ -60,6 +60,25 @@ xcodebuild build -project Worder.xcodeproj -scheme Worder -configuration Release
 - **Anthropic API (опционально)** — вставьте ключ (`sk-ant-…`) в Настройки → Anthropic API. Ключ хранится только в Keychain устройства, не логируется и не попадает в резервную копию. С ключом приложение фоново генерирует предложения-примеры (включается упражнение «контекст») и подсказки для систематически проваливаемых слов.
 - **Резервная копия** — экспорт всего состояния (слова, прогресс, история, кеш предложений, настройки — без API-ключа) в один JSON-файл через share sheet и восстановление из него. Импорт в непустую базу запрашивает подтверждение и полностью замещает текущие данные.
 
+## Публикация в App Store
+
+Материалы (описание, ключевые слова, анкета приватности, review notes) — в `docs/appstore.md`; политика конфиденциальности — в `docs/privacy-policy.md` (разместить по публичному URL, например GitHub Pages).
+
+```sh
+# Архив под App Store
+xcodegen generate
+xcodebuild archive -project Worder.xcodeproj -scheme Worder \
+  -destination 'generic/platform=iOS' \
+  -archivePath build/Worder.xcarchive -allowProvisioningUpdates
+
+# Экспорт и загрузка в App Store Connect (метод app-store-connect)
+xcodebuild -exportArchive -archivePath build/Worder.xcarchive \
+  -exportOptionsPlist ExportOptions.plist -exportPath build/export \
+  -allowProvisioningUpdates
+```
+
+Экспорт-комплаенс уже отвечен в коде (`ITSAppUsesNonExemptEncryption = NO` в `App/Info.plist`). Перед сабмитом: создать приложение в App Store Connect (bundle id `dev.lsa.worder`), заполнить метаданные из `docs/appstore.md`, приложить скриншоты 6.9" и Privacy Policy URL. Для установки близким без ревью подойдёт TestFlight (internal testing) — тот же архив.
+
 ## Как добавить новую пачку слов
 
 1. Составьте JSON по схеме ниже (уникальный `batchId`, `id` слов уникальны внутри пачки) и положите в `data/`.

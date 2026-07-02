@@ -31,3 +31,4 @@ Worder.xcodeproj/
 # Secrets
 .env
 *.pem
+build/
