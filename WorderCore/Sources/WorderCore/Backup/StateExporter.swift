@@ -56,7 +56,8 @@ public struct StateExporter: Sendable {
                     endedAt: session.endedAt,
                     answersTotal: session.answersTotal,
                     answersCorrect: session.answersCorrect,
-                    newWordsIntroduced: session.newWordsIntroduced
+                    newWordsIntroduced: session.newWordsIntroduced,
+                    mode: session.mode
                 )
             }
         )
@@ -91,7 +92,8 @@ public struct StateExporter: Sendable {
                     StateBackup.ReviewLogBackup(
                         reviewedAt: log.reviewedAt,
                         direction: log.direction,
-                        grade: log.grade
+                        grade: log.grade,
+                        isFreePractice: log.isFreePractice
                     )
                 },
             sentences: word.sentences

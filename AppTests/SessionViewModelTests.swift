@@ -526,7 +526,7 @@ struct SessionViewModelTests {
     }
 }
 
-private struct TestAbort: Error, CustomStringConvertible {
+struct TestAbort: Error, CustomStringConvertible {
     let description: String
 
     init(_ description: String) {

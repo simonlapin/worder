@@ -22,8 +22,11 @@ struct AnyRandomNumberGenerator: RandomNumberGenerator {
 @Observable
 final class SessionViewModel {
     struct Configuration {
+        /// Free practice never moves the FSRS schedule and has no soft timer.
+        var mode: StudySessionMode = .scheduled
         var sessionDuration: TimeInterval = 30 * 60
         var queue = SessionQueue.Configuration()
+        var freeQueue = FreePracticeQueue.Configuration()
         var selector = ExerciseSelector.Configuration()
         var checker = AnswerChecker.Configuration()
         var distractors = DistractorGenerator.Configuration()
@@ -92,7 +95,7 @@ final class SessionViewModel {
     private let calendar: Calendar
     private var rng: AnyRandomNumberGenerator
 
-    private var queue: SessionQueue?
+    private var queue: (any SessionWorkQueue)?
     private var checker: AnswerChecker?
     private var candidates: [DistractorCandidate] = []
     private var currentItem: SessionItem?
@@ -131,12 +134,21 @@ final class SessionViewModel {
     func start(now: Date = .now) {
         guard case .loading = phase else { return }
         do {
-            let queue = try SessionQueue(
-                context: context,
-                configuration: configuration.queue,
-                calendar: calendar,
-                now: now
-            )
+            let queue: any SessionWorkQueue = switch configuration.mode {
+            case .scheduled:
+                try SessionQueue(
+                    context: context,
+                    configuration: configuration.queue,
+                    calendar: calendar,
+                    now: now
+                )
+            case .free:
+                try FreePracticeQueue(
+                    context: context,
+                    configuration: configuration.freeQueue,
+                    using: &rng
+                )
+            }
             self.queue = queue
             checker = AnswerChecker(
                 index: try TranslationIndex(context: context),
@@ -148,7 +160,7 @@ final class SessionViewModel {
                 phase = .finished
                 return
             }
-            let record = StudySession(startedAt: now)
+            let record = StudySession(startedAt: now, mode: configuration.mode)
             context.insert(record)
             try context.save()
             sessionRecord = record
@@ -209,7 +221,8 @@ final class SessionViewModel {
             finish(now: now)
             return
         }
-        if let startedAt = sessionStartedAt,
+        if configuration.mode == .scheduled,
+           let startedAt = sessionStartedAt,
            now.timeIntervalSince(startedAt) >= configuration.sessionDuration {
             finish(now: now)
             return
@@ -383,25 +396,35 @@ final class SessionViewModel {
         let grade = verdict.reviewGrade
 
         do {
-            guard let state = word.directionState(for: direction) else {
-                phase = .failed("Word \"\(word.text)\" is missing state for \(direction.rawValue).")
-                return
-            }
-            let nextCard = try scheduler.next(card: state.schedulerCard, grade: grade, now: now)
-            let isFirstAnswerEver = word.reviewLogs.isEmpty
+            switch configuration.mode {
+            case .scheduled:
+                guard let state = word.directionState(for: direction) else {
+                    phase = .failed("Word \"\(word.text)\" is missing state for \(direction.rawValue).")
+                    return
+                }
+                let nextCard = try scheduler.next(card: state.schedulerCard, grade: grade, now: now)
+                // Free practice answers never introduce a word into the schedule.
+                let isFirstScheduledAnswer = word.reviewLogs.allSatisfy(\.isFreePractice)
 
-            let log = ReviewLog(reviewedAt: now, direction: direction, grade: grade)
-            context.insert(log)
-            log.word = word
-            state.apply(nextCard)
-            LeechDetector(lapseThreshold: configuration.leechLapseThreshold).updateFlag(for: word)
+                let log = ReviewLog(reviewedAt: now, direction: direction, grade: grade)
+                context.insert(log)
+                log.word = word
+                state.apply(nextCard)
+                LeechDetector(lapseThreshold: configuration.leechLapseThreshold).updateFlag(for: word)
+                if isFirstScheduledAnswer {
+                    sessionRecord.newWordsIntroduced += 1
+                }
+            case .free:
+                // Trainer only: log the answer for history and honest mastery
+                // status, leave DirectionState and the FSRS schedule untouched.
+                let log = ReviewLog(reviewedAt: now, direction: direction, grade: grade, isFreePractice: true)
+                context.insert(log)
+                log.word = word
+            }
 
             sessionRecord.answersTotal += 1
             if grade != .again {
                 sessionRecord.answersCorrect += 1
-            }
-            if isFirstAnswerEver {
-                sessionRecord.newWordsIntroduced += 1
             }
             studiedWordIds.insert(word.persistentModelID)
             try context.save()

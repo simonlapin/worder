@@ -21,6 +21,16 @@ public struct SessionItem: Equatable {
     }
 }
 
+/// Queue surface the session engine drives; implemented by the FSRS-scheduled
+/// `SessionQueue` and by `FreePracticeQueue`.
+public protocol SessionWorkQueue: AnyObject {
+    var isEmpty: Bool { get }
+    var remainingCount: Int { get }
+    func nextItem(now: Date) -> SessionItem?
+    func markCompleted(_ item: SessionItem, now: Date)
+    func markFailed(_ item: SessionItem, now: Date)
+}
+
 /// Builds and drives the work queue of one study session.
 ///
 /// Priority: overdue reviews (by due date, with same-word items interleaved
@@ -30,7 +40,7 @@ public struct SessionItem: Equatable {
 /// after an intra-session delay (default 1m, then 10m) until answered
 /// correctly. The queue only orders work — persisting answers and scheduling
 /// is the caller's job.
-public final class SessionQueue {
+public final class SessionQueue: SessionWorkQueue {
     public struct Configuration: Equatable, Sendable {
         /// Maximum new words introduced per day; nil removes the limit.
         public var dailyNewWordLimit: Int?
@@ -208,17 +218,22 @@ public final class SessionQueue {
         pending.append(failed)
     }
 
-    /// A word counts as introduced once its first answer is logged. An
-    /// introduction card alone leaves no trace, so an abandoned session does
-    /// not consume the daily budget.
+    /// A word counts as introduced once its first scheduled answer is logged.
+    /// An introduction card alone leaves no trace, so an abandoned session
+    /// does not consume the daily budget. Free practice answers are ignored:
+    /// they never introduce words into the schedule.
     private static func wordsIntroducedCount(context: ModelContext, since startOfDay: Date) throws -> Int {
         let todayLogs = try context.fetch(FetchDescriptor<ReviewLog>(
-            predicate: #Predicate { $0.reviewedAt >= startOfDay }
+            predicate: #Predicate { $0.reviewedAt >= startOfDay && !$0.isFreePractice }
         ))
         var counted = Set<PersistentIdentifier>()
         for log in todayLogs {
             guard let word = log.word, !counted.contains(word.persistentModelID) else { continue }
-            if let earliest = word.reviewLogs.map(\.reviewedAt).min(), earliest >= startOfDay {
+            let earliestScheduled = word.reviewLogs
+                .filter { !$0.isFreePractice }
+                .map(\.reviewedAt)
+                .min()
+            if let earliestScheduled, earliestScheduled >= startOfDay {
                 counted.insert(word.persistentModelID)
             }
         }

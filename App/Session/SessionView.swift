@@ -8,8 +8,12 @@ struct SessionView: View {
     @Environment(SentenceService.self) private var sentenceService
     @Environment(LeechHelper.self) private var leechHelper
 
-    init(context: ModelContext, settings: AppSettings) {
+    private let mode: StudySessionMode
+
+    init(context: ModelContext, settings: AppSettings, mode: StudySessionMode = .scheduled) {
+        self.mode = mode
         var configuration = SessionViewModel.Configuration()
+        configuration.mode = mode
         configuration.queue = SessionQueue.Configuration(dailyNewWordLimit: settings.dailyNewWordLimit)
         _model = State(initialValue: SessionViewModel(context: context, configuration: configuration))
     }
@@ -23,7 +27,7 @@ struct SessionView: View {
             content
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .navigationTitle("Сессия")
+        .navigationTitle(mode == .free ? "Свободная тренировка" : "Сессия")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             if showsProgress {
@@ -106,6 +110,14 @@ struct SessionView: View {
     private var finishedView: some View {
         if let summary = model.summary {
             SessionSummaryView(summary: summary) { dismiss() }
+        } else if mode == .free {
+            ContentUnavailableView {
+                Label("Словарь пуст", systemImage: "checkmark.seal")
+            } description: {
+                Text("Для свободной тренировки нужны импортированные слова.")
+            } actions: {
+                Button("Готово") { dismiss() }
+            }
         } else {
             ContentUnavailableView {
                 Label("Сейчас нечего повторять", systemImage: "checkmark.seal")

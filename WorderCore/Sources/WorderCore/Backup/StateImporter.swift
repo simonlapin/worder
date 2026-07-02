@@ -70,7 +70,8 @@ public struct StateImporter: Sendable {
                 endedAt: sessionBackup.endedAt,
                 answersTotal: sessionBackup.answersTotal,
                 answersCorrect: sessionBackup.answersCorrect,
-                newWordsIntroduced: sessionBackup.newWordsIntroduced
+                newWordsIntroduced: sessionBackup.newWordsIntroduced,
+                mode: sessionBackup.mode ?? .scheduled
             ))
         }
 
@@ -139,7 +140,8 @@ public struct StateImporter: Sendable {
             let log = ReviewLog(
                 reviewedAt: logBackup.reviewedAt,
                 direction: logBackup.direction,
-                grade: logBackup.grade
+                grade: logBackup.grade,
+                isFreePractice: logBackup.isFreePractice ?? false
             )
             context.insert(log)
             log.word = word

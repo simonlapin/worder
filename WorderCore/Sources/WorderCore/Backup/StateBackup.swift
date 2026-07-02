@@ -117,11 +117,14 @@ public struct StateBackup: Codable, Equatable, Sendable {
         public var reviewedAt: Date
         public var direction: Direction
         public var grade: ReviewGrade
+        /// Optional so pre-free-practice backups keep decoding; nil = false.
+        public var isFreePractice: Bool?
 
-        public init(reviewedAt: Date, direction: Direction, grade: ReviewGrade) {
+        public init(reviewedAt: Date, direction: Direction, grade: ReviewGrade, isFreePractice: Bool? = nil) {
             self.reviewedAt = reviewedAt
             self.direction = direction
             self.grade = grade
+            self.isFreePractice = isFreePractice
         }
     }
 
@@ -143,19 +146,23 @@ public struct StateBackup: Codable, Equatable, Sendable {
         public var answersTotal: Int
         public var answersCorrect: Int
         public var newWordsIntroduced: Int
+        /// Optional so pre-free-practice backups keep decoding; nil = scheduled.
+        public var mode: StudySessionMode?
 
         public init(
             startedAt: Date,
             endedAt: Date?,
             answersTotal: Int,
             answersCorrect: Int,
-            newWordsIntroduced: Int
+            newWordsIntroduced: Int,
+            mode: StudySessionMode? = nil
         ) {
             self.startedAt = startedAt
             self.endedAt = endedAt
             self.answersTotal = answersTotal
             self.answersCorrect = answersCorrect
             self.newWordsIntroduced = newWordsIntroduced
+            self.mode = mode
         }
     }
 

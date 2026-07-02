@@ -4,6 +4,7 @@ import WorderCore
 
 enum HomeRoute: Hashable {
     case session
+    case freeSession
     case stats
     case settings
 }
@@ -46,6 +47,8 @@ struct HomeView: View {
                 switch route {
                 case .session:
                     SessionView(context: context, settings: settings)
+                case .freeSession:
+                    SessionView(context: context, settings: settings, mode: .free)
                 case .stats:
                     StatsView(context: context)
                 case .settings:
@@ -74,16 +77,28 @@ struct HomeView: View {
     }
 
     private var startButton: some View {
-        Button {
-            path.append(.session)
-        } label: {
-            Text("Заниматься")
-                .font(.title3.bold())
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 8)
+        VStack(spacing: 12) {
+            Button {
+                path.append(.session)
+            } label: {
+                Text("Заниматься")
+                    .font(.title3.bold())
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 8)
+            }
+            .buttonStyle(.borderedProminent)
+            .disabled(!model.hasWorkAvailable)
+
+            Button {
+                path.append(.freeSession)
+            } label: {
+                Text("Свободная тренировка")
+                    .font(.title3)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 8)
+            }
+            .buttonStyle(.bordered)
         }
-        .buttonStyle(.borderedProminent)
-        .disabled(!model.hasWorkAvailable)
     }
 }
 

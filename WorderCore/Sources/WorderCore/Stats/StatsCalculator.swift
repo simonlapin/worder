@@ -33,6 +33,7 @@ public struct StatsSnapshot: Equatable, Sendable {
         public var answersTotal: Int
         public var answersCorrect: Int
         public var newWordsIntroduced: Int
+        public var mode: StudySessionMode
 
         /// Fraction 0...1; nil when the session recorded no answers.
         public var accuracy: Double? {
@@ -44,13 +45,15 @@ public struct StatsSnapshot: Equatable, Sendable {
             endedAt: Date,
             answersTotal: Int,
             answersCorrect: Int,
-            newWordsIntroduced: Int
+            newWordsIntroduced: Int,
+            mode: StudySessionMode = .scheduled
         ) {
             self.startedAt = startedAt
             self.endedAt = endedAt
             self.answersTotal = answersTotal
             self.answersCorrect = answersCorrect
             self.newWordsIntroduced = newWordsIntroduced
+            self.mode = mode
         }
     }
 
@@ -177,7 +180,8 @@ public struct StatsCalculator: Sendable {
                     endedAt: endedAt,
                     answersTotal: session.answersTotal,
                     answersCorrect: session.answersCorrect,
-                    newWordsIntroduced: session.newWordsIntroduced
+                    newWordsIntroduced: session.newWordsIntroduced,
+                    mode: session.mode
                 )
             }
         }

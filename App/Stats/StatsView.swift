@@ -92,7 +92,16 @@ struct StatsView: View {
             ForEach(model.snapshot.recentSessions, id: \.startedAt) { session in
                 HStack {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(session.startedAt, format: .dateTime.day().month().year())
+                        HStack(spacing: 6) {
+                            Text(session.startedAt, format: .dateTime.day().month().year())
+                            if session.mode == .free {
+                                Text("свободная")
+                                    .font(.caption2)
+                                    .padding(.horizontal, 6)
+                                    .padding(.vertical, 2)
+                                    .background(.quaternary, in: Capsule())
+                            }
+                        }
                         Text("ответов: \(session.answersTotal) · новых слов: \(session.newWordsIntroduced)")
                             .font(.caption)
                             .foregroundStyle(.secondary)
