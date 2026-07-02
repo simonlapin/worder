@@ -42,6 +42,9 @@ final class SessionViewModel {
             case typedAnswer
             /// The word is spoken, not shown; options are translations.
             case listening(options: [String])
+            /// The prompt is a sentence with the word masked out;
+            /// `translation` is its Russian counterpart shown as a hint.
+            case context(translation: String)
         }
 
         let direction: Direction
@@ -229,8 +232,10 @@ final class SessionViewModel {
             return
         }
 
+        let sentences = word.sentences.map { WordBatchFile.Sentence(en: $0.en, ru: $0.ru) }
         let capabilities = ExerciseSelector.Capabilities(
-            hasCachedSentences: !word.sentences.isEmpty,
+            hasCachedSentences: ContextSentencePicker()
+                .hasUsableSentence(wordText: word.text, sentences: sentences),
             canPlayAudio: speech.isAvailable
         )
         let type = ExerciseSelector(configuration: configuration.selector).exerciseType(
@@ -245,9 +250,25 @@ final class SessionViewModel {
             presentMultipleChoice(word: word, direction: direction)
         case .listening:
             presentListening(word: word)
-        case .typedAnswer, .context:
+        case .context:
+            presentContext(word: word, sentences: sentences)
+        case .typedAnswer:
             presentTypedAnswer(word: word, direction: direction)
         }
+    }
+
+    private func presentContext(word: Word, sentences: [WordBatchFile.Sentence]) {
+        guard let picked = ContextSentencePicker()
+            .pick(wordText: word.text, sentences: sentences, using: &rng) else {
+            presentTypedAnswer(word: word, direction: .ruToEn)
+            return
+        }
+        phase = .exercise(Exercise(
+            direction: .ruToEn,
+            prompt: picked.masked,
+            note: nil,
+            input: .context(translation: picked.translation)
+        ))
     }
 
     private func presentMultipleChoice(word: Word, direction: Direction) {

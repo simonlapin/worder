@@ -265,20 +265,29 @@ struct SessionViewModelTests {
         #expect(logs.first?.grade == .good)
     }
 
-    /// Container with shop's EN→RU card mature and due, everything else parked
-    /// in the future; daily-new limit 0 leaves exactly that one exercise queued.
-    private func makeMatureEnToRuSetup() throws -> (ModelContainer, SessionViewModel.Configuration) {
+    /// Container with shop's card in one direction mature and due, everything
+    /// else parked in the future; daily-new limit 0 leaves exactly that one
+    /// exercise queued. Optional cached sentences are attached to shop.
+    private func makeMatureSetup(
+        direction: Direction,
+        sentences: [(en: String, ru: String)] = []
+    ) throws -> (ModelContainer, SessionViewModel.Configuration) {
         let container = try makeContainer(importing: sixWordsJSON)
         let setup = ModelContext(container)
         let shop = try #require(setup.fetch(FetchDescriptor<Word>(
             predicate: #Predicate { $0.wordId == 1 }
         )).first)
-        let enToRu = try #require(shop.directionState(for: .enToRu))
-        enToRu.state = .review
-        enToRu.stability = 25
-        enToRu.due = t0.addingTimeInterval(-3600)
+        let mature = try #require(shop.directionState(for: direction))
+        mature.state = .review
+        mature.stability = 25
+        mature.due = t0.addingTimeInterval(-3600)
         for state in try setup.fetch(FetchDescriptor<DirectionState>()) where state.state == .new {
             state.due = t0.addingTimeInterval(86_400)
+        }
+        for sentence in sentences {
+            let cached = CachedSentence(en: sentence.en, ru: sentence.ru, createdAt: t0)
+            setup.insert(cached)
+            cached.word = shop
         }
         try setup.save()
 
@@ -290,7 +299,7 @@ struct SessionViewModelTests {
     @Test func listeningJoinsRotationForMatureCardWhenVoiceIsAvailable() throws {
         var sawListening = false
         for seed in UInt64(1)...30 {
-            let (container, configuration) = try makeMatureEnToRuSetup()
+            let (container, configuration) = try makeMatureSetup(direction: .enToRu)
             let speech = MockSpeechService(isAvailable: true)
             let model = makeModel(
                 context: ModelContext(container),
@@ -323,7 +332,7 @@ struct SessionViewModelTests {
 
     @Test func listeningNeverAppearsWithoutVoice() throws {
         for seed in UInt64(1)...30 {
-            let (container, configuration) = try makeMatureEnToRuSetup()
+            let (container, configuration) = try makeMatureSetup(direction: .enToRu)
             let model = makeModel(
                 context: ModelContext(container),
                 configuration: configuration,
@@ -369,6 +378,58 @@ struct SessionViewModelTests {
         let spokenBefore = speech.spokenTexts
         model.speakCurrentWord()
         #expect(speech.spokenTexts == spokenBefore)
+    }
+
+    @Test func contextExerciseMasksTheWordAndAcceptsIt() throws {
+        var sawContext = false
+        for seed in UInt64(1)...30 {
+            let (container, configuration) = try makeMatureSetup(
+                direction: .ruToEn,
+                sentences: [
+                    (en: "I bought bread at the shop.", ru: "Я купил хлеб в магазине."),
+                    (en: "Two shops are closed.", ru: "Два магазина закрыты.")
+                ]
+            )
+            let model = makeModel(
+                context: ModelContext(container),
+                configuration: configuration,
+                seed: seed
+            )
+            model.start(now: t0)
+
+            let exercise = try exercise(model)
+            #expect(exercise.direction == .ruToEn)
+            guard case .context(let translation) = exercise.input else { continue }
+            sawContext = true
+
+            // Only the sentence with the exact word form is usable.
+            #expect(exercise.prompt == "I bought bread at the ____.")
+            #expect(translation == "Я купил хлеб в магазине.")
+
+            model.submitTypedAnswer("shop", now: t0.addingTimeInterval(5))
+            #expect(try feedback(model).verdict == .correct)
+            break
+        }
+        #expect(sawContext)
+    }
+
+    @Test func contextNeverAppearsWithoutAUsableSentence() throws {
+        for seed in UInt64(1)...30 {
+            let (container, configuration) = try makeMatureSetup(
+                direction: .ruToEn,
+                sentences: [(en: "Two shops are closed.", ru: "Два магазина закрыты.")]
+            )
+            let model = makeModel(
+                context: ModelContext(container),
+                configuration: configuration,
+                seed: seed
+            )
+            model.start(now: t0)
+
+            guard case .typedAnswer = try exercise(model).input else {
+                throw TestAbort("expected typed answer for seed \(seed), got \(model.phase)")
+            }
+        }
     }
 
     @Test func sessionSoftFinishesWhenDurationElapses() throws {

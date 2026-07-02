@@ -83,6 +83,10 @@ struct SessionView: View {
             } onSelect: { option in
                 model.submitChoice(option)
             }
+        case .context(let translation):
+            ContextView(exercise: exercise, translation: translation) { input in
+                model.submitTypedAnswer(input)
+            }
         }
     }
 
