@@ -1,0 +1,11029 @@
+{
+ "schemaVersion": 1,
+ "batchId": "core-1500",
+ "title": "1500 самых употребляемых английских слов",
+ "category": null,
+ "words": [
+  {
+   "id": 1,
+   "word": "the",
+   "translations": [
+    "артикль"
+   ],
+   "note": "определённый"
+  },
+  {
+   "id": 2,
+   "word": "a",
+   "translations": [
+    "артикль"
+   ],
+   "note": "неопределённый"
+  },
+  {
+   "id": 3,
+   "word": "an",
+   "translations": [
+    "артикль"
+   ],
+   "note": "неопр., перед гласной"
+  },
+  {
+   "id": 4,
+   "word": "and",
+   "translations": [
+    "и"
+   ]
+  },
+  {
+   "id": 5,
+   "word": "or",
+   "translations": [
+    "или"
+   ]
+  },
+  {
+   "id": 6,
+   "word": "but",
+   "translations": [
+    "но"
+   ]
+  },
+  {
+   "id": 7,
+   "word": "so",
+   "translations": [
+    "так",
+    "поэтому"
+   ]
+  },
+  {
+   "id": 8,
+   "word": "because",
+   "translations": [
+    "потому что"
+   ]
+  },
+  {
+   "id": 9,
+   "word": "if",
+   "translations": [
+    "если"
+   ]
+  },
+  {
+   "id": 10,
+   "word": "then",
+   "translations": [
+    "затем",
+    "тогда"
+   ]
+  },
+  {
+   "id": 11,
+   "word": "than",
+   "translations": [
+    "чем"
+   ]
+  },
+  {
+   "id": 12,
+   "word": "as",
+   "translations": [
+    "как",
+    "в качестве"
+   ]
+  },
+  {
+   "id": 13,
+   "word": "while",
+   "translations": [
+    "пока",
+    "в то время как"
+   ]
+  },
+  {
+   "id": 14,
+   "word": "though",
+   "translations": [
+    "хотя"
+   ]
+  },
+  {
+   "id": 15,
+   "word": "although",
+   "translations": [
+    "хотя"
+   ]
+  },
+  {
+   "id": 16,
+   "word": "whether",
+   "translations": [
+    "ли"
+   ]
+  },
+  {
+   "id": 17,
+   "word": "not",
+   "translations": [
+    "не"
+   ]
+  },
+  {
+   "id": 18,
+   "word": "no",
+   "translations": [
+    "нет"
+   ]
+  },
+  {
+   "id": 19,
+   "word": "yes",
+   "translations": [
+    "да"
+   ]
+  },
+  {
+   "id": 20,
+   "word": "yeah",
+   "translations": [
+    "ага",
+    "да"
+   ]
+  },
+  {
+   "id": 21,
+   "word": "I",
+   "translations": [
+    "я"
+   ]
+  },
+  {
+   "id": 22,
+   "word": "you",
+   "translations": [
+    "ты",
+    "вы"
+   ]
+  },
+  {
+   "id": 23,
+   "word": "he",
+   "translations": [
+    "он"
+   ]
+  },
+  {
+   "id": 24,
+   "word": "she",
+   "translations": [
+    "она"
+   ]
+  },
+  {
+   "id": 25,
+   "word": "it",
+   "translations": [
+    "оно",
+    "это"
+   ]
+  },
+  {
+   "id": 26,
+   "word": "we",
+   "translations": [
+    "мы"
+   ]
+  },
+  {
+   "id": 27,
+   "word": "they",
+   "translations": [
+    "они"
+   ]
+  },
+  {
+   "id": 28,
+   "word": "me",
+   "translations": [
+    "меня",
+    "мне"
+   ]
+  },
+  {
+   "id": 29,
+   "word": "him",
+   "translations": [
+    "его",
+    "ему"
+   ]
+  },
+  {
+   "id": 30,
+   "word": "her",
+   "translations": [
+    "её",
+    "ей"
+   ]
+  },
+  {
+   "id": 31,
+   "word": "us",
+   "translations": [
+    "нас",
+    "нам"
+   ]
+  },
+  {
+   "id": 32,
+   "word": "them",
+   "translations": [
+    "их",
+    "им"
+   ]
+  },
+  {
+   "id": 33,
+   "word": "my",
+   "translations": [
+    "мой"
+   ]
+  },
+  {
+   "id": 34,
+   "word": "your",
+   "translations": [
+    "твой",
+    "ваш"
+   ]
+  },
+  {
+   "id": 35,
+   "word": "his",
+   "translations": [
+    "его"
+   ]
+  },
+  {
+   "id": 36,
+   "word": "its",
+   "translations": [
+    "его",
+    "её"
+   ],
+   "note": "о предмете"
+  },
+  {
+   "id": 37,
+   "word": "our",
+   "translations": [
+    "наш"
+   ]
+  },
+  {
+   "id": 38,
+   "word": "their",
+   "translations": [
+    "их"
+   ]
+  },
+  {
+   "id": 39,
+   "word": "mine",
+   "translations": [
+    "мой"
+   ],
+   "note": "без сущ."
+  },
+  {
+   "id": 40,
+   "word": "yours",
+   "translations": [
+    "твой"
+   ],
+   "note": "без сущ."
+  },
+  {
+   "id": 41,
+   "word": "this",
+   "translations": [
+    "это",
+    "этот"
+   ]
+  },
+  {
+   "id": 42,
+   "word": "that",
+   "translations": [
+    "тот",
+    "что"
+   ]
+  },
+  {
+   "id": 43,
+   "word": "these",
+   "translations": [
+    "эти"
+   ]
+  },
+  {
+   "id": 44,
+   "word": "those",
+   "translations": [
+    "те"
+   ]
+  },
+  {
+   "id": 45,
+   "word": "here",
+   "translations": [
+    "здесь",
+    "сюда"
+   ]
+  },
+  {
+   "id": 46,
+   "word": "there",
+   "translations": [
+    "там",
+    "туда"
+   ]
+  },
+  {
+   "id": 47,
+   "word": "who",
+   "translations": [
+    "кто"
+   ]
+  },
+  {
+   "id": 48,
+   "word": "whom",
+   "translations": [
+    "кого",
+    "кому"
+   ]
+  },
+  {
+   "id": 49,
+   "word": "whose",
+   "translations": [
+    "чей"
+   ]
+  },
+  {
+   "id": 50,
+   "word": "which",
+   "translations": [
+    "который"
+   ]
+  },
+  {
+   "id": 51,
+   "word": "what",
+   "translations": [
+    "что",
+    "какой"
+   ]
+  },
+  {
+   "id": 52,
+   "word": "when",
+   "translations": [
+    "когда"
+   ]
+  },
+  {
+   "id": 53,
+   "word": "where",
+   "translations": [
+    "где",
+    "куда"
+   ]
+  },
+  {
+   "id": 54,
+   "word": "why",
+   "translations": [
+    "почему"
+   ]
+  },
+  {
+   "id": 55,
+   "word": "how",
+   "translations": [
+    "как"
+   ]
+  },
+  {
+   "id": 56,
+   "word": "be",
+   "translations": [
+    "быть"
+   ]
+  },
+  {
+   "id": 57,
+   "word": "is",
+   "translations": [
+    "есть"
+   ],
+   "note": "он/она/оно"
+  },
+  {
+   "id": 58,
+   "word": "am",
+   "translations": [
+    "есть"
+   ],
+   "note": "я"
+  },
+  {
+   "id": 59,
+   "word": "are",
+   "translations": [
+    "есть"
+   ],
+   "note": "мн. ч."
+  },
+  {
+   "id": 60,
+   "word": "was",
+   "translations": [
+    "был"
+   ]
+  },
+  {
+   "id": 61,
+   "word": "were",
+   "translations": [
+    "были"
+   ]
+  },
+  {
+   "id": 62,
+   "word": "been",
+   "translations": [
+    "был"
+   ],
+   "note": "причастие"
+  },
+  {
+   "id": 63,
+   "word": "being",
+   "translations": [
+    "будучи",
+    "существо"
+   ]
+  },
+  {
+   "id": 64,
+   "word": "have",
+   "translations": [
+    "иметь"
+   ]
+  },
+  {
+   "id": 65,
+   "word": "has",
+   "translations": [
+    "имеет"
+   ]
+  },
+  {
+   "id": 66,
+   "word": "had",
+   "translations": [
+    "имел"
+   ]
+  },
+  {
+   "id": 67,
+   "word": "do",
+   "translations": [
+    "делать"
+   ]
+  },
+  {
+   "id": 68,
+   "word": "does",
+   "translations": [
+    "делает"
+   ]
+  },
+  {
+   "id": 69,
+   "word": "did",
+   "translations": [
+    "делал"
+   ]
+  },
+  {
+   "id": 70,
+   "word": "will",
+   "translations": [
+    "будет"
+   ],
+   "note": "буд. время"
+  },
+  {
+   "id": 71,
+   "word": "would",
+   "translations": [
+    "бы"
+   ],
+   "note": "условное"
+  },
+  {
+   "id": 72,
+   "word": "shall",
+   "translations": [
+    "должен",
+    "буд. время"
+   ]
+  },
+  {
+   "id": 73,
+   "word": "should",
+   "translations": [
+    "следует",
+    "должен"
+   ]
+  },
+  {
+   "id": 74,
+   "word": "can",
+   "translations": [
+    "мочь",
+    "уметь"
+   ]
+  },
+  {
+   "id": 75,
+   "word": "could",
+   "translations": [
+    "мог бы"
+   ]
+  },
+  {
+   "id": 76,
+   "word": "may",
+   "translations": [
+    "мочь",
+    "можно"
+   ]
+  },
+  {
+   "id": 77,
+   "word": "might",
+   "translations": [
+    "мог бы",
+    "может быть"
+   ]
+  },
+  {
+   "id": 78,
+   "word": "must",
+   "translations": [
+    "должен"
+   ]
+  },
+  {
+   "id": 79,
+   "word": "of",
+   "translations": [
+    "из",
+    "о"
+   ],
+   "note": "предлог"
+  },
+  {
+   "id": 80,
+   "word": "to",
+   "translations": [
+    "к",
+    "в"
+   ],
+   "note": "предлог"
+  },
+  {
+   "id": 81,
+   "word": "in",
+   "translations": [
+    "в"
+   ]
+  },
+  {
+   "id": 82,
+   "word": "on",
+   "translations": [
+    "на"
+   ]
+  },
+  {
+   "id": 83,
+   "word": "at",
+   "translations": [
+    "у",
+    "в"
+   ],
+   "note": "точке"
+  },
+  {
+   "id": 84,
+   "word": "by",
+   "translations": [
+    "посредством",
+    "у"
+   ]
+  },
+  {
+   "id": 85,
+   "word": "for",
+   "translations": [
+    "для"
+   ]
+  },
+  {
+   "id": 86,
+   "word": "with",
+   "translations": [
+    "с"
+   ]
+  },
+  {
+   "id": 87,
+   "word": "from",
+   "translations": [
+    "от",
+    "из"
+   ]
+  },
+  {
+   "id": 88,
+   "word": "about",
+   "translations": [
+    "о",
+    "около"
+   ]
+  },
+  {
+   "id": 89,
+   "word": "into",
+   "translations": [
+    "в",
+    "внутрь"
+   ]
+  },
+  {
+   "id": 90,
+   "word": "over",
+   "translations": [
+    "над",
+    "через"
+   ]
+  },
+  {
+   "id": 91,
+   "word": "under",
+   "translations": [
+    "под"
+   ]
+  },
+  {
+   "id": 92,
+   "word": "above",
+   "translations": [
+    "над",
+    "выше"
+   ]
+  },
+  {
+   "id": 93,
+   "word": "below",
+   "translations": [
+    "под",
+    "ниже"
+   ]
+  },
+  {
+   "id": 94,
+   "word": "between",
+   "translations": [
+    "между"
+   ]
+  },
+  {
+   "id": 95,
+   "word": "among",
+   "translations": [
+    "среди"
+   ]
+  },
+  {
+   "id": 96,
+   "word": "through",
+   "translations": [
+    "через",
+    "сквозь"
+   ]
+  },
+  {
+   "id": 97,
+   "word": "during",
+   "translations": [
+    "во время"
+   ]
+  },
+  {
+   "id": 98,
+   "word": "before",
+   "translations": [
+    "перед",
+    "до"
+   ]
+  },
+  {
+   "id": 99,
+   "word": "after",
+   "translations": [
+    "после"
+   ]
+  },
+  {
+   "id": 100,
+   "word": "since",
+   "translations": [
+    "с тех пор",
+    "так как"
+   ]
+  },
+  {
+   "id": 101,
+   "word": "until",
+   "translations": [
+    "до",
+    "пока не"
+   ]
+  },
+  {
+   "id": 102,
+   "word": "against",
+   "translations": [
+    "против"
+   ]
+  },
+  {
+   "id": 103,
+   "word": "toward",
+   "translations": [
+    "к",
+    "по направлению"
+   ]
+  },
+  {
+   "id": 104,
+   "word": "upon",
+   "translations": [
+    "на",
+    "по"
+   ]
+  },
+  {
+   "id": 105,
+   "word": "within",
+   "translations": [
+    "внутри",
+    "в пределах"
+   ]
+  },
+  {
+   "id": 106,
+   "word": "without",
+   "translations": [
+    "без"
+   ]
+  },
+  {
+   "id": 107,
+   "word": "across",
+   "translations": [
+    "через",
+    "поперёк"
+   ]
+  },
+  {
+   "id": 108,
+   "word": "behind",
+   "translations": [
+    "позади",
+    "за"
+   ]
+  },
+  {
+   "id": 109,
+   "word": "beyond",
+   "translations": [
+    "за пределами"
+   ]
+  },
+  {
+   "id": 110,
+   "word": "around",
+   "translations": [
+    "вокруг"
+   ]
+  },
+  {
+   "id": 111,
+   "word": "near",
+   "translations": [
+    "около",
+    "рядом"
+   ]
+  },
+  {
+   "id": 112,
+   "word": "off",
+   "translations": [
+    "прочь",
+    "выкл"
+   ]
+  },
+  {
+   "id": 113,
+   "word": "out",
+   "translations": [
+    "наружу",
+    "вне"
+   ]
+  },
+  {
+   "id": 114,
+   "word": "up",
+   "translations": [
+    "вверх"
+   ]
+  },
+  {
+   "id": 115,
+   "word": "down",
+   "translations": [
+    "вниз"
+   ]
+  },
+  {
+   "id": 116,
+   "word": "along",
+   "translations": [
+    "вдоль",
+    "вместе с"
+   ]
+  },
+  {
+   "id": 117,
+   "word": "onto",
+   "translations": [
+    "на"
+   ],
+   "note": "поверхность"
+  },
+  {
+   "id": 118,
+   "word": "per",
+   "translations": [
+    "за",
+    "на"
+   ],
+   "note": "per"
+  },
+  {
+   "id": 119,
+   "word": "via",
+   "translations": [
+    "через",
+    "посредством"
+   ]
+  },
+  {
+   "id": 120,
+   "word": "all",
+   "translations": [
+    "весь",
+    "все"
+   ]
+  },
+  {
+   "id": 121,
+   "word": "any",
+   "translations": [
+    "любой",
+    "какой-либо"
+   ]
+  },
+  {
+   "id": 122,
+   "word": "some",
+   "translations": [
+    "некоторые",
+    "немного"
+   ]
+  },
+  {
+   "id": 123,
+   "word": "none",
+   "translations": [
+    "ни один"
+   ]
+  },
+  {
+   "id": 124,
+   "word": "every",
+   "translations": [
+    "каждый"
+   ]
+  },
+  {
+   "id": 125,
+   "word": "each",
+   "translations": [
+    "каждый"
+   ],
+   "note": "по отдельности"
+  },
+  {
+   "id": 126,
+   "word": "both",
+   "translations": [
+    "оба"
+   ]
+  },
+  {
+   "id": 127,
+   "word": "either",
+   "translations": [
+    "любой из двух"
+   ]
+  },
+  {
+   "id": 128,
+   "word": "neither",
+   "translations": [
+    "ни тот ни другой"
+   ]
+  },
+  {
+   "id": 129,
+   "word": "many",
+   "translations": [
+    "многие",
+    "много"
+   ]
+  },
+  {
+   "id": 130,
+   "word": "much",
+   "translations": [
+    "много"
+   ],
+   "note": "неисчисл."
+  },
+  {
+   "id": 131,
+   "word": "more",
+   "translations": [
+    "больше",
+    "ещё"
+   ]
+  },
+  {
+   "id": 132,
+   "word": "most",
+   "translations": [
+    "больше всего",
+    "самый"
+   ]
+  },
+  {
+   "id": 133,
+   "word": "less",
+   "translations": [
+    "меньше"
+   ]
+  },
+  {
+   "id": 134,
+   "word": "least",
+   "translations": [
+    "наименьший"
+   ]
+  },
+  {
+   "id": 135,
+   "word": "few",
+   "translations": [
+    "немногие",
+    "мало"
+   ]
+  },
+  {
+   "id": 136,
+   "word": "little",
+   "translations": [
+    "маленький",
+    "мало"
+   ]
+  },
+  {
+   "id": 137,
+   "word": "several",
+   "translations": [
+    "несколько"
+   ]
+  },
+  {
+   "id": 138,
+   "word": "enough",
+   "translations": [
+    "достаточно"
+   ]
+  },
+  {
+   "id": 139,
+   "word": "only",
+   "translations": [
+    "только",
+    "единственный"
+   ]
+  },
+  {
+   "id": 140,
+   "word": "just",
+   "translations": [
+    "только",
+    "просто"
+   ]
+  },
+  {
+   "id": 141,
+   "word": "even",
+   "translations": [
+    "даже",
+    "ровный"
+   ]
+  },
+  {
+   "id": 142,
+   "word": "also",
+   "translations": [
+    "также"
+   ]
+  },
+  {
+   "id": 143,
+   "word": "too",
+   "translations": [
+    "тоже",
+    "слишком"
+   ]
+  },
+  {
+   "id": 144,
+   "word": "very",
+   "translations": [
+    "очень"
+   ]
+  },
+  {
+   "id": 145,
+   "word": "quite",
+   "translations": [
+    "довольно",
+    "вполне"
+   ]
+  },
+  {
+   "id": 146,
+   "word": "rather",
+   "translations": [
+    "скорее",
+    "довольно"
+   ]
+  },
+  {
+   "id": 147,
+   "word": "almost",
+   "translations": [
+    "почти"
+   ]
+  },
+  {
+   "id": 148,
+   "word": "nearly",
+   "translations": [
+    "почти"
+   ]
+  },
+  {
+   "id": 149,
+   "word": "such",
+   "translations": [
+    "такой"
+   ]
+  },
+  {
+   "id": 150,
+   "word": "same",
+   "translations": [
+    "тот же",
+    "одинаковый"
+   ]
+  },
+  {
+   "id": 151,
+   "word": "other",
+   "translations": [
+    "другой"
+   ]
+  },
+  {
+   "id": 152,
+   "word": "another",
+   "translations": [
+    "ещё один",
+    "другой"
+   ]
+  },
+  {
+   "id": 153,
+   "word": "else",
+   "translations": [
+    "ещё",
+    "иначе"
+   ]
+  },
+  {
+   "id": 154,
+   "word": "own",
+   "translations": [
+    "собственный"
+   ]
+  },
+  {
+   "id": 155,
+   "word": "self",
+   "translations": [
+    "сам",
+    "себя"
+   ]
+  },
+  {
+   "id": 156,
+   "word": "go",
+   "translations": [
+    "идти",
+    "ехать"
+   ]
+  },
+  {
+   "id": 157,
+   "word": "come",
+   "translations": [
+    "приходить"
+   ]
+  },
+  {
+   "id": 158,
+   "word": "get",
+   "translations": [
+    "получать"
+   ]
+  },
+  {
+   "id": 159,
+   "word": "make",
+   "translations": [
+    "делать",
+    "создавать"
+   ]
+  },
+  {
+   "id": 160,
+   "word": "take",
+   "translations": [
+    "брать",
+    "взять"
+   ]
+  },
+  {
+   "id": 161,
+   "word": "give",
+   "translations": [
+    "давать"
+   ]
+  },
+  {
+   "id": 162,
+   "word": "put",
+   "translations": [
+    "класть",
+    "ставить"
+   ]
+  },
+  {
+   "id": 163,
+   "word": "keep",
+   "translations": [
+    "хранить",
+    "держать"
+   ]
+  },
+  {
+   "id": 164,
+   "word": "let",
+   "translations": [
+    "позволять",
+    "пускать"
+   ]
+  },
+  {
+   "id": 165,
+   "word": "begin",
+   "translations": [
+    "начинать"
+   ]
+  },
+  {
+   "id": 166,
+   "word": "start",
+   "translations": [
+    "начинать",
+    "старт"
+   ]
+  },
+  {
+   "id": 167,
+   "word": "end",
+   "translations": [
+    "заканчивать",
+    "конец"
+   ]
+  },
+  {
+   "id": 168,
+   "word": "finish",
+   "translations": [
+    "заканчивать"
+   ]
+  },
+  {
+   "id": 169,
+   "word": "stop",
+   "translations": [
+    "останавливать"
+   ],
+   "note": "ся"
+  },
+  {
+   "id": 170,
+   "word": "continue",
+   "translations": [
+    "продолжать"
+   ]
+  },
+  {
+   "id": 171,
+   "word": "say",
+   "translations": [
+    "говорить",
+    "сказать"
+   ]
+  },
+  {
+   "id": 172,
+   "word": "tell",
+   "translations": [
+    "рассказывать",
+    "говорить"
+   ]
+  },
+  {
+   "id": 173,
+   "word": "speak",
+   "translations": [
+    "говорить"
+   ],
+   "note": "на языке"
+  },
+  {
+   "id": 174,
+   "word": "talk",
+   "translations": [
+    "разговаривать"
+   ]
+  },
+  {
+   "id": 175,
+   "word": "ask",
+   "translations": [
+    "спрашивать",
+    "просить"
+   ]
+  },
+  {
+   "id": 176,
+   "word": "answer",
+   "translations": [
+    "отвечать",
+    "ответ"
+   ]
+  },
+  {
+   "id": 177,
+   "word": "call",
+   "translations": [
+    "звонить",
+    "называть"
+   ]
+  },
+  {
+   "id": 178,
+   "word": "mean",
+   "translations": [
+    "значить",
+    "иметь в виду"
+   ]
+  },
+  {
+   "id": 179,
+   "word": "know",
+   "translations": [
+    "знать"
+   ]
+  },
+  {
+   "id": 180,
+   "word": "think",
+   "translations": [
+    "думать"
+   ]
+  },
+  {
+   "id": 181,
+   "word": "believe",
+   "translations": [
+    "верить",
+    "полагать"
+   ]
+  },
+  {
+   "id": 182,
+   "word": "feel",
+   "translations": [
+    "чувствовать"
+   ]
+  },
+  {
+   "id": 183,
+   "word": "see",
+   "translations": [
+    "видеть"
+   ]
+  },
+  {
+   "id": 184,
+   "word": "look",
+   "translations": [
+    "смотреть",
+    "вид"
+   ]
+  },
+  {
+   "id": 185,
+   "word": "watch",
+   "translations": [
+    "наблюдать",
+    "часы"
+   ]
+  },
+  {
+   "id": 186,
+   "word": "hear",
+   "translations": [
+    "слышать"
+   ]
+  },
+  {
+   "id": 187,
+   "word": "listen",
+   "translations": [
+    "слушать"
+   ]
+  },
+  {
+   "id": 188,
+   "word": "understand",
+   "translations": [
+    "понимать"
+   ]
+  },
+  {
+   "id": 189,
+   "word": "learn",
+   "translations": [
+    "учить",
+    "узнавать"
+   ]
+  },
+  {
+   "id": 190,
+   "word": "study",
+   "translations": [
+    "изучать"
+   ]
+  },
+  {
+   "id": 191,
+   "word": "teach",
+   "translations": [
+    "учить",
+    "преподавать"
+   ]
+  },
+  {
+   "id": 192,
+   "word": "read",
+   "translations": [
+    "читать"
+   ]
+  },
+  {
+   "id": 193,
+   "word": "write",
+   "translations": [
+    "писать"
+   ]
+  },
+  {
+   "id": 194,
+   "word": "want",
+   "translations": [
+    "хотеть"
+   ]
+  },
+  {
+   "id": 195,
+   "word": "need",
+   "translations": [
+    "нуждаться",
+    "нужда"
+   ]
+  },
+  {
+   "id": 196,
+   "word": "like",
+   "translations": [
+    "нравиться"
+   ]
+  },
+  {
+   "id": 197,
+   "word": "love",
+   "translations": [
+    "любить"
+   ]
+  },
+  {
+   "id": 198,
+   "word": "hate",
+   "translations": [
+    "ненавидеть"
+   ]
+  },
+  {
+   "id": 199,
+   "word": "hope",
+   "translations": [
+    "надеяться"
+   ]
+  },
+  {
+   "id": 200,
+   "word": "wish",
+   "translations": [
+    "желать"
+   ]
+  },
+  {
+   "id": 201,
+   "word": "try",
+   "translations": [
+    "пытаться"
+   ]
+  },
+  {
+   "id": 202,
+   "word": "seem",
+   "translations": [
+    "казаться"
+   ]
+  },
+  {
+   "id": 203,
+   "word": "appear",
+   "translations": [
+    "появляться",
+    "казаться"
+   ]
+  },
+  {
+   "id": 204,
+   "word": "become",
+   "translations": [
+    "становиться"
+   ]
+  },
+  {
+   "id": 205,
+   "word": "remain",
+   "translations": [
+    "оставаться"
+   ]
+  },
+  {
+   "id": 206,
+   "word": "stay",
+   "translations": [
+    "оставаться"
+   ]
+  },
+  {
+   "id": 207,
+   "word": "live",
+   "translations": [
+    "жить"
+   ]
+  },
+  {
+   "id": 208,
+   "word": "die",
+   "translations": [
+    "умирать"
+   ]
+  },
+  {
+   "id": 209,
+   "word": "kill",
+   "translations": [
+    "убивать"
+   ]
+  },
+  {
+   "id": 210,
+   "word": "eat",
+   "translations": [
+    "есть",
+    "кушать"
+   ]
+  },
+  {
+   "id": 211,
+   "word": "drink",
+   "translations": [
+    "пить"
+   ]
+  },
+  {
+   "id": 212,
+   "word": "sleep",
+   "translations": [
+    "спать"
+   ]
+  },
+  {
+   "id": 213,
+   "word": "wake",
+   "translations": [
+    "просыпаться",
+    "будить"
+   ]
+  },
+  {
+   "id": 214,
+   "word": "walk",
+   "translations": [
+    "идти пешком"
+   ]
+  },
+  {
+   "id": 215,
+   "word": "run",
+   "translations": [
+    "бежать",
+    "управлять"
+   ]
+  },
+  {
+   "id": 216,
+   "word": "jump",
+   "translations": [
+    "прыгать"
+   ]
+  },
+  {
+   "id": 217,
+   "word": "sit",
+   "translations": [
+    "сидеть"
+   ]
+  },
+  {
+   "id": 218,
+   "word": "stand",
+   "translations": [
+    "стоять"
+   ]
+  },
+  {
+   "id": 219,
+   "word": "lie",
+   "translations": [
+    "лежать",
+    "лгать"
+   ]
+  },
+  {
+   "id": 220,
+   "word": "fall",
+   "translations": [
+    "падать"
+   ]
+  },
+  {
+   "id": 221,
+   "word": "rise",
+   "translations": [
+    "подниматься"
+   ]
+  },
+  {
+   "id": 222,
+   "word": "turn",
+   "translations": [
+    "поворачивать"
+   ],
+   "note": "ся"
+  },
+  {
+   "id": 223,
+   "word": "move",
+   "translations": [
+    "двигать"
+   ],
+   "note": "ся"
+  },
+  {
+   "id": 224,
+   "word": "carry",
+   "translations": [
+    "нести"
+   ]
+  },
+  {
+   "id": 225,
+   "word": "bring",
+   "translations": [
+    "приносить",
+    "приводить"
+   ]
+  },
+  {
+   "id": 226,
+   "word": "send",
+   "translations": [
+    "отправлять"
+   ]
+  },
+  {
+   "id": 227,
+   "word": "hold",
+   "translations": [
+    "держать"
+   ]
+  },
+  {
+   "id": 228,
+   "word": "catch",
+   "translations": [
+    "ловить"
+   ]
+  },
+  {
+   "id": 229,
+   "word": "throw",
+   "translations": [
+    "бросать"
+   ]
+  },
+  {
+   "id": 230,
+   "word": "hit",
+   "translations": [
+    "ударять"
+   ]
+  },
+  {
+   "id": 231,
+   "word": "cut",
+   "translations": [
+    "резать"
+   ]
+  },
+  {
+   "id": 232,
+   "word": "break",
+   "translations": [
+    "ломать",
+    "перерыв"
+   ]
+  },
+  {
+   "id": 233,
+   "word": "fix",
+   "translations": [
+    "чинить",
+    "закреплять"
+   ]
+  },
+  {
+   "id": 234,
+   "word": "build",
+   "translations": [
+    "строить"
+   ]
+  },
+  {
+   "id": 235,
+   "word": "buy",
+   "translations": [
+    "покупать"
+   ]
+  },
+  {
+   "id": 236,
+   "word": "sell",
+   "translations": [
+    "продавать"
+   ]
+  },
+  {
+   "id": 237,
+   "word": "pay",
+   "translations": [
+    "платить"
+   ]
+  },
+  {
+   "id": 238,
+   "word": "cost",
+   "translations": [
+    "стоить"
+   ]
+  },
+  {
+   "id": 239,
+   "word": "spend",
+   "translations": [
+    "тратить",
+    "проводить"
+   ]
+  },
+  {
+   "id": 240,
+   "word": "save",
+   "translations": [
+    "спасать",
+    "экономить"
+   ]
+  },
+  {
+   "id": 241,
+   "word": "win",
+   "translations": [
+    "выигрывать"
+   ]
+  },
+  {
+   "id": 242,
+   "word": "lose",
+   "translations": [
+    "проигрывать",
+    "терять"
+   ]
+  },
+  {
+   "id": 243,
+   "word": "play",
+   "translations": [
+    "играть"
+   ]
+  },
+  {
+   "id": 244,
+   "word": "work",
+   "translations": [
+    "работать",
+    "работа"
+   ]
+  },
+  {
+   "id": 245,
+   "word": "use",
+   "translations": [
+    "использовать"
+   ]
+  },
+  {
+   "id": 246,
+   "word": "find",
+   "translations": [
+    "находить"
+   ]
+  },
+  {
+   "id": 247,
+   "word": "meet",
+   "translations": [
+    "встречать"
+   ],
+   "note": "ся"
+  },
+  {
+   "id": 248,
+   "word": "join",
+   "translations": [
+    "присоединять"
+   ],
+   "note": "ся"
+  },
+  {
+   "id": 249,
+   "word": "leave",
+   "translations": [
+    "уходить",
+    "оставлять"
+   ]
+  },
+  {
+   "id": 250,
+   "word": "follow",
+   "translations": [
+    "следовать"
+   ]
+  },
+  {
+   "id": 251,
+   "word": "lead",
+   "translations": [
+    "вести",
+    "руководить"
+   ]
+  },
+  {
+   "id": 252,
+   "word": "help",
+   "translations": [
+    "помогать"
+   ]
+  },
+  {
+   "id": 253,
+   "word": "show",
+   "translations": [
+    "показывать"
+   ]
+  },
+  {
+   "id": 254,
+   "word": "offer",
+   "translations": [
+    "предлагать"
+   ]
+  },
+  {
+   "id": 255,
+   "word": "provide",
+   "translations": [
+    "обеспечивать",
+    "предоставлять"
+   ]
+  },
+  {
+   "id": 256,
+   "word": "receive",
+   "translations": [
+    "получать"
+   ]
+  },
+  {
+   "id": 257,
+   "word": "accept",
+   "translations": [
+    "принимать"
+   ]
+  },
+  {
+   "id": 258,
+   "word": "refuse",
+   "translations": [
+    "отказывать"
+   ],
+   "note": "ся"
+  },
+  {
+   "id": 259,
+   "word": "allow",
+   "translations": [
+    "позволять"
+   ]
+  },
+  {
+   "id": 260,
+   "word": "agree",
+   "translations": [
+    "соглашаться"
+   ]
+  },
+  {
+   "id": 261,
+   "word": "decide",
+   "translations": [
+    "решать"
+   ]
+  },
+  {
+   "id": 262,
+   "word": "choose",
+   "translations": [
+    "выбирать"
+   ]
+  },
+  {
+   "id": 263,
+   "word": "pick",
+   "translations": [
+    "выбирать",
+    "собирать"
+   ]
+  },
+  {
+   "id": 264,
+   "word": "plan",
+   "translations": [
+    "планировать"
+   ]
+  },
+  {
+   "id": 265,
+   "word": "change",
+   "translations": [
+    "менять"
+   ]
+  },
+  {
+   "id": 266,
+   "word": "add",
+   "translations": [
+    "добавлять"
+   ]
+  },
+  {
+   "id": 267,
+   "word": "create",
+   "translations": [
+    "создавать"
+   ]
+  },
+  {
+   "id": 268,
+   "word": "produce",
+   "translations": [
+    "производить"
+   ]
+  },
+  {
+   "id": 269,
+   "word": "grow",
+   "translations": [
+    "расти"
+   ]
+  },
+  {
+   "id": 270,
+   "word": "develop",
+   "translations": [
+    "развивать"
+   ],
+   "note": "ся"
+  },
+  {
+   "id": 271,
+   "word": "improve",
+   "translations": [
+    "улучшать"
+   ]
+  },
+  {
+   "id": 272,
+   "word": "increase",
+   "translations": [
+    "увеличивать"
+   ],
+   "note": "ся"
+  },
+  {
+   "id": 273,
+   "word": "reduce",
+   "translations": [
+    "уменьшать"
+   ]
+  },
+  {
+   "id": 274,
+   "word": "open",
+   "translations": [
+    "открывать"
+   ]
+  },
+  {
+   "id": 275,
+   "word": "close",
+   "translations": [
+    "закрывать",
+    "близкий"
+   ]
+  },
+  {
+   "id": 276,
+   "word": "cover",
+   "translations": [
+    "покрывать"
+   ]
+  },
+  {
+   "id": 277,
+   "word": "fill",
+   "translations": [
+    "наполнять"
+   ]
+  },
+  {
+   "id": 278,
+   "word": "empty",
+   "translations": [
+    "опустошать",
+    "пустой"
+   ]
+  },
+  {
+   "id": 279,
+   "word": "push",
+   "translations": [
+    "толкать"
+   ]
+  },
+  {
+   "id": 280,
+   "word": "pull",
+   "translations": [
+    "тянуть"
+   ]
+  },
+  {
+   "id": 281,
+   "word": "drop",
+   "translations": [
+    "ронять",
+    "капля"
+   ]
+  },
+  {
+   "id": 282,
+   "word": "raise",
+   "translations": [
+    "поднимать",
+    "повышать"
+   ]
+  },
+  {
+   "id": 283,
+   "word": "lift",
+   "translations": [
+    "поднимать",
+    "лифт"
+   ]
+  },
+  {
+   "id": 284,
+   "word": "happen",
+   "translations": [
+    "случаться",
+    "происходить"
+   ]
+  },
+  {
+   "id": 285,
+   "word": "occur",
+   "translations": [
+    "случаться",
+    "происходить"
+   ]
+  },
+  {
+   "id": 286,
+   "word": "cause",
+   "translations": [
+    "вызывать",
+    "причина"
+   ]
+  },
+  {
+   "id": 287,
+   "word": "affect",
+   "translations": [
+    "влиять"
+   ]
+  },
+  {
+   "id": 288,
+   "word": "matter",
+   "translations": [
+    "иметь значение"
+   ]
+  },
+  {
+   "id": 289,
+   "word": "depend",
+   "translations": [
+    "зависеть"
+   ]
+  },
+  {
+   "id": 290,
+   "word": "include",
+   "translations": [
+    "включать"
+   ]
+  },
+  {
+   "id": 291,
+   "word": "contain",
+   "translations": [
+    "содержать"
+   ]
+  },
+  {
+   "id": 292,
+   "word": "remember",
+   "translations": [
+    "помнить"
+   ]
+  },
+  {
+   "id": 293,
+   "word": "forget",
+   "translations": [
+    "забывать"
+   ]
+  },
+  {
+   "id": 294,
+   "word": "recognize",
+   "translations": [
+    "узнавать",
+    "признавать"
+   ]
+  },
+  {
+   "id": 295,
+   "word": "realize",
+   "translations": [
+    "осознавать"
+   ]
+  },
+  {
+   "id": 296,
+   "word": "notice",
+   "translations": [
+    "замечать"
+   ]
+  },
+  {
+   "id": 297,
+   "word": "imagine",
+   "translations": [
+    "представлять",
+    "воображать"
+   ]
+  },
+  {
+   "id": 298,
+   "word": "expect",
+   "translations": [
+    "ожидать"
+   ]
+  },
+  {
+   "id": 299,
+   "word": "suppose",
+   "translations": [
+    "предполагать"
+   ]
+  },
+  {
+   "id": 300,
+   "word": "guess",
+   "translations": [
+    "догадываться",
+    "гадать"
+   ]
+  },
+  {
+   "id": 301,
+   "word": "consider",
+   "translations": [
+    "рассматривать",
+    "считать"
+   ]
+  },
+  {
+   "id": 302,
+   "word": "suggest",
+   "translations": [
+    "предлагать",
+    "советовать"
+   ]
+  },
+  {
+   "id": 303,
+   "word": "explain",
+   "translations": [
+    "объяснять"
+   ]
+  },
+  {
+   "id": 304,
+   "word": "describe",
+   "translations": [
+    "описывать"
+   ]
+  },
+  {
+   "id": 305,
+   "word": "mention",
+   "translations": [
+    "упоминать"
+   ]
+  },
+  {
+   "id": 306,
+   "word": "discuss",
+   "translations": [
+    "обсуждать"
+   ]
+  },
+  {
+   "id": 307,
+   "word": "argue",
+   "translations": [
+    "спорить",
+    "утверждать"
+   ]
+  },
+  {
+   "id": 308,
+   "word": "admit",
+   "translations": [
+    "признавать"
+   ]
+  },
+  {
+   "id": 309,
+   "word": "claim",
+   "translations": [
+    "утверждать",
+    "претензия"
+   ]
+  },
+  {
+   "id": 310,
+   "word": "report",
+   "translations": [
+    "сообщать",
+    "отчёт"
+   ]
+  },
+  {
+   "id": 311,
+   "word": "announce",
+   "translations": [
+    "объявлять"
+   ]
+  },
+  {
+   "id": 312,
+   "word": "draw",
+   "translations": [
+    "рисовать",
+    "тянуть"
+   ]
+  },
+  {
+   "id": 313,
+   "word": "paint",
+   "translations": [
+    "красить",
+    "рисовать"
+   ]
+  },
+  {
+   "id": 314,
+   "word": "sing",
+   "translations": [
+    "петь"
+   ]
+  },
+  {
+   "id": 315,
+   "word": "dance",
+   "translations": [
+    "танцевать"
+   ]
+  },
+  {
+   "id": 316,
+   "word": "cook",
+   "translations": [
+    "готовить"
+   ]
+  },
+  {
+   "id": 317,
+   "word": "wash",
+   "translations": [
+    "мыть"
+   ]
+  },
+  {
+   "id": 318,
+   "word": "clean",
+   "translations": [
+    "чистить",
+    "чистый"
+   ]
+  },
+  {
+   "id": 319,
+   "word": "wear",
+   "translations": [
+    "носить"
+   ],
+   "note": "одежду"
+  },
+  {
+   "id": 320,
+   "word": "dress",
+   "translations": [
+    "одевать",
+    "платье"
+   ],
+   "note": "ся"
+  },
+  {
+   "id": 321,
+   "word": "smile",
+   "translations": [
+    "улыбаться"
+   ]
+  },
+  {
+   "id": 322,
+   "word": "laugh",
+   "translations": [
+    "смеяться"
+   ]
+  },
+  {
+   "id": 323,
+   "word": "cry",
+   "translations": [
+    "плакать",
+    "кричать"
+   ]
+  },
+  {
+   "id": 324,
+   "word": "count",
+   "translations": [
+    "считать"
+   ]
+  },
+  {
+   "id": 325,
+   "word": "measure",
+   "translations": [
+    "измерять",
+    "мера"
+   ]
+  },
+  {
+   "id": 326,
+   "word": "test",
+   "translations": [
+    "проверять",
+    "тест"
+   ]
+  },
+  {
+   "id": 327,
+   "word": "check",
+   "translations": [
+    "проверять",
+    "чек"
+   ]
+  },
+  {
+   "id": 328,
+   "word": "compare",
+   "translations": [
+    "сравнивать"
+   ]
+  },
+  {
+   "id": 329,
+   "word": "prepare",
+   "translations": [
+    "готовить"
+   ],
+   "note": "ся"
+  },
+  {
+   "id": 330,
+   "word": "manage",
+   "translations": [
+    "управлять",
+    "справляться"
+   ]
+  },
+  {
+   "id": 331,
+   "word": "control",
+   "translations": [
+    "контролировать"
+   ]
+  },
+  {
+   "id": 332,
+   "word": "force",
+   "translations": [
+    "заставлять",
+    "сила"
+   ]
+  },
+  {
+   "id": 333,
+   "word": "avoid",
+   "translations": [
+    "избегать"
+   ]
+  },
+  {
+   "id": 334,
+   "word": "prevent",
+   "translations": [
+    "предотвращать"
+   ]
+  },
+  {
+   "id": 335,
+   "word": "protect",
+   "translations": [
+    "защищать"
+   ]
+  },
+  {
+   "id": 336,
+   "word": "attack",
+   "translations": [
+    "атаковать"
+   ]
+  },
+  {
+   "id": 337,
+   "word": "defend",
+   "translations": [
+    "защищать"
+   ]
+  },
+  {
+   "id": 338,
+   "word": "fight",
+   "translations": [
+    "бороться",
+    "драться"
+   ]
+  },
+  {
+   "id": 339,
+   "word": "support",
+   "translations": [
+    "поддерживать"
+   ]
+  },
+  {
+   "id": 340,
+   "word": "treat",
+   "translations": [
+    "обращаться",
+    "лечить"
+   ]
+  },
+  {
+   "id": 341,
+   "word": "serve",
+   "translations": [
+    "служить",
+    "подавать"
+   ]
+  },
+  {
+   "id": 342,
+   "word": "wait",
+   "translations": [
+    "ждать"
+   ]
+  },
+  {
+   "id": 343,
+   "word": "hurry",
+   "translations": [
+    "спешить"
+   ]
+  },
+  {
+   "id": 344,
+   "word": "reach",
+   "translations": [
+    "достигать",
+    "дотягиваться"
+   ]
+  },
+  {
+   "id": 345,
+   "word": "arrive",
+   "translations": [
+    "прибывать"
+   ]
+  },
+  {
+   "id": 346,
+   "word": "enter",
+   "translations": [
+    "входить"
+   ]
+  },
+  {
+   "id": 347,
+   "word": "return",
+   "translations": [
+    "возвращать"
+   ],
+   "note": "ся"
+  },
+  {
+   "id": 348,
+   "word": "visit",
+   "translations": [
+    "посещать"
+   ]
+  },
+  {
+   "id": 349,
+   "word": "travel",
+   "translations": [
+    "путешествовать"
+   ]
+  },
+  {
+   "id": 350,
+   "word": "drive",
+   "translations": [
+    "водить"
+   ],
+   "note": "машину"
+  },
+  {
+   "id": 351,
+   "word": "ride",
+   "translations": [
+    "ехать"
+   ],
+   "note": "верхом"
+  },
+  {
+   "id": 352,
+   "word": "fly",
+   "translations": [
+    "летать"
+   ]
+  },
+  {
+   "id": 353,
+   "word": "swim",
+   "translations": [
+    "плавать"
+   ]
+  },
+  {
+   "id": 354,
+   "word": "climb",
+   "translations": [
+    "лезть",
+    "взбираться"
+   ]
+  },
+  {
+   "id": 355,
+   "word": "pass",
+   "translations": [
+    "проходить",
+    "передавать"
+   ]
+  },
+  {
+   "id": 356,
+   "word": "cross",
+   "translations": [
+    "пересекать",
+    "крест"
+   ]
+  },
+  {
+   "id": 357,
+   "word": "seek",
+   "translations": [
+    "искать"
+   ]
+  },
+  {
+   "id": 358,
+   "word": "search",
+   "translations": [
+    "искать",
+    "поиск"
+   ]
+  },
+  {
+   "id": 359,
+   "word": "discover",
+   "translations": [
+    "обнаруживать",
+    "открывать"
+   ]
+  },
+  {
+   "id": 360,
+   "word": "solve",
+   "translations": [
+    "решать"
+   ],
+   "note": "задачу"
+  },
+  {
+   "id": 361,
+   "word": "apply",
+   "translations": [
+    "применять",
+    "подавать заявку"
+   ]
+  },
+  {
+   "id": 362,
+   "word": "represent",
+   "translations": [
+    "представлять"
+   ]
+  },
+  {
+   "id": 363,
+   "word": "require",
+   "translations": [
+    "требовать"
+   ]
+  },
+  {
+   "id": 364,
+   "word": "involve",
+   "translations": [
+    "вовлекать",
+    "включать"
+   ]
+  },
+  {
+   "id": 365,
+   "word": "achieve",
+   "translations": [
+    "достигать"
+   ]
+  },
+  {
+   "id": 366,
+   "word": "succeed",
+   "translations": [
+    "преуспевать"
+   ]
+  },
+  {
+   "id": 367,
+   "word": "fail",
+   "translations": [
+    "терпеть неудачу"
+   ]
+  },
+  {
+   "id": 368,
+   "word": "complete",
+   "translations": [
+    "завершать",
+    "полный"
+   ]
+  },
+  {
+   "id": 369,
+   "word": "perform",
+   "translations": [
+    "выполнять",
+    "выступать"
+   ]
+  },
+  {
+   "id": 370,
+   "word": "act",
+   "translations": [
+    "действовать",
+    "акт"
+   ]
+  },
+  {
+   "id": 371,
+   "word": "react",
+   "translations": [
+    "реагировать"
+   ]
+  },
+  {
+   "id": 372,
+   "word": "respond",
+   "translations": [
+    "отвечать",
+    "реагировать"
+   ]
+  },
+  {
+   "id": 373,
+   "word": "hurt",
+   "translations": [
+    "ранить",
+    "болеть"
+   ]
+  },
+  {
+   "id": 374,
+   "word": "suffer",
+   "translations": [
+    "страдать"
+   ]
+  },
+  {
+   "id": 375,
+   "word": "enjoy",
+   "translations": [
+    "наслаждаться"
+   ]
+  },
+  {
+   "id": 376,
+   "word": "relax",
+   "translations": [
+    "расслабляться"
+   ]
+  },
+  {
+   "id": 377,
+   "word": "rest",
+   "translations": [
+    "отдыхать",
+    "остаток"
+   ]
+  },
+  {
+   "id": 378,
+   "word": "marry",
+   "translations": [
+    "жениться",
+    "выходить замуж"
+   ]
+  },
+  {
+   "id": 379,
+   "word": "born",
+   "translations": [
+    "рождённый"
+   ]
+  },
+  {
+   "id": 380,
+   "word": "feed",
+   "translations": [
+    "кормить"
+   ]
+  },
+  {
+   "id": 381,
+   "word": "plant",
+   "translations": [
+    "сажать",
+    "растение"
+   ]
+  },
+  {
+   "id": 382,
+   "word": "burn",
+   "translations": [
+    "гореть",
+    "жечь"
+   ]
+  },
+  {
+   "id": 383,
+   "word": "freeze",
+   "translations": [
+    "замерзать",
+    "замораживать"
+   ]
+  },
+  {
+   "id": 384,
+   "word": "melt",
+   "translations": [
+    "таять"
+   ]
+  },
+  {
+   "id": 385,
+   "word": "shake",
+   "translations": [
+    "трясти"
+   ],
+   "note": "сь"
+  },
+  {
+   "id": 386,
+   "word": "touch",
+   "translations": [
+    "трогать",
+    "касание"
+   ]
+  },
+  {
+   "id": 387,
+   "word": "press",
+   "translations": [
+    "нажимать",
+    "пресса"
+   ]
+  },
+  {
+   "id": 388,
+   "word": "hang",
+   "translations": [
+    "вешать",
+    "висеть"
+   ]
+  },
+  {
+   "id": 389,
+   "word": "tie",
+   "translations": [
+    "завязывать",
+    "галстук"
+   ]
+  },
+  {
+   "id": 390,
+   "word": "roll",
+   "translations": [
+    "катить",
+    "рулон"
+   ],
+   "note": "ся"
+  },
+  {
+   "id": 391,
+   "word": "spread",
+   "translations": [
+    "распространять"
+   ],
+   "note": "ся"
+  },
+  {
+   "id": 392,
+   "word": "share",
+   "translations": [
+    "делиться",
+    "доля"
+   ]
+  },
+  {
+   "id": 393,
+   "word": "waste",
+   "translations": [
+    "тратить впустую",
+    "отходы"
+   ]
+  },
+  {
+   "id": 394,
+   "word": "earn",
+   "translations": [
+    "зарабатывать"
+   ]
+  },
+  {
+   "id": 395,
+   "word": "owe",
+   "translations": [
+    "быть должным"
+   ]
+  },
+  {
+   "id": 396,
+   "word": "borrow",
+   "translations": [
+    "занимать"
+   ],
+   "note": "брать"
+  },
+  {
+   "id": 397,
+   "word": "lend",
+   "translations": [
+    "одалживать"
+   ],
+   "note": "давать"
+  },
+  {
+   "id": 398,
+   "word": "repeat",
+   "translations": [
+    "повторять"
+   ]
+  },
+  {
+   "id": 399,
+   "word": "replace",
+   "translations": [
+    "заменять"
+   ]
+  },
+  {
+   "id": 400,
+   "word": "remove",
+   "translations": [
+    "удалять",
+    "убирать"
+   ]
+  },
+  {
+   "id": 401,
+   "word": "destroy",
+   "translations": [
+    "разрушать"
+   ]
+  },
+  {
+   "id": 402,
+   "word": "damage",
+   "translations": [
+    "повреждать",
+    "ущерб"
+   ]
+  },
+  {
+   "id": 403,
+   "word": "repair",
+   "translations": [
+    "ремонтировать"
+   ]
+  },
+  {
+   "id": 404,
+   "word": "hide",
+   "translations": [
+    "прятать"
+   ],
+   "note": "ся"
+  },
+  {
+   "id": 405,
+   "word": "disappear",
+   "translations": [
+    "исчезать"
+   ]
+  },
+  {
+   "id": 406,
+   "word": "wonder",
+   "translations": [
+    "удивляться",
+    "чудо"
+   ]
+  },
+  {
+   "id": 407,
+   "word": "doubt",
+   "translations": [
+    "сомневаться",
+    "сомнение"
+   ]
+  },
+  {
+   "id": 408,
+   "word": "trust",
+   "translations": [
+    "доверять",
+    "доверие"
+   ]
+  },
+  {
+   "id": 409,
+   "word": "promise",
+   "translations": [
+    "обещать",
+    "обещание"
+   ]
+  },
+  {
+   "id": 410,
+   "word": "warn",
+   "translations": [
+    "предупреждать"
+   ]
+  },
+  {
+   "id": 411,
+   "word": "threaten",
+   "translations": [
+    "угрожать"
+   ]
+  },
+  {
+   "id": 412,
+   "word": "blame",
+   "translations": [
+    "винить",
+    "вина"
+   ]
+  },
+  {
+   "id": 413,
+   "word": "forgive",
+   "translations": [
+    "прощать"
+   ]
+  },
+  {
+   "id": 414,
+   "word": "thank",
+   "translations": [
+    "благодарить"
+   ]
+  },
+  {
+   "id": 415,
+   "word": "greet",
+   "translations": [
+    "приветствовать"
+   ]
+  },
+  {
+   "id": 416,
+   "word": "invite",
+   "translations": [
+    "приглашать"
+   ]
+  },
+  {
+   "id": 417,
+   "word": "introduce",
+   "translations": [
+    "представлять",
+    "знакомить"
+   ]
+  },
+  {
+   "id": 418,
+   "word": "indicate",
+   "translations": [
+    "указывать"
+   ]
+  },
+  {
+   "id": 419,
+   "word": "reflect",
+   "translations": [
+    "отражать",
+    "размышлять"
+   ]
+  },
+  {
+   "id": 420,
+   "word": "reveal",
+   "translations": [
+    "раскрывать"
+   ]
+  },
+  {
+   "id": 421,
+   "word": "prove",
+   "translations": [
+    "доказывать"
+   ]
+  },
+  {
+   "id": 422,
+   "word": "confirm",
+   "translations": [
+    "подтверждать"
+   ]
+  },
+  {
+   "id": 423,
+   "word": "deny",
+   "translations": [
+    "отрицать"
+   ]
+  },
+  {
+   "id": 424,
+   "word": "ignore",
+   "translations": [
+    "игнорировать"
+   ]
+  },
+  {
+   "id": 425,
+   "word": "focus",
+   "translations": [
+    "сосредотачивать"
+   ],
+   "note": "ся"
+  },
+  {
+   "id": 426,
+   "word": "relate",
+   "translations": [
+    "относиться",
+    "связывать"
+   ]
+  },
+  {
+   "id": 427,
+   "word": "connect",
+   "translations": [
+    "соединять"
+   ]
+  },
+  {
+   "id": 428,
+   "word": "separate",
+   "translations": [
+    "разделять",
+    "отдельный"
+   ]
+  },
+  {
+   "id": 429,
+   "word": "divide",
+   "translations": [
+    "делить"
+   ]
+  },
+  {
+   "id": 430,
+   "word": "combine",
+   "translations": [
+    "сочетать",
+    "объединять"
+   ]
+  },
+  {
+   "id": 431,
+   "word": "collect",
+   "translations": [
+    "собирать"
+   ]
+  },
+  {
+   "id": 432,
+   "word": "gather",
+   "translations": [
+    "собирать"
+   ],
+   "note": "ся"
+  },
+  {
+   "id": 433,
+   "word": "select",
+   "translations": [
+    "выбирать"
+   ]
+  },
+  {
+   "id": 434,
+   "word": "arrange",
+   "translations": [
+    "устраивать",
+    "организовывать"
+   ]
+  },
+  {
+   "id": 435,
+   "word": "organize",
+   "translations": [
+    "организовывать"
+   ]
+  },
+  {
+   "id": 436,
+   "word": "design",
+   "translations": [
+    "проектировать",
+    "дизайн"
+   ]
+  },
+  {
+   "id": 437,
+   "word": "define",
+   "translations": [
+    "определять"
+   ]
+  },
+  {
+   "id": 438,
+   "word": "identify",
+   "translations": [
+    "определять",
+    "опознавать"
+   ]
+  },
+  {
+   "id": 439,
+   "word": "examine",
+   "translations": [
+    "изучать",
+    "осматривать"
+   ]
+  },
+  {
+   "id": 440,
+   "word": "observe",
+   "translations": [
+    "наблюдать"
+   ]
+  },
+  {
+   "id": 441,
+   "word": "record",
+   "translations": [
+    "записывать",
+    "запись"
+   ]
+  },
+  {
+   "id": 442,
+   "word": "score",
+   "translations": [
+    "набирать очки",
+    "счёт"
+   ]
+  },
+  {
+   "id": 443,
+   "word": "rate",
+   "translations": [
+    "оценивать",
+    "ставка"
+   ]
+  },
+  {
+   "id": 444,
+   "word": "rank",
+   "translations": [
+    "ранжировать",
+    "ранг"
+   ]
+  },
+  {
+   "id": 445,
+   "word": "man",
+   "translations": [
+    "мужчина",
+    "человек"
+   ]
+  },
+  {
+   "id": 446,
+   "word": "woman",
+   "translations": [
+    "женщина"
+   ]
+  },
+  {
+   "id": 447,
+   "word": "person",
+   "translations": [
+    "человек"
+   ]
+  },
+  {
+   "id": 448,
+   "word": "people",
+   "translations": [
+    "люди"
+   ]
+  },
+  {
+   "id": 449,
+   "word": "child",
+   "translations": [
+    "ребёнок"
+   ]
+  },
+  {
+   "id": 450,
+   "word": "kid",
+   "translations": [
+    "ребёнок"
+   ]
+  },
+  {
+   "id": 451,
+   "word": "baby",
+   "translations": [
+    "малыш",
+    "младенец"
+   ]
+  },
+  {
+   "id": 452,
+   "word": "boy",
+   "translations": [
+    "мальчик"
+   ]
+  },
+  {
+   "id": 453,
+   "word": "girl",
+   "translations": [
+    "девочка",
+    "девушка"
+   ]
+  },
+  {
+   "id": 454,
+   "word": "adult",
+   "translations": [
+    "взрослый"
+   ]
+  },
+  {
+   "id": 455,
+   "word": "guy",
+   "translations": [
+    "парень"
+   ]
+  },
+  {
+   "id": 456,
+   "word": "family",
+   "translations": [
+    "семья"
+   ]
+  },
+  {
+   "id": 457,
+   "word": "parent",
+   "translations": [
+    "родитель"
+   ]
+  },
+  {
+   "id": 458,
+   "word": "mother",
+   "translations": [
+    "мать"
+   ]
+  },
+  {
+   "id": 459,
+   "word": "father",
+   "translations": [
+    "отец"
+   ]
+  },
+  {
+   "id": 460,
+   "word": "mom",
+   "translations": [
+    "мама"
+   ]
+  },
+  {
+   "id": 461,
+   "word": "dad",
+   "translations": [
+    "папа"
+   ]
+  },
+  {
+   "id": 462,
+   "word": "son",
+   "translations": [
+    "сын"
+   ]
+  },
+  {
+   "id": 463,
+   "word": "daughter",
+   "translations": [
+    "дочь"
+   ]
+  },
+  {
+   "id": 464,
+   "word": "brother",
+   "translations": [
+    "брат"
+   ]
+  },
+  {
+   "id": 465,
+   "word": "sister",
+   "translations": [
+    "сестра"
+   ]
+  },
+  {
+   "id": 466,
+   "word": "husband",
+   "translations": [
+    "муж"
+   ]
+  },
+  {
+   "id": 467,
+   "word": "wife",
+   "translations": [
+    "жена"
+   ]
+  },
+  {
+   "id": 468,
+   "word": "grandmother",
+   "translations": [
+    "бабушка"
+   ]
+  },
+  {
+   "id": 469,
+   "word": "grandfather",
+   "translations": [
+    "дедушка"
+   ]
+  },
+  {
+   "id": 470,
+   "word": "aunt",
+   "translations": [
+    "тётя"
+   ]
+  },
+  {
+   "id": 471,
+   "word": "uncle",
+   "translations": [
+    "дядя"
+   ]
+  },
+  {
+   "id": 472,
+   "word": "cousin",
+   "translations": [
+    "двоюродный брат/сестра"
+   ]
+  },
+  {
+   "id": 473,
+   "word": "nephew",
+   "translations": [
+    "племянник"
+   ]
+  },
+  {
+   "id": 474,
+   "word": "niece",
+   "translations": [
+    "племянница"
+   ]
+  },
+  {
+   "id": 475,
+   "word": "friend",
+   "translations": [
+    "друг"
+   ]
+  },
+  {
+   "id": 476,
+   "word": "neighbor",
+   "translations": [
+    "сосед"
+   ]
+  },
+  {
+   "id": 477,
+   "word": "stranger",
+   "translations": [
+    "незнакомец"
+   ]
+  },
+  {
+   "id": 478,
+   "word": "guest",
+   "translations": [
+    "гость"
+   ]
+  },
+  {
+   "id": 479,
+   "word": "partner",
+   "translations": [
+    "партнёр"
+   ]
+  },
+  {
+   "id": 480,
+   "word": "couple",
+   "translations": [
+    "пара"
+   ]
+  },
+  {
+   "id": 481,
+   "word": "member",
+   "translations": [
+    "член",
+    "участник"
+   ]
+  },
+  {
+   "id": 482,
+   "word": "group",
+   "translations": [
+    "группа"
+   ]
+  },
+  {
+   "id": 483,
+   "word": "team",
+   "translations": [
+    "команда"
+   ]
+  },
+  {
+   "id": 484,
+   "word": "crowd",
+   "translations": [
+    "толпа"
+   ]
+  },
+  {
+   "id": 485,
+   "word": "public",
+   "translations": [
+    "публика",
+    "общественный"
+   ]
+  },
+  {
+   "id": 486,
+   "word": "society",
+   "translations": [
+    "общество"
+   ]
+  },
+  {
+   "id": 487,
+   "word": "community",
+   "translations": [
+    "сообщество"
+   ]
+  },
+  {
+   "id": 488,
+   "word": "population",
+   "translations": [
+    "население"
+   ]
+  },
+  {
+   "id": 489,
+   "word": "citizen",
+   "translations": [
+    "гражданин"
+   ]
+  },
+  {
+   "id": 490,
+   "word": "human",
+   "translations": [
+    "человек"
+   ]
+  },
+  {
+   "id": 491,
+   "word": "name",
+   "translations": [
+    "имя"
+   ]
+  },
+  {
+   "id": 492,
+   "word": "age",
+   "translations": [
+    "возраст"
+   ]
+  },
+  {
+   "id": 493,
+   "word": "life",
+   "translations": [
+    "жизнь"
+   ]
+  },
+  {
+   "id": 494,
+   "word": "death",
+   "translations": [
+    "смерть"
+   ]
+  },
+  {
+   "id": 495,
+   "word": "birth",
+   "translations": [
+    "рождение"
+   ]
+  },
+  {
+   "id": 496,
+   "word": "body",
+   "translations": [
+    "тело"
+   ]
+  },
+  {
+   "id": 497,
+   "word": "head",
+   "translations": [
+    "голова"
+   ]
+  },
+  {
+   "id": 498,
+   "word": "face",
+   "translations": [
+    "лицо"
+   ]
+  },
+  {
+   "id": 499,
+   "word": "hair",
+   "translations": [
+    "волосы"
+   ]
+  },
+  {
+   "id": 500,
+   "word": "eye",
+   "translations": [
+    "глаз"
+   ]
+  },
+  {
+   "id": 501,
+   "word": "ear",
+   "translations": [
+    "ухо"
+   ]
+  },
+  {
+   "id": 502,
+   "word": "nose",
+   "translations": [
+    "нос"
+   ]
+  },
+  {
+   "id": 503,
+   "word": "mouth",
+   "translations": [
+    "рот"
+   ]
+  },
+  {
+   "id": 504,
+   "word": "tooth",
+   "translations": [
+    "зуб"
+   ]
+  },
+  {
+   "id": 505,
+   "word": "tongue",
+   "translations": [
+    "язык"
+   ],
+   "note": "орган"
+  },
+  {
+   "id": 506,
+   "word": "lip",
+   "translations": [
+    "губа"
+   ]
+  },
+  {
+   "id": 507,
+   "word": "neck",
+   "translations": [
+    "шея"
+   ]
+  },
+  {
+   "id": 508,
+   "word": "shoulder",
+   "translations": [
+    "плечо"
+   ]
+  },
+  {
+   "id": 509,
+   "word": "arm",
+   "translations": [
+    "рука"
+   ],
+   "note": "от плеча"
+  },
+  {
+   "id": 510,
+   "word": "hand",
+   "translations": [
+    "рука"
+   ],
+   "note": "кисть"
+  },
+  {
+   "id": 511,
+   "word": "finger",
+   "translations": [
+    "палец"
+   ],
+   "note": "руки"
+  },
+  {
+   "id": 512,
+   "word": "thumb",
+   "translations": [
+    "большой палец"
+   ]
+  },
+  {
+   "id": 513,
+   "word": "leg",
+   "translations": [
+    "нога"
+   ]
+  },
+  {
+   "id": 514,
+   "word": "foot",
+   "translations": [
+    "ступня",
+    "нога"
+   ]
+  },
+  {
+   "id": 515,
+   "word": "toe",
+   "translations": [
+    "палец"
+   ],
+   "note": "ноги"
+  },
+  {
+   "id": 516,
+   "word": "knee",
+   "translations": [
+    "колено"
+   ]
+  },
+  {
+   "id": 517,
+   "word": "back",
+   "translations": [
+    "спина"
+   ]
+  },
+  {
+   "id": 518,
+   "word": "chest",
+   "translations": [
+    "грудь",
+    "сундук"
+   ]
+  },
+  {
+   "id": 519,
+   "word": "stomach",
+   "translations": [
+    "живот",
+    "желудок"
+   ]
+  },
+  {
+   "id": 520,
+   "word": "heart",
+   "translations": [
+    "сердце"
+   ]
+  },
+  {
+   "id": 521,
+   "word": "brain",
+   "translations": [
+    "мозг"
+   ]
+  },
+  {
+   "id": 522,
+   "word": "blood",
+   "translations": [
+    "кровь"
+   ]
+  },
+  {
+   "id": 523,
+   "word": "bone",
+   "translations": [
+    "кость"
+   ]
+  },
+  {
+   "id": 524,
+   "word": "skin",
+   "translations": [
+    "кожа"
+   ]
+  },
+  {
+   "id": 525,
+   "word": "muscle",
+   "translations": [
+    "мышца"
+   ]
+  },
+  {
+   "id": 526,
+   "word": "voice",
+   "translations": [
+    "голос"
+   ]
+  },
+  {
+   "id": 527,
+   "word": "breath",
+   "translations": [
+    "дыхание"
+   ]
+  },
+  {
+   "id": 528,
+   "word": "time",
+   "translations": [
+    "время"
+   ]
+  },
+  {
+   "id": 529,
+   "word": "moment",
+   "translations": [
+    "момент"
+   ]
+  },
+  {
+   "id": 530,
+   "word": "second",
+   "translations": [
+    "секунда"
+   ]
+  },
+  {
+   "id": 531,
+   "word": "minute",
+   "translations": [
+    "минута"
+   ]
+  },
+  {
+   "id": 532,
+   "word": "hour",
+   "translations": [
+    "час"
+   ]
+  },
+  {
+   "id": 533,
+   "word": "day",
+   "translations": [
+    "день"
+   ]
+  },
+  {
+   "id": 534,
+   "word": "night",
+   "translations": [
+    "ночь"
+   ]
+  },
+  {
+   "id": 535,
+   "word": "morning",
+   "translations": [
+    "утро"
+   ]
+  },
+  {
+   "id": 536,
+   "word": "afternoon",
+   "translations": [
+    "день"
+   ],
+   "note": "после полудня"
+  },
+  {
+   "id": 537,
+   "word": "evening",
+   "translations": [
+    "вечер"
+   ]
+  },
+  {
+   "id": 538,
+   "word": "midnight",
+   "translations": [
+    "полночь"
+   ]
+  },
+  {
+   "id": 539,
+   "word": "noon",
+   "translations": [
+    "полдень"
+   ]
+  },
+  {
+   "id": 540,
+   "word": "week",
+   "translations": [
+    "неделя"
+   ]
+  },
+  {
+   "id": 541,
+   "word": "weekend",
+   "translations": [
+    "выходные"
+   ]
+  },
+  {
+   "id": 542,
+   "word": "month",
+   "translations": [
+    "месяц"
+   ]
+  },
+  {
+   "id": 543,
+   "word": "year",
+   "translations": [
+    "год"
+   ]
+  },
+  {
+   "id": 544,
+   "word": "decade",
+   "translations": [
+    "десятилетие"
+   ]
+  },
+  {
+   "id": 545,
+   "word": "century",
+   "translations": [
+    "век",
+    "столетие"
+   ]
+  },
+  {
+   "id": 546,
+   "word": "today",
+   "translations": [
+    "сегодня"
+   ]
+  },
+  {
+   "id": 547,
+   "word": "tomorrow",
+   "translations": [
+    "завтра"
+   ]
+  },
+  {
+   "id": 548,
+   "word": "yesterday",
+   "translations": [
+    "вчера"
+   ]
+  },
+  {
+   "id": 549,
+   "word": "tonight",
+   "translations": [
+    "сегодня вечером"
+   ]
+  },
+  {
+   "id": 550,
+   "word": "date",
+   "translations": [
+    "дата",
+    "свидание"
+   ]
+  },
+  {
+   "id": 551,
+   "word": "schedule",
+   "translations": [
+    "расписание",
+    "график"
+   ]
+  },
+  {
+   "id": 552,
+   "word": "future",
+   "translations": [
+    "будущее"
+   ]
+  },
+  {
+   "id": 553,
+   "word": "past",
+   "translations": [
+    "прошлое"
+   ]
+  },
+  {
+   "id": 554,
+   "word": "present",
+   "translations": [
+    "настоящее",
+    "подарок"
+   ]
+  },
+  {
+   "id": 555,
+   "word": "history",
+   "translations": [
+    "история"
+   ]
+  },
+  {
+   "id": 556,
+   "word": "Monday",
+   "translations": [
+    "понедельник"
+   ]
+  },
+  {
+   "id": 557,
+   "word": "Tuesday",
+   "translations": [
+    "вторник"
+   ]
+  },
+  {
+   "id": 558,
+   "word": "Wednesday",
+   "translations": [
+    "среда"
+   ]
+  },
+  {
+   "id": 559,
+   "word": "Thursday",
+   "translations": [
+    "четверг"
+   ]
+  },
+  {
+   "id": 560,
+   "word": "Friday",
+   "translations": [
+    "пятница"
+   ]
+  },
+  {
+   "id": 561,
+   "word": "Saturday",
+   "translations": [
+    "суббота"
+   ]
+  },
+  {
+   "id": 562,
+   "word": "Sunday",
+   "translations": [
+    "воскресенье"
+   ]
+  },
+  {
+   "id": 563,
+   "word": "January",
+   "translations": [
+    "январь"
+   ]
+  },
+  {
+   "id": 564,
+   "word": "February",
+   "translations": [
+    "февраль"
+   ]
+  },
+  {
+   "id": 565,
+   "word": "March",
+   "translations": [
+    "март"
+   ]
+  },
+  {
+   "id": 566,
+   "word": "April",
+   "translations": [
+    "апрель"
+   ]
+  },
+  {
+   "id": 567,
+   "word": "June",
+   "translations": [
+    "июнь"
+   ]
+  },
+  {
+   "id": 568,
+   "word": "July",
+   "translations": [
+    "июль"
+   ]
+  },
+  {
+   "id": 569,
+   "word": "August",
+   "translations": [
+    "август"
+   ]
+  },
+  {
+   "id": 570,
+   "word": "September",
+   "translations": [
+    "сентябрь"
+   ]
+  },
+  {
+   "id": 571,
+   "word": "October",
+   "translations": [
+    "октябрь"
+   ]
+  },
+  {
+   "id": 572,
+   "word": "November",
+   "translations": [
+    "ноябрь"
+   ]
+  },
+  {
+   "id": 573,
+   "word": "December",
+   "translations": [
+    "декабрь"
+   ]
+  },
+  {
+   "id": 574,
+   "word": "season",
+   "translations": [
+    "сезон",
+    "время года"
+   ]
+  },
+  {
+   "id": 575,
+   "word": "spring",
+   "translations": [
+    "весна",
+    "пружина"
+   ]
+  },
+  {
+   "id": 576,
+   "word": "summer",
+   "translations": [
+    "лето"
+   ]
+  },
+  {
+   "id": 577,
+   "word": "autumn",
+   "translations": [
+    "осень"
+   ]
+  },
+  {
+   "id": 578,
+   "word": "winter",
+   "translations": [
+    "зима"
+   ]
+  },
+  {
+   "id": 579,
+   "word": "nature",
+   "translations": [
+    "природа"
+   ]
+  },
+  {
+   "id": 580,
+   "word": "world",
+   "translations": [
+    "мир"
+   ]
+  },
+  {
+   "id": 581,
+   "word": "earth",
+   "translations": [
+    "земля"
+   ],
+   "note": "планета"
+  },
+  {
+   "id": 582,
+   "word": "ground",
+   "translations": [
+    "земля",
+    "грунт"
+   ]
+  },
+  {
+   "id": 583,
+   "word": "land",
+   "translations": [
+    "земля",
+    "суша"
+   ]
+  },
+  {
+   "id": 584,
+   "word": "sky",
+   "translations": [
+    "небо"
+   ]
+  },
+  {
+   "id": 585,
+   "word": "sun",
+   "translations": [
+    "солнце"
+   ]
+  },
+  {
+   "id": 586,
+   "word": "moon",
+   "translations": [
+    "луна"
+   ]
+  },
+  {
+   "id": 587,
+   "word": "star",
+   "translations": [
+    "звезда"
+   ]
+  },
+  {
+   "id": 588,
+   "word": "planet",
+   "translations": [
+    "планета"
+   ]
+  },
+  {
+   "id": 589,
+   "word": "space",
+   "translations": [
+    "космос",
+    "пространство"
+   ]
+  },
+  {
+   "id": 590,
+   "word": "air",
+   "translations": [
+    "воздух"
+   ]
+  },
+  {
+   "id": 591,
+   "word": "wind",
+   "translations": [
+    "ветер"
+   ]
+  },
+  {
+   "id": 592,
+   "word": "water",
+   "translations": [
+    "вода"
+   ]
+  },
+  {
+   "id": 593,
+   "word": "fire",
+   "translations": [
+    "огонь"
+   ]
+  },
+  {
+   "id": 594,
+   "word": "rain",
+   "translations": [
+    "дождь"
+   ]
+  },
+  {
+   "id": 595,
+   "word": "snow",
+   "translations": [
+    "снег"
+   ]
+  },
+  {
+   "id": 596,
+   "word": "ice",
+   "translations": [
+    "лёд"
+   ]
+  },
+  {
+   "id": 597,
+   "word": "storm",
+   "translations": [
+    "буря",
+    "шторм"
+   ]
+  },
+  {
+   "id": 598,
+   "word": "cloud",
+   "translations": [
+    "облако"
+   ]
+  },
+  {
+   "id": 599,
+   "word": "weather",
+   "translations": [
+    "погода"
+   ]
+  },
+  {
+   "id": 600,
+   "word": "climate",
+   "translations": [
+    "климат"
+   ]
+  },
+  {
+   "id": 601,
+   "word": "heat",
+   "translations": [
+    "жара",
+    "тепло"
+   ]
+  },
+  {
+   "id": 602,
+   "word": "light",
+   "translations": [
+    "свет",
+    "лёгкий"
+   ]
+  },
+  {
+   "id": 603,
+   "word": "dark",
+   "translations": [
+    "темнота",
+    "тёмный"
+   ]
+  },
+  {
+   "id": 604,
+   "word": "shadow",
+   "translations": [
+    "тень"
+   ]
+  },
+  {
+   "id": 605,
+   "word": "sea",
+   "translations": [
+    "море"
+   ]
+  },
+  {
+   "id": 606,
+   "word": "ocean",
+   "translations": [
+    "океан"
+   ]
+  },
+  {
+   "id": 607,
+   "word": "lake",
+   "translations": [
+    "озеро"
+   ]
+  },
+  {
+   "id": 608,
+   "word": "river",
+   "translations": [
+    "река"
+   ]
+  },
+  {
+   "id": 609,
+   "word": "beach",
+   "translations": [
+    "пляж"
+   ]
+  },
+  {
+   "id": 610,
+   "word": "island",
+   "translations": [
+    "остров"
+   ]
+  },
+  {
+   "id": 611,
+   "word": "mountain",
+   "translations": [
+    "гора"
+   ]
+  },
+  {
+   "id": 612,
+   "word": "hill",
+   "translations": [
+    "холм"
+   ]
+  },
+  {
+   "id": 613,
+   "word": "valley",
+   "translations": [
+    "долина"
+   ]
+  },
+  {
+   "id": 614,
+   "word": "forest",
+   "translations": [
+    "лес"
+   ]
+  },
+  {
+   "id": 615,
+   "word": "tree",
+   "translations": [
+    "дерево"
+   ]
+  },
+  {
+   "id": 616,
+   "word": "flower",
+   "translations": [
+    "цветок"
+   ]
+  },
+  {
+   "id": 617,
+   "word": "grass",
+   "translations": [
+    "трава"
+   ]
+  },
+  {
+   "id": 618,
+   "word": "leaf",
+   "translations": [
+    "лист"
+   ]
+  },
+  {
+   "id": 619,
+   "word": "seed",
+   "translations": [
+    "семя"
+   ]
+  },
+  {
+   "id": 620,
+   "word": "wood",
+   "translations": [
+    "дерево",
+    "лес"
+   ],
+   "note": "материал"
+  },
+  {
+   "id": 621,
+   "word": "stone",
+   "translations": [
+    "камень"
+   ]
+  },
+  {
+   "id": 622,
+   "word": "rock",
+   "translations": [
+    "скала",
+    "камень"
+   ]
+  },
+  {
+   "id": 623,
+   "word": "sand",
+   "translations": [
+    "песок"
+   ]
+  },
+  {
+   "id": 624,
+   "word": "soil",
+   "translations": [
+    "почва"
+   ]
+  },
+  {
+   "id": 625,
+   "word": "field",
+   "translations": [
+    "поле"
+   ]
+  },
+  {
+   "id": 626,
+   "word": "garden",
+   "translations": [
+    "сад"
+   ]
+  },
+  {
+   "id": 627,
+   "word": "animal",
+   "translations": [
+    "животное"
+   ]
+  },
+  {
+   "id": 628,
+   "word": "dog",
+   "translations": [
+    "собака"
+   ]
+  },
+  {
+   "id": 629,
+   "word": "cat",
+   "translations": [
+    "кошка"
+   ]
+  },
+  {
+   "id": 630,
+   "word": "horse",
+   "translations": [
+    "лошадь"
+   ]
+  },
+  {
+   "id": 631,
+   "word": "cow",
+   "translations": [
+    "корова"
+   ]
+  },
+  {
+   "id": 632,
+   "word": "pig",
+   "translations": [
+    "свинья"
+   ]
+  },
+  {
+   "id": 633,
+   "word": "sheep",
+   "translations": [
+    "овца"
+   ]
+  },
+  {
+   "id": 634,
+   "word": "chicken",
+   "translations": [
+    "курица"
+   ]
+  },
+  {
+   "id": 635,
+   "word": "bird",
+   "translations": [
+    "птица"
+   ]
+  },
+  {
+   "id": 636,
+   "word": "fish",
+   "translations": [
+    "рыба"
+   ]
+  },
+  {
+   "id": 637,
+   "word": "snake",
+   "translations": [
+    "змея"
+   ]
+  },
+  {
+   "id": 638,
+   "word": "bear",
+   "translations": [
+    "медведь"
+   ]
+  },
+  {
+   "id": 639,
+   "word": "lion",
+   "translations": [
+    "лев"
+   ]
+  },
+  {
+   "id": 640,
+   "word": "tiger",
+   "translations": [
+    "тигр"
+   ]
+  },
+  {
+   "id": 641,
+   "word": "elephant",
+   "translations": [
+    "слон"
+   ]
+  },
+  {
+   "id": 642,
+   "word": "monkey",
+   "translations": [
+    "обезьяна"
+   ]
+  },
+  {
+   "id": 643,
+   "word": "rabbit",
+   "translations": [
+    "кролик"
+   ]
+  },
+  {
+   "id": 644,
+   "word": "mouse",
+   "translations": [
+    "мышь"
+   ]
+  },
+  {
+   "id": 645,
+   "word": "insect",
+   "translations": [
+    "насекомое"
+   ]
+  },
+  {
+   "id": 646,
+   "word": "bee",
+   "translations": [
+    "пчела"
+   ]
+  },
+  {
+   "id": 647,
+   "word": "spider",
+   "translations": [
+    "паук"
+   ]
+  },
+  {
+   "id": 648,
+   "word": "wing",
+   "translations": [
+    "крыло"
+   ]
+  },
+  {
+   "id": 649,
+   "word": "tail",
+   "translations": [
+    "хвост"
+   ]
+  },
+  {
+   "id": 650,
+   "word": "home",
+   "translations": [
+    "дом",
+    "домой"
+   ]
+  },
+  {
+   "id": 651,
+   "word": "house",
+   "translations": [
+    "дом"
+   ],
+   "note": "здание"
+  },
+  {
+   "id": 652,
+   "word": "apartment",
+   "translations": [
+    "квартира"
+   ]
+  },
+  {
+   "id": 653,
+   "word": "room",
+   "translations": [
+    "комната"
+   ]
+  },
+  {
+   "id": 654,
+   "word": "kitchen",
+   "translations": [
+    "кухня"
+   ]
+  },
+  {
+   "id": 655,
+   "word": "bedroom",
+   "translations": [
+    "спальня"
+   ]
+  },
+  {
+   "id": 656,
+   "word": "bathroom",
+   "translations": [
+    "ванная",
+    "туалет"
+   ]
+  },
+  {
+   "id": 657,
+   "word": "door",
+   "translations": [
+    "дверь"
+   ]
+  },
+  {
+   "id": 658,
+   "word": "window",
+   "translations": [
+    "окно"
+   ]
+  },
+  {
+   "id": 659,
+   "word": "wall",
+   "translations": [
+    "стена"
+   ]
+  },
+  {
+   "id": 660,
+   "word": "floor",
+   "translations": [
+    "пол",
+    "этаж"
+   ]
+  },
+  {
+   "id": 661,
+   "word": "ceiling",
+   "translations": [
+    "потолок"
+   ]
+  },
+  {
+   "id": 662,
+   "word": "roof",
+   "translations": [
+    "крыша"
+   ]
+  },
+  {
+   "id": 663,
+   "word": "stair",
+   "translations": [
+    "ступенька",
+    "лестница"
+   ]
+  },
+  {
+   "id": 664,
+   "word": "gate",
+   "translations": [
+    "ворота",
+    "калитка"
+   ]
+  },
+  {
+   "id": 665,
+   "word": "yard",
+   "translations": [
+    "двор"
+   ]
+  },
+  {
+   "id": 666,
+   "word": "furniture",
+   "translations": [
+    "мебель"
+   ]
+  },
+  {
+   "id": 667,
+   "word": "table",
+   "translations": [
+    "стол"
+   ]
+  },
+  {
+   "id": 668,
+   "word": "chair",
+   "translations": [
+    "стул"
+   ]
+  },
+  {
+   "id": 669,
+   "word": "bed",
+   "translations": [
+    "кровать"
+   ]
+  },
+  {
+   "id": 670,
+   "word": "sofa",
+   "translations": [
+    "диван"
+   ]
+  },
+  {
+   "id": 671,
+   "word": "desk",
+   "translations": [
+    "письменный стол"
+   ]
+  },
+  {
+   "id": 672,
+   "word": "shelf",
+   "translations": [
+    "полка"
+   ]
+  },
+  {
+   "id": 673,
+   "word": "lamp",
+   "translations": [
+    "лампа"
+   ]
+  },
+  {
+   "id": 674,
+   "word": "mirror",
+   "translations": [
+    "зеркало"
+   ]
+  },
+  {
+   "id": 675,
+   "word": "clock",
+   "translations": [
+    "часы"
+   ],
+   "note": "настенные"
+  },
+  {
+   "id": 676,
+   "word": "key",
+   "translations": [
+    "ключ"
+   ]
+  },
+  {
+   "id": 677,
+   "word": "lock",
+   "translations": [
+    "замок"
+   ]
+  },
+  {
+   "id": 678,
+   "word": "box",
+   "translations": [
+    "коробка",
+    "ящик"
+   ]
+  },
+  {
+   "id": 679,
+   "word": "bag",
+   "translations": [
+    "сумка",
+    "пакет"
+   ]
+  },
+  {
+   "id": 680,
+   "word": "bottle",
+   "translations": [
+    "бутылка"
+   ]
+  },
+  {
+   "id": 681,
+   "word": "cup",
+   "translations": [
+    "чашка"
+   ]
+  },
+  {
+   "id": 682,
+   "word": "glass",
+   "translations": [
+    "стакан",
+    "стекло"
+   ]
+  },
+  {
+   "id": 683,
+   "word": "plate",
+   "translations": [
+    "тарелка"
+   ]
+  },
+  {
+   "id": 684,
+   "word": "bowl",
+   "translations": [
+    "миска"
+   ]
+  },
+  {
+   "id": 685,
+   "word": "knife",
+   "translations": [
+    "нож"
+   ]
+  },
+  {
+   "id": 686,
+   "word": "fork",
+   "translations": [
+    "вилка"
+   ]
+  },
+  {
+   "id": 687,
+   "word": "spoon",
+   "translations": [
+    "ложка"
+   ]
+  },
+  {
+   "id": 688,
+   "word": "pot",
+   "translations": [
+    "горшок",
+    "кастрюля"
+   ]
+  },
+  {
+   "id": 689,
+   "word": "pan",
+   "translations": [
+    "сковорода"
+   ]
+  },
+  {
+   "id": 690,
+   "word": "towel",
+   "translations": [
+    "полотенце"
+   ]
+  },
+  {
+   "id": 691,
+   "word": "soap",
+   "translations": [
+    "мыло"
+   ]
+  },
+  {
+   "id": 692,
+   "word": "brush",
+   "translations": [
+    "щётка",
+    "кисть"
+   ]
+  },
+  {
+   "id": 693,
+   "word": "blanket",
+   "translations": [
+    "одеяло"
+   ]
+  },
+  {
+   "id": 694,
+   "word": "pillow",
+   "translations": [
+    "подушка"
+   ]
+  },
+  {
+   "id": 695,
+   "word": "food",
+   "translations": [
+    "еда"
+   ]
+  },
+  {
+   "id": 696,
+   "word": "meal",
+   "translations": [
+    "приём пищи"
+   ]
+  },
+  {
+   "id": 697,
+   "word": "breakfast",
+   "translations": [
+    "завтрак"
+   ]
+  },
+  {
+   "id": 698,
+   "word": "lunch",
+   "translations": [
+    "обед"
+   ]
+  },
+  {
+   "id": 699,
+   "word": "dinner",
+   "translations": [
+    "ужин"
+   ]
+  },
+  {
+   "id": 700,
+   "word": "bread",
+   "translations": [
+    "хлеб"
+   ]
+  },
+  {
+   "id": 701,
+   "word": "rice",
+   "translations": [
+    "рис"
+   ]
+  },
+  {
+   "id": 702,
+   "word": "meat",
+   "translations": [
+    "мясо"
+   ]
+  },
+  {
+   "id": 703,
+   "word": "beef",
+   "translations": [
+    "говядина"
+   ]
+  },
+  {
+   "id": 704,
+   "word": "egg",
+   "translations": [
+    "яйцо"
+   ]
+  },
+  {
+   "id": 705,
+   "word": "milk",
+   "translations": [
+    "молоко"
+   ]
+  },
+  {
+   "id": 706,
+   "word": "cheese",
+   "translations": [
+    "сыр"
+   ]
+  },
+  {
+   "id": 707,
+   "word": "butter",
+   "translations": [
+    "масло"
+   ],
+   "note": "сливочное"
+  },
+  {
+   "id": 708,
+   "word": "sugar",
+   "translations": [
+    "сахар"
+   ]
+  },
+  {
+   "id": 709,
+   "word": "salt",
+   "translations": [
+    "соль"
+   ]
+  },
+  {
+   "id": 710,
+   "word": "pepper",
+   "translations": [
+    "перец"
+   ]
+  },
+  {
+   "id": 711,
+   "word": "oil",
+   "translations": [
+    "масло",
+    "нефть"
+   ]
+  },
+  {
+   "id": 712,
+   "word": "soup",
+   "translations": [
+    "суп"
+   ]
+  },
+  {
+   "id": 713,
+   "word": "salad",
+   "translations": [
+    "салат"
+   ]
+  },
+  {
+   "id": 714,
+   "word": "fruit",
+   "translations": [
+    "фрукт"
+   ]
+  },
+  {
+   "id": 715,
+   "word": "apple",
+   "translations": [
+    "яблоко"
+   ]
+  },
+  {
+   "id": 716,
+   "word": "banana",
+   "translations": [
+    "банан"
+   ]
+  },
+  {
+   "id": 717,
+   "word": "orange",
+   "translations": [
+    "апельсин",
+    "оранжевый"
+   ]
+  },
+  {
+   "id": 718,
+   "word": "lemon",
+   "translations": [
+    "лимон"
+   ]
+  },
+  {
+   "id": 719,
+   "word": "grape",
+   "translations": [
+    "виноград"
+   ]
+  },
+  {
+   "id": 720,
+   "word": "vegetable",
+   "translations": [
+    "овощ"
+   ]
+  },
+  {
+   "id": 721,
+   "word": "potato",
+   "translations": [
+    "картофель"
+   ]
+  },
+  {
+   "id": 722,
+   "word": "tomato",
+   "translations": [
+    "помидор"
+   ]
+  },
+  {
+   "id": 723,
+   "word": "onion",
+   "translations": [
+    "лук"
+   ]
+  },
+  {
+   "id": 724,
+   "word": "carrot",
+   "translations": [
+    "морковь"
+   ]
+  },
+  {
+   "id": 725,
+   "word": "bean",
+   "translations": [
+    "боб",
+    "фасоль"
+   ]
+  },
+  {
+   "id": 726,
+   "word": "corn",
+   "translations": [
+    "кукуруза"
+   ]
+  },
+  {
+   "id": 727,
+   "word": "cake",
+   "translations": [
+    "торт",
+    "пирог"
+   ]
+  },
+  {
+   "id": 728,
+   "word": "cookie",
+   "translations": [
+    "печенье"
+   ]
+  },
+  {
+   "id": 729,
+   "word": "candy",
+   "translations": [
+    "конфета"
+   ]
+  },
+  {
+   "id": 730,
+   "word": "chocolate",
+   "translations": [
+    "шоколад"
+   ]
+  },
+  {
+   "id": 731,
+   "word": "ice cream",
+   "translations": [
+    "мороженое"
+   ]
+  },
+  {
+   "id": 732,
+   "word": "coffee",
+   "translations": [
+    "кофе"
+   ]
+  },
+  {
+   "id": 733,
+   "word": "tea",
+   "translations": [
+    "чай"
+   ]
+  },
+  {
+   "id": 734,
+   "word": "juice",
+   "translations": [
+    "сок"
+   ]
+  },
+  {
+   "id": 735,
+   "word": "wine",
+   "translations": [
+    "вино"
+   ]
+  },
+  {
+   "id": 736,
+   "word": "beer",
+   "translations": [
+    "пиво"
+   ]
+  },
+  {
+   "id": 737,
+   "word": "snack",
+   "translations": [
+    "перекус",
+    "закуска"
+   ]
+  },
+  {
+   "id": 738,
+   "word": "dish",
+   "translations": [
+    "блюдо",
+    "тарелка"
+   ]
+  },
+  {
+   "id": 739,
+   "word": "menu",
+   "translations": [
+    "меню"
+   ]
+  },
+  {
+   "id": 740,
+   "word": "taste",
+   "translations": [
+    "вкус",
+    "пробовать"
+   ]
+  },
+  {
+   "id": 741,
+   "word": "clothes",
+   "translations": [
+    "одежда"
+   ]
+  },
+  {
+   "id": 742,
+   "word": "shirt",
+   "translations": [
+    "рубашка"
+   ]
+  },
+  {
+   "id": 743,
+   "word": "pants",
+   "translations": [
+    "брюки",
+    "штаны"
+   ]
+  },
+  {
+   "id": 744,
+   "word": "skirt",
+   "translations": [
+    "юбка"
+   ]
+  },
+  {
+   "id": 745,
+   "word": "coat",
+   "translations": [
+    "пальто"
+   ]
+  },
+  {
+   "id": 746,
+   "word": "jacket",
+   "translations": [
+    "куртка",
+    "пиджак"
+   ]
+  },
+  {
+   "id": 747,
+   "word": "sweater",
+   "translations": [
+    "свитер"
+   ]
+  },
+  {
+   "id": 748,
+   "word": "hat",
+   "translations": [
+    "шляпа",
+    "шапка"
+   ]
+  },
+  {
+   "id": 749,
+   "word": "cap",
+   "translations": [
+    "кепка"
+   ]
+  },
+  {
+   "id": 750,
+   "word": "glove",
+   "translations": [
+    "перчатка"
+   ]
+  },
+  {
+   "id": 751,
+   "word": "scarf",
+   "translations": [
+    "шарф"
+   ]
+  },
+  {
+   "id": 752,
+   "word": "sock",
+   "translations": [
+    "носок"
+   ]
+  },
+  {
+   "id": 753,
+   "word": "shoe",
+   "translations": [
+    "туфля",
+    "ботинок"
+   ]
+  },
+  {
+   "id": 754,
+   "word": "boot",
+   "translations": [
+    "сапог",
+    "ботинок"
+   ]
+  },
+  {
+   "id": 755,
+   "word": "belt",
+   "translations": [
+    "ремень"
+   ]
+  },
+  {
+   "id": 756,
+   "word": "button",
+   "translations": [
+    "пуговица",
+    "кнопка"
+   ]
+  },
+  {
+   "id": 757,
+   "word": "pocket",
+   "translations": [
+    "карман"
+   ]
+  },
+  {
+   "id": 758,
+   "word": "jeans",
+   "translations": [
+    "джинсы"
+   ]
+  },
+  {
+   "id": 759,
+   "word": "uniform",
+   "translations": [
+    "форма",
+    "униформа"
+   ]
+  },
+  {
+   "id": 760,
+   "word": "ring",
+   "translations": [
+    "кольцо",
+    "звонить"
+   ]
+  },
+  {
+   "id": 761,
+   "word": "glasses",
+   "translations": [
+    "очки"
+   ]
+  },
+  {
+   "id": 762,
+   "word": "umbrella",
+   "translations": [
+    "зонт"
+   ]
+  },
+  {
+   "id": 763,
+   "word": "car",
+   "translations": [
+    "машина",
+    "автомобиль"
+   ]
+  },
+  {
+   "id": 764,
+   "word": "bus",
+   "translations": [
+    "автобус"
+   ]
+  },
+  {
+   "id": 765,
+   "word": "train",
+   "translations": [
+    "поезд",
+    "тренировать"
+   ]
+  },
+  {
+   "id": 766,
+   "word": "plane",
+   "translations": [
+    "самолёт"
+   ]
+  },
+  {
+   "id": 767,
+   "word": "airplane",
+   "translations": [
+    "самолёт"
+   ]
+  },
+  {
+   "id": 768,
+   "word": "ship",
+   "translations": [
+    "корабль"
+   ]
+  },
+  {
+   "id": 769,
+   "word": "boat",
+   "translations": [
+    "лодка"
+   ]
+  },
+  {
+   "id": 770,
+   "word": "bike",
+   "translations": [
+    "велосипед"
+   ]
+  },
+  {
+   "id": 771,
+   "word": "bicycle",
+   "translations": [
+    "велосипед"
+   ]
+  },
+  {
+   "id": 772,
+   "word": "motorcycle",
+   "translations": [
+    "мотоцикл"
+   ]
+  },
+  {
+   "id": 773,
+   "word": "truck",
+   "translations": [
+    "грузовик"
+   ]
+  },
+  {
+   "id": 774,
+   "word": "taxi",
+   "translations": [
+    "такси"
+   ]
+  },
+  {
+   "id": 775,
+   "word": "subway",
+   "translations": [
+    "метро"
+   ]
+  },
+  {
+   "id": 776,
+   "word": "wheel",
+   "translations": [
+    "колесо"
+   ]
+  },
+  {
+   "id": 777,
+   "word": "engine",
+   "translations": [
+    "двигатель"
+   ]
+  },
+  {
+   "id": 778,
+   "word": "road",
+   "translations": [
+    "дорога"
+   ]
+  },
+  {
+   "id": 779,
+   "word": "street",
+   "translations": [
+    "улица"
+   ]
+  },
+  {
+   "id": 780,
+   "word": "highway",
+   "translations": [
+    "шоссе"
+   ]
+  },
+  {
+   "id": 781,
+   "word": "bridge",
+   "translations": [
+    "мост"
+   ]
+  },
+  {
+   "id": 782,
+   "word": "path",
+   "translations": [
+    "тропа",
+    "путь"
+   ]
+  },
+  {
+   "id": 783,
+   "word": "track",
+   "translations": [
+    "путь",
+    "след"
+   ]
+  },
+  {
+   "id": 784,
+   "word": "station",
+   "translations": [
+    "станция",
+    "вокзал"
+   ]
+  },
+  {
+   "id": 785,
+   "word": "airport",
+   "translations": [
+    "аэропорт"
+   ]
+  },
+  {
+   "id": 786,
+   "word": "port",
+   "translations": [
+    "порт"
+   ]
+  },
+  {
+   "id": 787,
+   "word": "trip",
+   "translations": [
+    "поездка"
+   ]
+  },
+  {
+   "id": 788,
+   "word": "journey",
+   "translations": [
+    "путешествие"
+   ]
+  },
+  {
+   "id": 789,
+   "word": "tour",
+   "translations": [
+    "тур",
+    "экскурсия"
+   ]
+  },
+  {
+   "id": 790,
+   "word": "ticket",
+   "translations": [
+    "билет"
+   ]
+  },
+  {
+   "id": 791,
+   "word": "map",
+   "translations": [
+    "карта"
+   ]
+  },
+  {
+   "id": 792,
+   "word": "flight",
+   "translations": [
+    "рейс",
+    "полёт"
+   ]
+  },
+  {
+   "id": 793,
+   "word": "traffic",
+   "translations": [
+    "движение",
+    "трафик"
+   ]
+  },
+  {
+   "id": 794,
+   "word": "fuel",
+   "translations": [
+    "топливо"
+   ]
+  },
+  {
+   "id": 795,
+   "word": "gas",
+   "translations": [
+    "газ",
+    "бензин"
+   ]
+  },
+  {
+   "id": 796,
+   "word": "city",
+   "translations": [
+    "город"
+   ]
+  },
+  {
+   "id": 797,
+   "word": "town",
+   "translations": [
+    "город"
+   ],
+   "note": "ок"
+  },
+  {
+   "id": 798,
+   "word": "village",
+   "translations": [
+    "деревня"
+   ]
+  },
+  {
+   "id": 799,
+   "word": "country",
+   "translations": [
+    "страна",
+    "деревня"
+   ]
+  },
+  {
+   "id": 800,
+   "word": "state",
+   "translations": [
+    "штат",
+    "состояние"
+   ]
+  },
+  {
+   "id": 801,
+   "word": "nation",
+   "translations": [
+    "нация",
+    "народ"
+   ]
+  },
+  {
+   "id": 802,
+   "word": "capital",
+   "translations": [
+    "столица",
+    "капитал"
+   ]
+  },
+  {
+   "id": 803,
+   "word": "place",
+   "translations": [
+    "место"
+   ]
+  },
+  {
+   "id": 804,
+   "word": "area",
+   "translations": [
+    "район",
+    "область"
+   ]
+  },
+  {
+   "id": 805,
+   "word": "region",
+   "translations": [
+    "регион"
+   ]
+  },
+  {
+   "id": 806,
+   "word": "location",
+   "translations": [
+    "местоположение"
+   ]
+  },
+  {
+   "id": 807,
+   "word": "center",
+   "translations": [
+    "центр"
+   ]
+  },
+  {
+   "id": 808,
+   "word": "downtown",
+   "translations": [
+    "центр города"
+   ]
+  },
+  {
+   "id": 809,
+   "word": "park",
+   "translations": [
+    "парк"
+   ]
+  },
+  {
+   "id": 810,
+   "word": "square",
+   "translations": [
+    "площадь",
+    "квадрат"
+   ]
+  },
+  {
+   "id": 811,
+   "word": "building",
+   "translations": [
+    "здание"
+   ]
+  },
+  {
+   "id": 812,
+   "word": "tower",
+   "translations": [
+    "башня"
+   ]
+  },
+  {
+   "id": 813,
+   "word": "church",
+   "translations": [
+    "церковь"
+   ]
+  },
+  {
+   "id": 814,
+   "word": "school",
+   "translations": [
+    "школа"
+   ]
+  },
+  {
+   "id": 815,
+   "word": "college",
+   "translations": [
+    "колледж"
+   ]
+  },
+  {
+   "id": 816,
+   "word": "university",
+   "translations": [
+    "университет"
+   ]
+  },
+  {
+   "id": 817,
+   "word": "library",
+   "translations": [
+    "библиотека"
+   ]
+  },
+  {
+   "id": 818,
+   "word": "museum",
+   "translations": [
+    "музей"
+   ]
+  },
+  {
+   "id": 819,
+   "word": "theater",
+   "translations": [
+    "театр"
+   ]
+  },
+  {
+   "id": 820,
+   "word": "cinema",
+   "translations": [
+    "кинотеатр"
+   ]
+  },
+  {
+   "id": 821,
+   "word": "hospital",
+   "translations": [
+    "больница"
+   ]
+  },
+  {
+   "id": 822,
+   "word": "hotel",
+   "translations": [
+    "отель",
+    "гостиница"
+   ]
+  },
+  {
+   "id": 823,
+   "word": "restaurant",
+   "translations": [
+    "ресторан"
+   ]
+  },
+  {
+   "id": 824,
+   "word": "cafe",
+   "translations": [
+    "кафе"
+   ]
+  },
+  {
+   "id": 825,
+   "word": "bar",
+   "translations": [
+    "бар"
+   ]
+  },
+  {
+   "id": 826,
+   "word": "shop",
+   "translations": [
+    "магазин"
+   ]
+  },
+  {
+   "id": 827,
+   "word": "store",
+   "translations": [
+    "магазин"
+   ]
+  },
+  {
+   "id": 828,
+   "word": "market",
+   "translations": [
+    "рынок"
+   ]
+  },
+  {
+   "id": 829,
+   "word": "mall",
+   "translations": [
+    "торговый центр"
+   ]
+  },
+  {
+   "id": 830,
+   "word": "bank",
+   "translations": [
+    "банк",
+    "берег"
+   ]
+  },
+  {
+   "id": 831,
+   "word": "office",
+   "translations": [
+    "офис",
+    "контора"
+   ]
+  },
+  {
+   "id": 832,
+   "word": "factory",
+   "translations": [
+    "фабрика",
+    "завод"
+   ]
+  },
+  {
+   "id": 833,
+   "word": "farm",
+   "translations": [
+    "ферма"
+   ]
+  },
+  {
+   "id": 834,
+   "word": "prison",
+   "translations": [
+    "тюрьма"
+   ]
+  },
+  {
+   "id": 835,
+   "word": "stadium",
+   "translations": [
+    "стадион"
+   ]
+  },
+  {
+   "id": 836,
+   "word": "zoo",
+   "translations": [
+    "зоопарк"
+   ]
+  },
+  {
+   "id": 837,
+   "word": "job",
+   "translations": [
+    "работа",
+    "должность"
+   ]
+  },
+  {
+   "id": 838,
+   "word": "career",
+   "translations": [
+    "карьера"
+   ]
+  },
+  {
+   "id": 839,
+   "word": "business",
+   "translations": [
+    "бизнес",
+    "дело"
+   ]
+  },
+  {
+   "id": 840,
+   "word": "company",
+   "translations": [
+    "компания"
+   ]
+  },
+  {
+   "id": 841,
+   "word": "boss",
+   "translations": [
+    "начальник"
+   ]
+  },
+  {
+   "id": 842,
+   "word": "manager",
+   "translations": [
+    "менеджер",
+    "управляющий"
+   ]
+  },
+  {
+   "id": 843,
+   "word": "worker",
+   "translations": [
+    "рабочий",
+    "работник"
+   ]
+  },
+  {
+   "id": 844,
+   "word": "employee",
+   "translations": [
+    "сотрудник"
+   ]
+  },
+  {
+   "id": 845,
+   "word": "employer",
+   "translations": [
+    "работодатель"
+   ]
+  },
+  {
+   "id": 846,
+   "word": "staff",
+   "translations": [
+    "персонал",
+    "штат"
+   ]
+  },
+  {
+   "id": 847,
+   "word": "colleague",
+   "translations": [
+    "коллега"
+   ]
+  },
+  {
+   "id": 848,
+   "word": "customer",
+   "translations": [
+    "клиент",
+    "покупатель"
+   ]
+  },
+  {
+   "id": 849,
+   "word": "client",
+   "translations": [
+    "клиент"
+   ]
+  },
+  {
+   "id": 850,
+   "word": "meeting",
+   "translations": [
+    "собрание",
+    "встреча"
+   ]
+  },
+  {
+   "id": 851,
+   "word": "project",
+   "translations": [
+    "проект"
+   ]
+  },
+  {
+   "id": 852,
+   "word": "task",
+   "translations": [
+    "задача"
+   ]
+  },
+  {
+   "id": 853,
+   "word": "deadline",
+   "translations": [
+    "крайний срок"
+   ]
+  },
+  {
+   "id": 854,
+   "word": "salary",
+   "translations": [
+    "зарплата"
+   ]
+  },
+  {
+   "id": 855,
+   "word": "money",
+   "translations": [
+    "деньги"
+   ]
+  },
+  {
+   "id": 856,
+   "word": "cash",
+   "translations": [
+    "наличные"
+   ]
+  },
+  {
+   "id": 857,
+   "word": "coin",
+   "translations": [
+    "монета"
+   ]
+  },
+  {
+   "id": 858,
+   "word": "price",
+   "translations": [
+    "цена"
+   ]
+  },
+  {
+   "id": 859,
+   "word": "payment",
+   "translations": [
+    "платёж",
+    "оплата"
+   ]
+  },
+  {
+   "id": 860,
+   "word": "bill",
+   "translations": [
+    "счёт",
+    "купюра"
+   ]
+  },
+  {
+   "id": 861,
+   "word": "debt",
+   "translations": [
+    "долг"
+   ]
+  },
+  {
+   "id": 862,
+   "word": "loan",
+   "translations": [
+    "заём",
+    "кредит"
+   ]
+  },
+  {
+   "id": 863,
+   "word": "tax",
+   "translations": [
+    "налог"
+   ]
+  },
+  {
+   "id": 864,
+   "word": "budget",
+   "translations": [
+    "бюджет"
+   ]
+  },
+  {
+   "id": 865,
+   "word": "profit",
+   "translations": [
+    "прибыль"
+   ]
+  },
+  {
+   "id": 866,
+   "word": "loss",
+   "translations": [
+    "потеря",
+    "убыток"
+   ]
+  },
+  {
+   "id": 867,
+   "word": "income",
+   "translations": [
+    "доход"
+   ]
+  },
+  {
+   "id": 868,
+   "word": "account",
+   "translations": [
+    "счёт",
+    "учётная запись"
+   ]
+  },
+  {
+   "id": 869,
+   "word": "trade",
+   "translations": [
+    "торговля",
+    "торговать"
+   ]
+  },
+  {
+   "id": 870,
+   "word": "economy",
+   "translations": [
+    "экономика"
+   ]
+  },
+  {
+   "id": 871,
+   "word": "industry",
+   "translations": [
+    "промышленность",
+    "отрасль"
+   ]
+  },
+  {
+   "id": 872,
+   "word": "product",
+   "translations": [
+    "продукт",
+    "изделие"
+   ]
+  },
+  {
+   "id": 873,
+   "word": "service",
+   "translations": [
+    "услуга",
+    "служба"
+   ]
+  },
+  {
+   "id": 874,
+   "word": "quality",
+   "translations": [
+    "качество"
+   ]
+  },
+  {
+   "id": 875,
+   "word": "value",
+   "translations": [
+    "ценность",
+    "значение"
+   ]
+  },
+  {
+   "id": 876,
+   "word": "student",
+   "translations": [
+    "студент",
+    "ученик"
+   ]
+  },
+  {
+   "id": 877,
+   "word": "teacher",
+   "translations": [
+    "учитель"
+   ]
+  },
+  {
+   "id": 878,
+   "word": "professor",
+   "translations": [
+    "профессор"
+   ]
+  },
+  {
+   "id": 879,
+   "word": "class",
+   "translations": [
+    "класс",
+    "занятие"
+   ]
+  },
+  {
+   "id": 880,
+   "word": "lesson",
+   "translations": [
+    "урок"
+   ]
+  },
+  {
+   "id": 881,
+   "word": "course",
+   "translations": [
+    "курс",
+    "блюдо"
+   ]
+  },
+  {
+   "id": 882,
+   "word": "subject",
+   "translations": [
+    "предмет",
+    "тема"
+   ]
+  },
+  {
+   "id": 883,
+   "word": "homework",
+   "translations": [
+    "домашнее задание"
+   ]
+  },
+  {
+   "id": 884,
+   "word": "exam",
+   "translations": [
+    "экзамен"
+   ]
+  },
+  {
+   "id": 885,
+   "word": "grade",
+   "translations": [
+    "оценка",
+    "класс"
+   ]
+  },
+  {
+   "id": 886,
+   "word": "degree",
+   "translations": [
+    "степень",
+    "градус"
+   ]
+  },
+  {
+   "id": 887,
+   "word": "knowledge",
+   "translations": [
+    "знание"
+   ]
+  },
+  {
+   "id": 888,
+   "word": "science",
+   "translations": [
+    "наука"
+   ]
+  },
+  {
+   "id": 889,
+   "word": "math",
+   "translations": [
+    "математика"
+   ]
+  },
+  {
+   "id": 890,
+   "word": "geography",
+   "translations": [
+    "география"
+   ]
+  },
+  {
+   "id": 891,
+   "word": "language",
+   "translations": [
+    "язык"
+   ],
+   "note": "речь"
+  },
+  {
+   "id": 892,
+   "word": "word",
+   "translations": [
+    "слово"
+   ]
+  },
+  {
+   "id": 893,
+   "word": "letter",
+   "translations": [
+    "буква",
+    "письмо"
+   ]
+  },
+  {
+   "id": 894,
+   "word": "sentence",
+   "translations": [
+    "предложение",
+    "приговор"
+   ]
+  },
+  {
+   "id": 895,
+   "word": "page",
+   "translations": [
+    "страница"
+   ]
+  },
+  {
+   "id": 896,
+   "word": "book",
+   "translations": [
+    "книга"
+   ]
+  },
+  {
+   "id": 897,
+   "word": "notebook",
+   "translations": [
+    "тетрадь",
+    "ноутбук"
+   ]
+  },
+  {
+   "id": 898,
+   "word": "pen",
+   "translations": [
+    "ручка"
+   ]
+  },
+  {
+   "id": 899,
+   "word": "pencil",
+   "translations": [
+    "карандаш"
+   ]
+  },
+  {
+   "id": 900,
+   "word": "paper",
+   "translations": [
+    "бумага",
+    "газета"
+   ]
+  },
+  {
+   "id": 901,
+   "word": "dictionary",
+   "translations": [
+    "словарь"
+   ]
+  },
+  {
+   "id": 902,
+   "word": "example",
+   "translations": [
+    "пример"
+   ]
+  },
+  {
+   "id": 903,
+   "word": "question",
+   "translations": [
+    "вопрос"
+   ]
+  },
+  {
+   "id": 904,
+   "word": "problem",
+   "translations": [
+    "проблема",
+    "задача"
+   ]
+  },
+  {
+   "id": 905,
+   "word": "idea",
+   "translations": [
+    "идея"
+   ]
+  },
+  {
+   "id": 906,
+   "word": "topic",
+   "translations": [
+    "тема"
+   ]
+  },
+  {
+   "id": 907,
+   "word": "phone",
+   "translations": [
+    "телефон"
+   ]
+  },
+  {
+   "id": 908,
+   "word": "computer",
+   "translations": [
+    "компьютер"
+   ]
+  },
+  {
+   "id": 909,
+   "word": "internet",
+   "translations": [
+    "интернет"
+   ]
+  },
+  {
+   "id": 910,
+   "word": "website",
+   "translations": [
+    "веб-сайт"
+   ]
+  },
+  {
+   "id": 911,
+   "word": "email",
+   "translations": [
+    "электронная почта"
+   ]
+  },
+  {
+   "id": 912,
+   "word": "message",
+   "translations": [
+    "сообщение"
+   ]
+  },
+  {
+   "id": 913,
+   "word": "screen",
+   "translations": [
+    "экран"
+   ]
+  },
+  {
+   "id": 914,
+   "word": "keyboard",
+   "translations": [
+    "клавиатура"
+   ]
+  },
+  {
+   "id": 915,
+   "word": "program",
+   "translations": [
+    "программа"
+   ]
+  },
+  {
+   "id": 916,
+   "word": "software",
+   "translations": [
+    "программное обеспечение"
+   ]
+  },
+  {
+   "id": 917,
+   "word": "app",
+   "translations": [
+    "приложение"
+   ]
+  },
+  {
+   "id": 918,
+   "word": "file",
+   "translations": [
+    "файл"
+   ]
+  },
+  {
+   "id": 919,
+   "word": "data",
+   "translations": [
+    "данные"
+   ]
+  },
+  {
+   "id": 920,
+   "word": "information",
+   "translations": [
+    "информация"
+   ]
+  },
+  {
+   "id": 921,
+   "word": "network",
+   "translations": [
+    "сеть"
+   ]
+  },
+  {
+   "id": 922,
+   "word": "system",
+   "translations": [
+    "система"
+   ]
+  },
+  {
+   "id": 923,
+   "word": "device",
+   "translations": [
+    "устройство"
+   ]
+  },
+  {
+   "id": 924,
+   "word": "machine",
+   "translations": [
+    "машина",
+    "механизм"
+   ]
+  },
+  {
+   "id": 925,
+   "word": "tool",
+   "translations": [
+    "инструмент"
+   ]
+  },
+  {
+   "id": 926,
+   "word": "technology",
+   "translations": [
+    "технология"
+   ]
+  },
+  {
+   "id": 927,
+   "word": "camera",
+   "translations": [
+    "камера",
+    "фотоаппарат"
+   ]
+  },
+  {
+   "id": 928,
+   "word": "photo",
+   "translations": [
+    "фото"
+   ]
+  },
+  {
+   "id": 929,
+   "word": "picture",
+   "translations": [
+    "картинка",
+    "фото"
+   ]
+  },
+  {
+   "id": 930,
+   "word": "image",
+   "translations": [
+    "изображение",
+    "образ"
+   ]
+  },
+  {
+   "id": 931,
+   "word": "video",
+   "translations": [
+    "видео"
+   ]
+  },
+  {
+   "id": 932,
+   "word": "film",
+   "translations": [
+    "фильм",
+    "плёнка"
+   ]
+  },
+  {
+   "id": 933,
+   "word": "movie",
+   "translations": [
+    "фильм",
+    "кино"
+   ]
+  },
+  {
+   "id": 934,
+   "word": "music",
+   "translations": [
+    "музыка"
+   ]
+  },
+  {
+   "id": 935,
+   "word": "song",
+   "translations": [
+    "песня"
+   ]
+  },
+  {
+   "id": 936,
+   "word": "sound",
+   "translations": [
+    "звук"
+   ]
+  },
+  {
+   "id": 937,
+   "word": "noise",
+   "translations": [
+    "шум"
+   ]
+  },
+  {
+   "id": 938,
+   "word": "news",
+   "translations": [
+    "новости"
+   ]
+  },
+  {
+   "id": 939,
+   "word": "media",
+   "translations": [
+    "СМИ",
+    "медиа"
+   ]
+  },
+  {
+   "id": 940,
+   "word": "newspaper",
+   "translations": [
+    "газета"
+   ]
+  },
+  {
+   "id": 941,
+   "word": "magazine",
+   "translations": [
+    "журнал"
+   ]
+  },
+  {
+   "id": 942,
+   "word": "radio",
+   "translations": [
+    "радио"
+   ]
+  },
+  {
+   "id": 943,
+   "word": "television",
+   "translations": [
+    "телевидение"
+   ]
+  },
+  {
+   "id": 944,
+   "word": "channel",
+   "translations": [
+    "канал"
+   ]
+  },
+  {
+   "id": 945,
+   "word": "game",
+   "translations": [
+    "игра"
+   ]
+  },
+  {
+   "id": 946,
+   "word": "story",
+   "translations": [
+    "история",
+    "рассказ"
+   ]
+  },
+  {
+   "id": 947,
+   "word": "novel",
+   "translations": [
+    "роман"
+   ]
+  },
+  {
+   "id": 948,
+   "word": "poem",
+   "translations": [
+    "стихотворение"
+   ]
+  },
+  {
+   "id": 949,
+   "word": "art",
+   "translations": [
+    "искусство"
+   ]
+  },
+  {
+   "id": 950,
+   "word": "painting",
+   "translations": [
+    "картина",
+    "живопись"
+   ]
+  },
+  {
+   "id": 951,
+   "word": "drawing",
+   "translations": [
+    "рисунок"
+   ]
+  },
+  {
+   "id": 952,
+   "word": "color",
+   "translations": [
+    "цвет"
+   ]
+  },
+  {
+   "id": 953,
+   "word": "style",
+   "translations": [
+    "стиль"
+   ]
+  },
+  {
+   "id": 954,
+   "word": "fashion",
+   "translations": [
+    "мода"
+   ]
+  },
+  {
+   "id": 955,
+   "word": "culture",
+   "translations": [
+    "культура"
+   ]
+  },
+  {
+   "id": 956,
+   "word": "tradition",
+   "translations": [
+    "традиция"
+   ]
+  },
+  {
+   "id": 957,
+   "word": "religion",
+   "translations": [
+    "религия"
+   ]
+  },
+  {
+   "id": 958,
+   "word": "god",
+   "translations": [
+    "бог"
+   ]
+  },
+  {
+   "id": 959,
+   "word": "speech",
+   "translations": [
+    "речь"
+   ]
+  },
+  {
+   "id": 960,
+   "word": "conversation",
+   "translations": [
+    "разговор",
+    "беседа"
+   ]
+  },
+  {
+   "id": 961,
+   "word": "discussion",
+   "translations": [
+    "обсуждение"
+   ]
+  },
+  {
+   "id": 962,
+   "word": "argument",
+   "translations": [
+    "спор",
+    "аргумент"
+   ]
+  },
+  {
+   "id": 963,
+   "word": "debate",
+   "translations": [
+    "дебаты",
+    "спор"
+   ]
+  },
+  {
+   "id": 964,
+   "word": "comment",
+   "translations": [
+    "комментарий"
+   ]
+  },
+  {
+   "id": 965,
+   "word": "opinion",
+   "translations": [
+    "мнение"
+   ]
+  },
+  {
+   "id": 966,
+   "word": "advice",
+   "translations": [
+    "совет"
+   ]
+  },
+  {
+   "id": 967,
+   "word": "article",
+   "translations": [
+    "статья"
+   ]
+  },
+  {
+   "id": 968,
+   "word": "note",
+   "translations": [
+    "заметка",
+    "нота"
+   ]
+  },
+  {
+   "id": 969,
+   "word": "list",
+   "translations": [
+    "список"
+   ]
+  },
+  {
+   "id": 970,
+   "word": "thought",
+   "translations": [
+    "мысль"
+   ]
+  },
+  {
+   "id": 971,
+   "word": "mind",
+   "translations": [
+    "разум",
+    "ум"
+   ]
+  },
+  {
+   "id": 972,
+   "word": "memory",
+   "translations": [
+    "память"
+   ]
+  },
+  {
+   "id": 973,
+   "word": "dream",
+   "translations": [
+    "сон",
+    "мечта"
+   ]
+  },
+  {
+   "id": 974,
+   "word": "fear",
+   "translations": [
+    "страх"
+   ]
+  },
+  {
+   "id": 975,
+   "word": "feeling",
+   "translations": [
+    "чувство"
+   ]
+  },
+  {
+   "id": 976,
+   "word": "emotion",
+   "translations": [
+    "эмоция"
+   ]
+  },
+  {
+   "id": 977,
+   "word": "mood",
+   "translations": [
+    "настроение"
+   ]
+  },
+  {
+   "id": 978,
+   "word": "joy",
+   "translations": [
+    "радость"
+   ]
+  },
+  {
+   "id": 979,
+   "word": "happiness",
+   "translations": [
+    "счастье"
+   ]
+  },
+  {
+   "id": 980,
+   "word": "sadness",
+   "translations": [
+    "грусть"
+   ]
+  },
+  {
+   "id": 981,
+   "word": "anger",
+   "translations": [
+    "гнев"
+   ]
+  },
+  {
+   "id": 982,
+   "word": "surprise",
+   "translations": [
+    "сюрприз",
+    "удивление"
+   ]
+  },
+  {
+   "id": 983,
+   "word": "pain",
+   "translations": [
+    "боль"
+   ]
+  },
+  {
+   "id": 984,
+   "word": "pleasure",
+   "translations": [
+    "удовольствие"
+   ]
+  },
+  {
+   "id": 985,
+   "word": "comfort",
+   "translations": [
+    "комфорт",
+    "удобство"
+   ]
+  },
+  {
+   "id": 986,
+   "word": "stress",
+   "translations": [
+    "стресс",
+    "ударение"
+   ]
+  },
+  {
+   "id": 987,
+   "word": "energy",
+   "translations": [
+    "энергия"
+   ]
+  },
+  {
+   "id": 988,
+   "word": "power",
+   "translations": [
+    "сила",
+    "власть"
+   ]
+  },
+  {
+   "id": 989,
+   "word": "strength",
+   "translations": [
+    "сила",
+    "прочность"
+   ]
+  },
+  {
+   "id": 990,
+   "word": "health",
+   "translations": [
+    "здоровье"
+   ]
+  },
+  {
+   "id": 991,
+   "word": "illness",
+   "translations": [
+    "болезнь"
+   ]
+  },
+  {
+   "id": 992,
+   "word": "disease",
+   "translations": [
+    "болезнь"
+   ]
+  },
+  {
+   "id": 993,
+   "word": "medicine",
+   "translations": [
+    "медицина",
+    "лекарство"
+   ]
+  },
+  {
+   "id": 994,
+   "word": "drug",
+   "translations": [
+    "лекарство",
+    "наркотик"
+   ]
+  },
+  {
+   "id": 995,
+   "word": "doctor",
+   "translations": [
+    "врач"
+   ]
+  },
+  {
+   "id": 996,
+   "word": "nurse",
+   "translations": [
+    "медсестра"
+   ]
+  },
+  {
+   "id": 997,
+   "word": "patient",
+   "translations": [
+    "пациент",
+    "терпеливый"
+   ]
+  },
+  {
+   "id": 998,
+   "word": "government",
+   "translations": [
+    "правительство"
+   ]
+  },
+  {
+   "id": 999,
+   "word": "president",
+   "translations": [
+    "президент"
+   ]
+  },
+  {
+   "id": 1000,
+   "word": "leader",
+   "translations": [
+    "лидер",
+    "руководитель"
+   ]
+  },
+  {
+   "id": 1001,
+   "word": "politics",
+   "translations": [
+    "политика"
+   ]
+  },
+  {
+   "id": 1002,
+   "word": "policy",
+   "translations": [
+    "политика",
+    "курс"
+   ]
+  },
+  {
+   "id": 1003,
+   "word": "party",
+   "translations": [
+    "партия",
+    "вечеринка"
+   ]
+  },
+  {
+   "id": 1004,
+   "word": "election",
+   "translations": [
+    "выборы"
+   ]
+  },
+  {
+   "id": 1005,
+   "word": "vote",
+   "translations": [
+    "голос",
+    "голосовать"
+   ]
+  },
+  {
+   "id": 1006,
+   "word": "law",
+   "translations": [
+    "закон"
+   ]
+  },
+  {
+   "id": 1007,
+   "word": "rule",
+   "translations": [
+    "правило"
+   ]
+  },
+  {
+   "id": 1008,
+   "word": "right",
+   "translations": [
+    "право",
+    "правый"
+   ]
+  },
+  {
+   "id": 1009,
+   "word": "freedom",
+   "translations": [
+    "свобода"
+   ]
+  },
+  {
+   "id": 1010,
+   "word": "justice",
+   "translations": [
+    "справедливость",
+    "правосудие"
+   ]
+  },
+  {
+   "id": 1011,
+   "word": "court",
+   "translations": [
+    "суд",
+    "корт"
+   ]
+  },
+  {
+   "id": 1012,
+   "word": "judge",
+   "translations": [
+    "судья",
+    "судить"
+   ]
+  },
+  {
+   "id": 1013,
+   "word": "lawyer",
+   "translations": [
+    "юрист",
+    "адвокат"
+   ]
+  },
+  {
+   "id": 1014,
+   "word": "police",
+   "translations": [
+    "полиция"
+   ]
+  },
+  {
+   "id": 1015,
+   "word": "officer",
+   "translations": [
+    "офицер",
+    "служащий"
+   ]
+  },
+  {
+   "id": 1016,
+   "word": "crime",
+   "translations": [
+    "преступление"
+   ]
+  },
+  {
+   "id": 1017,
+   "word": "criminal",
+   "translations": [
+    "преступник",
+    "преступный"
+   ]
+  },
+  {
+   "id": 1018,
+   "word": "army",
+   "translations": [
+    "армия"
+   ]
+  },
+  {
+   "id": 1019,
+   "word": "soldier",
+   "translations": [
+    "солдат"
+   ]
+  },
+  {
+   "id": 1020,
+   "word": "war",
+   "translations": [
+    "война"
+   ]
+  },
+  {
+   "id": 1021,
+   "word": "peace",
+   "translations": [
+    "мир"
+   ],
+   "note": "не война"
+  },
+  {
+   "id": 1022,
+   "word": "weapon",
+   "translations": [
+    "оружие"
+   ]
+  },
+  {
+   "id": 1023,
+   "word": "gun",
+   "translations": [
+    "ружьё",
+    "пистолет"
+   ]
+  },
+  {
+   "id": 1024,
+   "word": "authority",
+   "translations": [
+    "власть",
+    "авторитет"
+   ]
+  },
+  {
+   "id": 1025,
+   "word": "border",
+   "translations": [
+    "граница"
+   ]
+  },
+  {
+   "id": 1026,
+   "word": "flag",
+   "translations": [
+    "флаг"
+   ]
+  },
+  {
+   "id": 1027,
+   "word": "organization",
+   "translations": [
+    "организация"
+   ]
+  },
+  {
+   "id": 1028,
+   "word": "union",
+   "translations": [
+    "союз",
+    "профсоюз"
+   ]
+  },
+  {
+   "id": 1029,
+   "word": "structure",
+   "translations": [
+    "структура",
+    "строение"
+   ]
+  },
+  {
+   "id": 1030,
+   "word": "process",
+   "translations": [
+    "процесс"
+   ]
+  },
+  {
+   "id": 1031,
+   "word": "method",
+   "translations": [
+    "метод"
+   ]
+  },
+  {
+   "id": 1032,
+   "word": "way",
+   "translations": [
+    "путь",
+    "способ"
+   ]
+  },
+  {
+   "id": 1033,
+   "word": "means",
+   "translations": [
+    "средство",
+    "способ"
+   ]
+  },
+  {
+   "id": 1034,
+   "word": "goal",
+   "translations": [
+    "цель",
+    "гол"
+   ]
+  },
+  {
+   "id": 1035,
+   "word": "aim",
+   "translations": [
+    "цель"
+   ]
+  },
+  {
+   "id": 1036,
+   "word": "purpose",
+   "translations": [
+    "цель",
+    "назначение"
+   ]
+  },
+  {
+   "id": 1037,
+   "word": "result",
+   "translations": [
+    "результат"
+   ]
+  },
+  {
+   "id": 1038,
+   "word": "effect",
+   "translations": [
+    "эффект",
+    "воздействие"
+   ]
+  },
+  {
+   "id": 1039,
+   "word": "reason",
+   "translations": [
+    "причина",
+    "разум"
+   ]
+  },
+  {
+   "id": 1040,
+   "word": "fact",
+   "translations": [
+    "факт"
+   ]
+  },
+  {
+   "id": 1041,
+   "word": "truth",
+   "translations": [
+    "правда",
+    "истина"
+   ]
+  },
+  {
+   "id": 1042,
+   "word": "reality",
+   "translations": [
+    "реальность"
+   ]
+  },
+  {
+   "id": 1043,
+   "word": "situation",
+   "translations": [
+    "ситуация"
+   ]
+  },
+  {
+   "id": 1044,
+   "word": "condition",
+   "translations": [
+    "условие",
+    "состояние"
+   ]
+  },
+  {
+   "id": 1045,
+   "word": "position",
+   "translations": [
+    "положение",
+    "позиция"
+   ]
+  },
+  {
+   "id": 1046,
+   "word": "level",
+   "translations": [
+    "уровень"
+   ]
+  },
+  {
+   "id": 1047,
+   "word": "amount",
+   "translations": [
+    "количество",
+    "сумма"
+   ]
+  },
+  {
+   "id": 1048,
+   "word": "number",
+   "translations": [
+    "число",
+    "номер"
+   ]
+  },
+  {
+   "id": 1049,
+   "word": "figure",
+   "translations": [
+    "цифра",
+    "фигура"
+   ]
+  },
+  {
+   "id": 1050,
+   "word": "total",
+   "translations": [
+    "итог",
+    "общий"
+   ]
+  },
+  {
+   "id": 1051,
+   "word": "part",
+   "translations": [
+    "часть"
+   ]
+  },
+  {
+   "id": 1052,
+   "word": "piece",
+   "translations": [
+    "кусок",
+    "деталь"
+   ]
+  },
+  {
+   "id": 1053,
+   "word": "section",
+   "translations": [
+    "раздел",
+    "секция"
+   ]
+  },
+  {
+   "id": 1054,
+   "word": "half",
+   "translations": [
+    "половина"
+   ]
+  },
+  {
+   "id": 1055,
+   "word": "quarter",
+   "translations": [
+    "четверть"
+   ]
+  },
+  {
+   "id": 1056,
+   "word": "side",
+   "translations": [
+    "сторона"
+   ]
+  },
+  {
+   "id": 1057,
+   "word": "edge",
+   "translations": [
+    "край",
+    "грань"
+   ]
+  },
+  {
+   "id": 1058,
+   "word": "corner",
+   "translations": [
+    "угол"
+   ]
+  },
+  {
+   "id": 1059,
+   "word": "middle",
+   "translations": [
+    "середина"
+   ]
+  },
+  {
+   "id": 1060,
+   "word": "top",
+   "translations": [
+    "верх",
+    "верхний"
+   ]
+  },
+  {
+   "id": 1061,
+   "word": "bottom",
+   "translations": [
+    "низ",
+    "дно"
+   ]
+  },
+  {
+   "id": 1062,
+   "word": "front",
+   "translations": [
+    "перёд",
+    "передний"
+   ]
+  },
+  {
+   "id": 1063,
+   "word": "beginning",
+   "translations": [
+    "начало"
+   ]
+  },
+  {
+   "id": 1064,
+   "word": "size",
+   "translations": [
+    "размер"
+   ]
+  },
+  {
+   "id": 1065,
+   "word": "shape",
+   "translations": [
+    "форма"
+   ]
+  },
+  {
+   "id": 1066,
+   "word": "form",
+   "translations": [
+    "форма",
+    "бланк"
+   ]
+  },
+  {
+   "id": 1067,
+   "word": "type",
+   "translations": [
+    "тип",
+    "вид"
+   ]
+  },
+  {
+   "id": 1068,
+   "word": "kind",
+   "translations": [
+    "вид",
+    "сорт",
+    "добрый"
+   ]
+  },
+  {
+   "id": 1069,
+   "word": "sort",
+   "translations": [
+    "вид",
+    "сортировать"
+   ]
+  },
+  {
+   "id": 1070,
+   "word": "category",
+   "translations": [
+    "категория"
+   ]
+  },
+  {
+   "id": 1071,
+   "word": "series",
+   "translations": [
+    "серия",
+    "ряд"
+   ]
+  },
+  {
+   "id": 1072,
+   "word": "set",
+   "translations": [
+    "набор",
+    "ставить"
+   ]
+  },
+  {
+   "id": 1073,
+   "word": "pair",
+   "translations": [
+    "пара"
+   ]
+  },
+  {
+   "id": 1074,
+   "word": "row",
+   "translations": [
+    "ряд",
+    "грести"
+   ]
+  },
+  {
+   "id": 1075,
+   "word": "line",
+   "translations": [
+    "линия",
+    "очередь"
+   ]
+  },
+  {
+   "id": 1076,
+   "word": "point",
+   "translations": [
+    "точка",
+    "пункт"
+   ]
+  },
+  {
+   "id": 1077,
+   "word": "distance",
+   "translations": [
+    "расстояние"
+   ]
+  },
+  {
+   "id": 1078,
+   "word": "length",
+   "translations": [
+    "длина"
+   ]
+  },
+  {
+   "id": 1079,
+   "word": "width",
+   "translations": [
+    "ширина"
+   ]
+  },
+  {
+   "id": 1080,
+   "word": "height",
+   "translations": [
+    "высота"
+   ]
+  },
+  {
+   "id": 1081,
+   "word": "depth",
+   "translations": [
+    "глубина"
+   ]
+  },
+  {
+   "id": 1082,
+   "word": "weight",
+   "translations": [
+    "вес"
+   ]
+  },
+  {
+   "id": 1083,
+   "word": "speed",
+   "translations": [
+    "скорость"
+   ]
+  },
+  {
+   "id": 1084,
+   "word": "temperature",
+   "translations": [
+    "температура"
+   ]
+  },
+  {
+   "id": 1085,
+   "word": "unit",
+   "translations": [
+    "единица"
+   ]
+  },
+  {
+   "id": 1086,
+   "word": "event",
+   "translations": [
+    "событие"
+   ]
+  },
+  {
+   "id": 1087,
+   "word": "activity",
+   "translations": [
+    "деятельность"
+   ]
+  },
+  {
+   "id": 1088,
+   "word": "action",
+   "translations": [
+    "действие"
+   ]
+  },
+  {
+   "id": 1089,
+   "word": "movement",
+   "translations": [
+    "движение"
+   ]
+  },
+  {
+   "id": 1090,
+   "word": "development",
+   "translations": [
+    "развитие"
+   ]
+  },
+  {
+   "id": 1091,
+   "word": "growth",
+   "translations": [
+    "рост"
+   ]
+  },
+  {
+   "id": 1092,
+   "word": "progress",
+   "translations": [
+    "прогресс"
+   ]
+  },
+  {
+   "id": 1093,
+   "word": "success",
+   "translations": [
+    "успех"
+   ]
+  },
+  {
+   "id": 1094,
+   "word": "failure",
+   "translations": [
+    "неудача",
+    "провал"
+   ]
+  },
+  {
+   "id": 1095,
+   "word": "chance",
+   "translations": [
+    "шанс",
+    "случай"
+   ]
+  },
+  {
+   "id": 1096,
+   "word": "opportunity",
+   "translations": [
+    "возможность"
+   ]
+  },
+  {
+   "id": 1097,
+   "word": "risk",
+   "translations": [
+    "риск"
+   ]
+  },
+  {
+   "id": 1098,
+   "word": "danger",
+   "translations": [
+    "опасность"
+   ]
+  },
+  {
+   "id": 1099,
+   "word": "safety",
+   "translations": [
+    "безопасность"
+   ]
+  },
+  {
+   "id": 1100,
+   "word": "trouble",
+   "translations": [
+    "беда",
+    "неприятность"
+   ]
+  },
+  {
+   "id": 1101,
+   "word": "issue",
+   "translations": [
+    "вопрос",
+    "проблема"
+   ]
+  },
+  {
+   "id": 1102,
+   "word": "challenge",
+   "translations": [
+    "вызов"
+   ]
+  },
+  {
+   "id": 1103,
+   "word": "solution",
+   "translations": [
+    "решение"
+   ]
+  },
+  {
+   "id": 1104,
+   "word": "choice",
+   "translations": [
+    "выбор"
+   ]
+  },
+  {
+   "id": 1105,
+   "word": "decision",
+   "translations": [
+    "решение"
+   ]
+  },
+  {
+   "id": 1106,
+   "word": "effort",
+   "translations": [
+    "усилие"
+   ]
+  },
+  {
+   "id": 1107,
+   "word": "attempt",
+   "translations": [
+    "попытка"
+   ]
+  },
+  {
+   "id": 1108,
+   "word": "experience",
+   "translations": [
+    "опыт"
+   ]
+  },
+  {
+   "id": 1109,
+   "word": "skill",
+   "translations": [
+    "навык",
+    "умение"
+   ]
+  },
+  {
+   "id": 1110,
+   "word": "ability",
+   "translations": [
+    "способность"
+   ]
+  },
+  {
+   "id": 1111,
+   "word": "talent",
+   "translations": [
+    "талант"
+   ]
+  },
+  {
+   "id": 1112,
+   "word": "habit",
+   "translations": [
+    "привычка"
+   ]
+  },
+  {
+   "id": 1113,
+   "word": "behavior",
+   "translations": [
+    "поведение"
+   ]
+  },
+  {
+   "id": 1114,
+   "word": "character",
+   "translations": [
+    "характер",
+    "персонаж"
+   ]
+  },
+  {
+   "id": 1115,
+   "word": "personality",
+   "translations": [
+    "личность",
+    "характер"
+   ]
+  },
+  {
+   "id": 1116,
+   "word": "attitude",
+   "translations": [
+    "отношение",
+    "позиция"
+   ]
+  },
+  {
+   "id": 1117,
+   "word": "relationship",
+   "translations": [
+    "отношения"
+   ]
+  },
+  {
+   "id": 1118,
+   "word": "connection",
+   "translations": [
+    "связь",
+    "соединение"
+   ]
+  },
+  {
+   "id": 1119,
+   "word": "difference",
+   "translations": [
+    "разница"
+   ]
+  },
+  {
+   "id": 1120,
+   "word": "contrast",
+   "translations": [
+    "контраст"
+   ]
+  },
+  {
+   "id": 1121,
+   "word": "comparison",
+   "translations": [
+    "сравнение"
+   ]
+  },
+  {
+   "id": 1122,
+   "word": "balance",
+   "translations": [
+    "баланс",
+    "равновесие"
+   ]
+  },
+  {
+   "id": 1123,
+   "word": "order",
+   "translations": [
+    "порядок",
+    "заказ"
+   ]
+  },
+  {
+   "id": 1124,
+   "word": "limit",
+   "translations": [
+    "предел",
+    "ограничение"
+   ]
+  },
+  {
+   "id": 1125,
+   "word": "standard",
+   "translations": [
+    "стандарт"
+   ]
+  },
+  {
+   "id": 1126,
+   "word": "model",
+   "translations": [
+    "модель",
+    "образец"
+   ]
+  },
+  {
+   "id": 1127,
+   "word": "pattern",
+   "translations": [
+    "узор",
+    "шаблон"
+   ]
+  },
+  {
+   "id": 1128,
+   "word": "detail",
+   "translations": [
+    "деталь",
+    "подробность"
+   ]
+  },
+  {
+   "id": 1129,
+   "word": "feature",
+   "translations": [
+    "особенность",
+    "черта"
+   ]
+  },
+  {
+   "id": 1130,
+   "word": "element",
+   "translations": [
+    "элемент"
+   ]
+  },
+  {
+   "id": 1131,
+   "word": "factor",
+   "translations": [
+    "фактор"
+   ]
+  },
+  {
+   "id": 1132,
+   "word": "aspect",
+   "translations": [
+    "аспект",
+    "сторона"
+   ]
+  },
+  {
+   "id": 1133,
+   "word": "content",
+   "translations": [
+    "содержание"
+   ]
+  },
+  {
+   "id": 1134,
+   "word": "material",
+   "translations": [
+    "материал"
+   ]
+  },
+  {
+   "id": 1135,
+   "word": "substance",
+   "translations": [
+    "вещество"
+   ]
+  },
+  {
+   "id": 1136,
+   "word": "object",
+   "translations": [
+    "объект",
+    "предмет"
+   ]
+  },
+  {
+   "id": 1137,
+   "word": "thing",
+   "translations": [
+    "вещь"
+   ]
+  },
+  {
+   "id": 1138,
+   "word": "stuff",
+   "translations": [
+    "вещи",
+    "материал"
+   ]
+  },
+  {
+   "id": 1139,
+   "word": "item",
+   "translations": [
+    "пункт",
+    "предмет"
+   ]
+  },
+  {
+   "id": 1140,
+   "word": "goods",
+   "translations": [
+    "товары"
+   ]
+  },
+  {
+   "id": 1141,
+   "word": "property",
+   "translations": [
+    "собственность",
+    "свойство"
+   ]
+  },
+  {
+   "id": 1142,
+   "word": "resource",
+   "translations": [
+    "ресурс"
+   ]
+  },
+  {
+   "id": 1143,
+   "word": "supply",
+   "translations": [
+    "запас",
+    "снабжать"
+   ]
+  },
+  {
+   "id": 1144,
+   "word": "demand",
+   "translations": [
+    "спрос",
+    "требование"
+   ]
+  },
+  {
+   "id": 1145,
+   "word": "research",
+   "translations": [
+    "исследование"
+   ]
+  },
+  {
+   "id": 1146,
+   "word": "evidence",
+   "translations": [
+    "доказательство"
+   ]
+  },
+  {
+   "id": 1147,
+   "word": "proof",
+   "translations": [
+    "доказательство"
+   ]
+  },
+  {
+   "id": 1148,
+   "word": "wisdom",
+   "translations": [
+    "мудрость"
+   ]
+  },
+  {
+   "id": 1149,
+   "word": "sense",
+   "translations": [
+    "чувство",
+    "смысл"
+   ]
+  },
+  {
+   "id": 1150,
+   "word": "meaning",
+   "translations": [
+    "значение",
+    "смысл"
+   ]
+  },
+  {
+   "id": 1151,
+   "word": "signal",
+   "translations": [
+    "сигнал"
+   ]
+  },
+  {
+   "id": 1152,
+   "word": "sign",
+   "translations": [
+    "знак",
+    "вывеска"
+   ]
+  },
+  {
+   "id": 1153,
+   "word": "symbol",
+   "translations": [
+    "символ"
+   ]
+  },
+  {
+   "id": 1154,
+   "word": "mark",
+   "translations": [
+    "метка",
+    "отметка"
+   ]
+  },
+  {
+   "id": 1155,
+   "word": "code",
+   "translations": [
+    "код"
+   ]
+  },
+  {
+   "id": 1156,
+   "word": "good",
+   "translations": [
+    "хороший"
+   ]
+  },
+  {
+   "id": 1157,
+   "word": "bad",
+   "translations": [
+    "плохой"
+   ]
+  },
+  {
+   "id": 1158,
+   "word": "great",
+   "translations": [
+    "отличный",
+    "великий"
+   ]
+  },
+  {
+   "id": 1159,
+   "word": "nice",
+   "translations": [
+    "приятный",
+    "милый"
+   ]
+  },
+  {
+   "id": 1160,
+   "word": "fine",
+   "translations": [
+    "прекрасный",
+    "штраф"
+   ]
+  },
+  {
+   "id": 1161,
+   "word": "better",
+   "translations": [
+    "лучше"
+   ]
+  },
+  {
+   "id": 1162,
+   "word": "best",
+   "translations": [
+    "лучший"
+   ]
+  },
+  {
+   "id": 1163,
+   "word": "worse",
+   "translations": [
+    "хуже"
+   ]
+  },
+  {
+   "id": 1164,
+   "word": "worst",
+   "translations": [
+    "худший"
+   ]
+  },
+  {
+   "id": 1165,
+   "word": "new",
+   "translations": [
+    "новый"
+   ]
+  },
+  {
+   "id": 1166,
+   "word": "old",
+   "translations": [
+    "старый"
+   ]
+  },
+  {
+   "id": 1167,
+   "word": "young",
+   "translations": [
+    "молодой"
+   ]
+  },
+  {
+   "id": 1168,
+   "word": "big",
+   "translations": [
+    "большой"
+   ]
+  },
+  {
+   "id": 1169,
+   "word": "large",
+   "translations": [
+    "крупный",
+    "большой"
+   ]
+  },
+  {
+   "id": 1170,
+   "word": "huge",
+   "translations": [
+    "огромный"
+   ]
+  },
+  {
+   "id": 1171,
+   "word": "small",
+   "translations": [
+    "маленький"
+   ]
+  },
+  {
+   "id": 1172,
+   "word": "tiny",
+   "translations": [
+    "крошечный"
+   ]
+  },
+  {
+   "id": 1173,
+   "word": "long",
+   "translations": [
+    "длинный",
+    "долгий"
+   ]
+  },
+  {
+   "id": 1174,
+   "word": "short",
+   "translations": [
+    "короткий",
+    "низкий"
+   ]
+  },
+  {
+   "id": 1175,
+   "word": "tall",
+   "translations": [
+    "высокий"
+   ],
+   "note": "рост"
+  },
+  {
+   "id": 1176,
+   "word": "high",
+   "translations": [
+    "высокий"
+   ]
+  },
+  {
+   "id": 1177,
+   "word": "low",
+   "translations": [
+    "низкий"
+   ]
+  },
+  {
+   "id": 1178,
+   "word": "wide",
+   "translations": [
+    "широкий"
+   ]
+  },
+  {
+   "id": 1179,
+   "word": "narrow",
+   "translations": [
+    "узкий"
+   ]
+  },
+  {
+   "id": 1180,
+   "word": "thick",
+   "translations": [
+    "толстый",
+    "густой"
+   ]
+  },
+  {
+   "id": 1181,
+   "word": "thin",
+   "translations": [
+    "тонкий",
+    "худой"
+   ]
+  },
+  {
+   "id": 1182,
+   "word": "fat",
+   "translations": [
+    "толстый",
+    "жир"
+   ]
+  },
+  {
+   "id": 1183,
+   "word": "deep",
+   "translations": [
+    "глубокий"
+   ]
+  },
+  {
+   "id": 1184,
+   "word": "flat",
+   "translations": [
+    "плоский",
+    "квартира"
+   ]
+  },
+  {
+   "id": 1185,
+   "word": "round",
+   "translations": [
+    "круглый"
+   ]
+  },
+  {
+   "id": 1186,
+   "word": "heavy",
+   "translations": [
+    "тяжёлый"
+   ]
+  },
+  {
+   "id": 1187,
+   "word": "hard",
+   "translations": [
+    "трудный",
+    "твёрдый"
+   ]
+  },
+  {
+   "id": 1188,
+   "word": "soft",
+   "translations": [
+    "мягкий"
+   ]
+  },
+  {
+   "id": 1189,
+   "word": "easy",
+   "translations": [
+    "лёгкий",
+    "простой"
+   ]
+  },
+  {
+   "id": 1190,
+   "word": "difficult",
+   "translations": [
+    "трудный",
+    "сложный"
+   ]
+  },
+  {
+   "id": 1191,
+   "word": "simple",
+   "translations": [
+    "простой"
+   ]
+  },
+  {
+   "id": 1192,
+   "word": "complex",
+   "translations": [
+    "сложный"
+   ]
+  },
+  {
+   "id": 1193,
+   "word": "hot",
+   "translations": [
+    "горячий",
+    "жаркий"
+   ]
+  },
+  {
+   "id": 1194,
+   "word": "warm",
+   "translations": [
+    "тёплый"
+   ]
+  },
+  {
+   "id": 1195,
+   "word": "cool",
+   "translations": [
+    "прохладный",
+    "классный"
+   ]
+  },
+  {
+   "id": 1196,
+   "word": "cold",
+   "translations": [
+    "холодный"
+   ]
+  },
+  {
+   "id": 1197,
+   "word": "dry",
+   "translations": [
+    "сухой"
+   ]
+  },
+  {
+   "id": 1198,
+   "word": "wet",
+   "translations": [
+    "мокрый",
+    "влажный"
+   ]
+  },
+  {
+   "id": 1199,
+   "word": "dirty",
+   "translations": [
+    "грязный"
+   ]
+  },
+  {
+   "id": 1200,
+   "word": "fresh",
+   "translations": [
+    "свежий"
+   ]
+  },
+  {
+   "id": 1201,
+   "word": "full",
+   "translations": [
+    "полный"
+   ]
+  },
+  {
+   "id": 1202,
+   "word": "closed",
+   "translations": [
+    "закрытый"
+   ]
+  },
+  {
+   "id": 1203,
+   "word": "free",
+   "translations": [
+    "свободный",
+    "бесплатный"
+   ]
+  },
+  {
+   "id": 1204,
+   "word": "busy",
+   "translations": [
+    "занятой"
+   ]
+  },
+  {
+   "id": 1205,
+   "word": "fast",
+   "translations": [
+    "быстрый"
+   ]
+  },
+  {
+   "id": 1206,
+   "word": "quick",
+   "translations": [
+    "быстрый"
+   ]
+  },
+  {
+   "id": 1207,
+   "word": "slow",
+   "translations": [
+    "медленный"
+   ]
+  },
+  {
+   "id": 1208,
+   "word": "early",
+   "translations": [
+    "ранний"
+   ]
+  },
+  {
+   "id": 1209,
+   "word": "late",
+   "translations": [
+    "поздний"
+   ]
+  },
+  {
+   "id": 1210,
+   "word": "far",
+   "translations": [
+    "далёкий"
+   ]
+  },
+  {
+   "id": 1211,
+   "word": "strong",
+   "translations": [
+    "сильный",
+    "крепкий"
+   ]
+  },
+  {
+   "id": 1212,
+   "word": "weak",
+   "translations": [
+    "слабый"
+   ]
+  },
+  {
+   "id": 1213,
+   "word": "rich",
+   "translations": [
+    "богатый"
+   ]
+  },
+  {
+   "id": 1214,
+   "word": "poor",
+   "translations": [
+    "бедный"
+   ]
+  },
+  {
+   "id": 1215,
+   "word": "expensive",
+   "translations": [
+    "дорогой"
+   ]
+  },
+  {
+   "id": 1216,
+   "word": "cheap",
+   "translations": [
+    "дешёвый"
+   ]
+  },
+  {
+   "id": 1217,
+   "word": "important",
+   "translations": [
+    "важный"
+   ]
+  },
+  {
+   "id": 1218,
+   "word": "serious",
+   "translations": [
+    "серьёзный"
+   ]
+  },
+  {
+   "id": 1219,
+   "word": "real",
+   "translations": [
+    "настоящий",
+    "реальный"
+   ]
+  },
+  {
+   "id": 1220,
+   "word": "true",
+   "translations": [
+    "правдивый",
+    "истинный"
+   ]
+  },
+  {
+   "id": 1221,
+   "word": "false",
+   "translations": [
+    "ложный"
+   ]
+  },
+  {
+   "id": 1222,
+   "word": "wrong",
+   "translations": [
+    "неправильный"
+   ]
+  },
+  {
+   "id": 1223,
+   "word": "correct",
+   "translations": [
+    "правильный"
+   ]
+  },
+  {
+   "id": 1224,
+   "word": "sure",
+   "translations": [
+    "уверенный"
+   ]
+  },
+  {
+   "id": 1225,
+   "word": "certain",
+   "translations": [
+    "определённый",
+    "уверенный"
+   ]
+  },
+  {
+   "id": 1226,
+   "word": "clear",
+   "translations": [
+    "ясный",
+    "чистый"
+   ]
+  },
+  {
+   "id": 1227,
+   "word": "possible",
+   "translations": [
+    "возможный"
+   ]
+  },
+  {
+   "id": 1228,
+   "word": "impossible",
+   "translations": [
+    "невозможный"
+   ]
+  },
+  {
+   "id": 1229,
+   "word": "able",
+   "translations": [
+    "способный"
+   ]
+  },
+  {
+   "id": 1230,
+   "word": "ready",
+   "translations": [
+    "готовый"
+   ]
+  },
+  {
+   "id": 1231,
+   "word": "similar",
+   "translations": [
+    "похожий"
+   ]
+  },
+  {
+   "id": 1232,
+   "word": "different",
+   "translations": [
+    "разный",
+    "другой"
+   ]
+  },
+  {
+   "id": 1233,
+   "word": "common",
+   "translations": [
+    "общий",
+    "обычный"
+   ]
+  },
+  {
+   "id": 1234,
+   "word": "normal",
+   "translations": [
+    "нормальный"
+   ]
+  },
+  {
+   "id": 1235,
+   "word": "usual",
+   "translations": [
+    "обычный"
+   ]
+  },
+  {
+   "id": 1236,
+   "word": "special",
+   "translations": [
+    "особый",
+    "специальный"
+   ]
+  },
+  {
+   "id": 1237,
+   "word": "main",
+   "translations": [
+    "главный"
+   ]
+  },
+  {
+   "id": 1238,
+   "word": "major",
+   "translations": [
+    "главный",
+    "основной"
+   ]
+  },
+  {
+   "id": 1239,
+   "word": "minor",
+   "translations": [
+    "незначительный",
+    "малый"
+   ]
+  },
+  {
+   "id": 1240,
+   "word": "general",
+   "translations": [
+    "общий",
+    "генерал"
+   ]
+  },
+  {
+   "id": 1241,
+   "word": "particular",
+   "translations": [
+    "особый",
+    "конкретный"
+   ]
+  },
+  {
+   "id": 1242,
+   "word": "specific",
+   "translations": [
+    "конкретный",
+    "особый"
+   ]
+  },
+  {
+   "id": 1243,
+   "word": "single",
+   "translations": [
+    "единственный",
+    "одиночный"
+   ]
+  },
+  {
+   "id": 1244,
+   "word": "double",
+   "translations": [
+    "двойной"
+   ]
+  },
+  {
+   "id": 1245,
+   "word": "whole",
+   "translations": [
+    "целый",
+    "весь"
+   ]
+  },
+  {
+   "id": 1246,
+   "word": "entire",
+   "translations": [
+    "весь",
+    "целый"
+   ]
+  },
+  {
+   "id": 1247,
+   "word": "final",
+   "translations": [
+    "финальный",
+    "последний"
+   ]
+  },
+  {
+   "id": 1248,
+   "word": "last",
+   "translations": [
+    "последний",
+    "длиться"
+   ]
+  },
+  {
+   "id": 1249,
+   "word": "first",
+   "translations": [
+    "первый"
+   ]
+  },
+  {
+   "id": 1250,
+   "word": "next",
+   "translations": [
+    "следующий"
+   ]
+  },
+  {
+   "id": 1251,
+   "word": "previous",
+   "translations": [
+    "предыдущий"
+   ]
+  },
+  {
+   "id": 1252,
+   "word": "recent",
+   "translations": [
+    "недавний"
+   ]
+  },
+  {
+   "id": 1253,
+   "word": "modern",
+   "translations": [
+    "современный"
+   ]
+  },
+  {
+   "id": 1254,
+   "word": "ancient",
+   "translations": [
+    "древний"
+   ]
+  },
+  {
+   "id": 1255,
+   "word": "current",
+   "translations": [
+    "текущий",
+    "течение"
+   ]
+  },
+  {
+   "id": 1256,
+   "word": "local",
+   "translations": [
+    "местный"
+   ]
+  },
+  {
+   "id": 1257,
+   "word": "national",
+   "translations": [
+    "национальный"
+   ]
+  },
+  {
+   "id": 1258,
+   "word": "international",
+   "translations": [
+    "международный"
+   ]
+  },
+  {
+   "id": 1259,
+   "word": "global",
+   "translations": [
+    "глобальный",
+    "мировой"
+   ]
+  },
+  {
+   "id": 1260,
+   "word": "private",
+   "translations": [
+    "частный",
+    "личный"
+   ]
+  },
+  {
+   "id": 1261,
+   "word": "personal",
+   "translations": [
+    "личный"
+   ]
+  },
+  {
+   "id": 1262,
+   "word": "social",
+   "translations": [
+    "социальный",
+    "общественный"
+   ]
+  },
+  {
+   "id": 1263,
+   "word": "political",
+   "translations": [
+    "политический"
+   ]
+  },
+  {
+   "id": 1264,
+   "word": "economic",
+   "translations": [
+    "экономический"
+   ]
+  },
+  {
+   "id": 1265,
+   "word": "financial",
+   "translations": [
+    "финансовый"
+   ]
+  },
+  {
+   "id": 1266,
+   "word": "legal",
+   "translations": [
+    "законный",
+    "юридический"
+   ]
+  },
+  {
+   "id": 1267,
+   "word": "medical",
+   "translations": [
+    "медицинский"
+   ]
+  },
+  {
+   "id": 1268,
+   "word": "natural",
+   "translations": [
+    "природный",
+    "естественный"
+   ]
+  },
+  {
+   "id": 1269,
+   "word": "physical",
+   "translations": [
+    "физический"
+   ]
+  },
+  {
+   "id": 1270,
+   "word": "mental",
+   "translations": [
+    "умственный",
+    "психический"
+   ]
+  },
+  {
+   "id": 1271,
+   "word": "basic",
+   "translations": [
+    "базовый",
+    "основной"
+   ]
+  },
+  {
+   "id": 1272,
+   "word": "central",
+   "translations": [
+    "центральный"
+   ]
+  },
+  {
+   "id": 1273,
+   "word": "direct",
+   "translations": [
+    "прямой"
+   ]
+  },
+  {
+   "id": 1274,
+   "word": "available",
+   "translations": [
+    "доступный",
+    "имеющийся"
+   ]
+  },
+  {
+   "id": 1275,
+   "word": "popular",
+   "translations": [
+    "популярный"
+   ]
+  },
+  {
+   "id": 1276,
+   "word": "famous",
+   "translations": [
+    "знаменитый"
+   ]
+  },
+  {
+   "id": 1277,
+   "word": "known",
+   "translations": [
+    "известный"
+   ]
+  },
+  {
+   "id": 1278,
+   "word": "dead",
+   "translations": [
+    "мёртвый"
+   ]
+  },
+  {
+   "id": 1279,
+   "word": "alive",
+   "translations": [
+    "живой"
+   ]
+  },
+  {
+   "id": 1280,
+   "word": "sick",
+   "translations": [
+    "больной"
+   ]
+  },
+  {
+   "id": 1281,
+   "word": "ill",
+   "translations": [
+    "больной"
+   ]
+  },
+  {
+   "id": 1282,
+   "word": "healthy",
+   "translations": [
+    "здоровый"
+   ]
+  },
+  {
+   "id": 1283,
+   "word": "safe",
+   "translations": [
+    "безопасный"
+   ]
+  },
+  {
+   "id": 1284,
+   "word": "dangerous",
+   "translations": [
+    "опасный"
+   ]
+  },
+  {
+   "id": 1285,
+   "word": "careful",
+   "translations": [
+    "осторожный",
+    "внимательный"
+   ]
+  },
+  {
+   "id": 1286,
+   "word": "happy",
+   "translations": [
+    "счастливый"
+   ]
+  },
+  {
+   "id": 1287,
+   "word": "glad",
+   "translations": [
+    "радостный",
+    "довольный"
+   ]
+  },
+  {
+   "id": 1288,
+   "word": "sad",
+   "translations": [
+    "грустный"
+   ]
+  },
+  {
+   "id": 1289,
+   "word": "angry",
+   "translations": [
+    "сердитый",
+    "злой"
+   ]
+  },
+  {
+   "id": 1290,
+   "word": "afraid",
+   "translations": [
+    "испуганный",
+    "боящийся"
+   ]
+  },
+  {
+   "id": 1291,
+   "word": "scared",
+   "translations": [
+    "напуганный"
+   ]
+  },
+  {
+   "id": 1292,
+   "word": "tired",
+   "translations": [
+    "усталый"
+   ]
+  },
+  {
+   "id": 1293,
+   "word": "bored",
+   "translations": [
+    "скучающий"
+   ]
+  },
+  {
+   "id": 1294,
+   "word": "excited",
+   "translations": [
+    "взволнованный",
+    "радостный"
+   ]
+  },
+  {
+   "id": 1295,
+   "word": "surprised",
+   "translations": [
+    "удивлённый"
+   ]
+  },
+  {
+   "id": 1296,
+   "word": "worried",
+   "translations": [
+    "обеспокоенный"
+   ]
+  },
+  {
+   "id": 1297,
+   "word": "nervous",
+   "translations": [
+    "нервный"
+   ]
+  },
+  {
+   "id": 1298,
+   "word": "calm",
+   "translations": [
+    "спокойный"
+   ]
+  },
+  {
+   "id": 1299,
+   "word": "proud",
+   "translations": [
+    "гордый"
+   ]
+  },
+  {
+   "id": 1300,
+   "word": "friendly",
+   "translations": [
+    "дружелюбный"
+   ]
+  },
+  {
+   "id": 1301,
+   "word": "polite",
+   "translations": [
+    "вежливый"
+   ]
+  },
+  {
+   "id": 1302,
+   "word": "rude",
+   "translations": [
+    "грубый"
+   ]
+  },
+  {
+   "id": 1303,
+   "word": "honest",
+   "translations": [
+    "честный"
+   ]
+  },
+  {
+   "id": 1304,
+   "word": "fair",
+   "translations": [
+    "справедливый",
+    "светлый"
+   ]
+  },
+  {
+   "id": 1305,
+   "word": "brave",
+   "translations": [
+    "храбрый"
+   ]
+  },
+  {
+   "id": 1306,
+   "word": "smart",
+   "translations": [
+    "умный"
+   ]
+  },
+  {
+   "id": 1307,
+   "word": "clever",
+   "translations": [
+    "умный",
+    "сообразительный"
+   ]
+  },
+  {
+   "id": 1308,
+   "word": "wise",
+   "translations": [
+    "мудрый"
+   ]
+  },
+  {
+   "id": 1309,
+   "word": "stupid",
+   "translations": [
+    "глупый"
+   ]
+  },
+  {
+   "id": 1310,
+   "word": "silly",
+   "translations": [
+    "глупый",
+    "дурацкий"
+   ]
+  },
+  {
+   "id": 1311,
+   "word": "crazy",
+   "translations": [
+    "сумасшедший"
+   ]
+  },
+  {
+   "id": 1312,
+   "word": "funny",
+   "translations": [
+    "смешной",
+    "забавный"
+   ]
+  },
+  {
+   "id": 1313,
+   "word": "strange",
+   "translations": [
+    "странный"
+   ]
+  },
+  {
+   "id": 1314,
+   "word": "weird",
+   "translations": [
+    "странный",
+    "чудной"
+   ]
+  },
+  {
+   "id": 1315,
+   "word": "interesting",
+   "translations": [
+    "интересный"
+   ]
+  },
+  {
+   "id": 1316,
+   "word": "boring",
+   "translations": [
+    "скучный"
+   ]
+  },
+  {
+   "id": 1317,
+   "word": "exciting",
+   "translations": [
+    "захватывающий"
+   ]
+  },
+  {
+   "id": 1318,
+   "word": "amazing",
+   "translations": [
+    "удивительный",
+    "потрясающий"
+   ]
+  },
+  {
+   "id": 1319,
+   "word": "wonderful",
+   "translations": [
+    "чудесный"
+   ]
+  },
+  {
+   "id": 1320,
+   "word": "terrible",
+   "translations": [
+    "ужасный"
+   ]
+  },
+  {
+   "id": 1321,
+   "word": "awful",
+   "translations": [
+    "ужасный"
+   ]
+  },
+  {
+   "id": 1322,
+   "word": "horrible",
+   "translations": [
+    "ужасный"
+   ]
+  },
+  {
+   "id": 1323,
+   "word": "beautiful",
+   "translations": [
+    "красивый"
+   ]
+  },
+  {
+   "id": 1324,
+   "word": "pretty",
+   "translations": [
+    "симпатичный",
+    "довольно"
+   ]
+  },
+  {
+   "id": 1325,
+   "word": "handsome",
+   "translations": [
+    "красивый"
+   ],
+   "note": "о мужчине"
+  },
+  {
+   "id": 1326,
+   "word": "ugly",
+   "translations": [
+    "уродливый"
+   ]
+  },
+  {
+   "id": 1327,
+   "word": "lovely",
+   "translations": [
+    "прелестный"
+   ]
+  },
+  {
+   "id": 1328,
+   "word": "cute",
+   "translations": [
+    "милый"
+   ]
+  },
+  {
+   "id": 1329,
+   "word": "bright",
+   "translations": [
+    "яркий",
+    "умный"
+   ]
+  },
+  {
+   "id": 1330,
+   "word": "loud",
+   "translations": [
+    "громкий"
+   ]
+  },
+  {
+   "id": 1331,
+   "word": "quiet",
+   "translations": [
+    "тихий"
+   ]
+  },
+  {
+   "id": 1332,
+   "word": "silent",
+   "translations": [
+    "молчаливый",
+    "безмолвный"
+   ]
+  },
+  {
+   "id": 1333,
+   "word": "sharp",
+   "translations": [
+    "острый",
+    "резкий"
+   ]
+  },
+  {
+   "id": 1334,
+   "word": "smooth",
+   "translations": [
+    "гладкий",
+    "плавный"
+   ]
+  },
+  {
+   "id": 1335,
+   "word": "rough",
+   "translations": [
+    "грубый",
+    "неровный"
+   ]
+  },
+  {
+   "id": 1336,
+   "word": "sweet",
+   "translations": [
+    "сладкий",
+    "милый"
+   ]
+  },
+  {
+   "id": 1337,
+   "word": "sour",
+   "translations": [
+    "кислый"
+   ]
+  },
+  {
+   "id": 1338,
+   "word": "bitter",
+   "translations": [
+    "горький"
+   ]
+  },
+  {
+   "id": 1339,
+   "word": "salty",
+   "translations": [
+    "солёный"
+   ]
+  },
+  {
+   "id": 1340,
+   "word": "delicious",
+   "translations": [
+    "вкусный"
+   ]
+  },
+  {
+   "id": 1341,
+   "word": "comfortable",
+   "translations": [
+    "удобный",
+    "комфортный"
+   ]
+  },
+  {
+   "id": 1342,
+   "word": "uncomfortable",
+   "translations": [
+    "неудобный"
+   ]
+  },
+  {
+   "id": 1343,
+   "word": "useful",
+   "translations": [
+    "полезный"
+   ]
+  },
+  {
+   "id": 1344,
+   "word": "useless",
+   "translations": [
+    "бесполезный"
+   ]
+  },
+  {
+   "id": 1345,
+   "word": "necessary",
+   "translations": [
+    "необходимый"
+   ]
+  },
+  {
+   "id": 1346,
+   "word": "perfect",
+   "translations": [
+    "идеальный"
+   ]
+  },
+  {
+   "id": 1347,
+   "word": "excellent",
+   "translations": [
+    "отличный",
+    "превосходный"
+   ]
+  },
+  {
+   "id": 1348,
+   "word": "lucky",
+   "translations": [
+    "удачливый",
+    "везучий"
+   ]
+  },
+  {
+   "id": 1349,
+   "word": "successful",
+   "translations": [
+    "успешный"
+   ]
+  },
+  {
+   "id": 1350,
+   "word": "powerful",
+   "translations": [
+    "мощный",
+    "сильный"
+   ]
+  },
+  {
+   "id": 1351,
+   "word": "favorite",
+   "translations": [
+    "любимый"
+   ]
+  },
+  {
+   "id": 1352,
+   "word": "dear",
+   "translations": [
+    "дорогой"
+   ]
+  },
+  {
+   "id": 1353,
+   "word": "pleasant",
+   "translations": [
+    "приятный"
+   ]
+  },
+  {
+   "id": 1354,
+   "word": "now",
+   "translations": [
+    "сейчас",
+    "теперь"
+   ]
+  },
+  {
+   "id": 1355,
+   "word": "soon",
+   "translations": [
+    "скоро"
+   ]
+  },
+  {
+   "id": 1356,
+   "word": "later",
+   "translations": [
+    "позже"
+   ]
+  },
+  {
+   "id": 1357,
+   "word": "already",
+   "translations": [
+    "уже"
+   ]
+  },
+  {
+   "id": 1358,
+   "word": "still",
+   "translations": [
+    "всё ещё",
+    "неподвижный"
+   ]
+  },
+  {
+   "id": 1359,
+   "word": "yet",
+   "translations": [
+    "ещё",
+    "пока"
+   ]
+  },
+  {
+   "id": 1360,
+   "word": "again",
+   "translations": [
+    "снова",
+    "опять"
+   ]
+  },
+  {
+   "id": 1361,
+   "word": "once",
+   "translations": [
+    "однажды",
+    "раз"
+   ]
+  },
+  {
+   "id": 1362,
+   "word": "twice",
+   "translations": [
+    "дважды"
+   ]
+  },
+  {
+   "id": 1363,
+   "word": "always",
+   "translations": [
+    "всегда"
+   ]
+  },
+  {
+   "id": 1364,
+   "word": "usually",
+   "translations": [
+    "обычно"
+   ]
+  },
+  {
+   "id": 1365,
+   "word": "often",
+   "translations": [
+    "часто"
+   ]
+  },
+  {
+   "id": 1366,
+   "word": "sometimes",
+   "translations": [
+    "иногда"
+   ]
+  },
+  {
+   "id": 1367,
+   "word": "rarely",
+   "translations": [
+    "редко"
+   ]
+  },
+  {
+   "id": 1368,
+   "word": "seldom",
+   "translations": [
+    "редко"
+   ]
+  },
+  {
+   "id": 1369,
+   "word": "never",
+   "translations": [
+    "никогда"
+   ]
+  },
+  {
+   "id": 1370,
+   "word": "ever",
+   "translations": [
+    "когда-либо"
+   ]
+  },
+  {
+   "id": 1371,
+   "word": "everywhere",
+   "translations": [
+    "везде"
+   ]
+  },
+  {
+   "id": 1372,
+   "word": "anywhere",
+   "translations": [
+    "где-либо"
+   ]
+  },
+  {
+   "id": 1373,
+   "word": "somewhere",
+   "translations": [
+    "где-то"
+   ]
+  },
+  {
+   "id": 1374,
+   "word": "nowhere",
+   "translations": [
+    "нигде"
+   ]
+  },
+  {
+   "id": 1375,
+   "word": "away",
+   "translations": [
+    "прочь",
+    "в сторону"
+   ]
+  },
+  {
+   "id": 1376,
+   "word": "forward",
+   "translations": [
+    "вперёд"
+   ]
+  },
+  {
+   "id": 1377,
+   "word": "ahead",
+   "translations": [
+    "впереди",
+    "вперёд"
+   ]
+  },
+  {
+   "id": 1378,
+   "word": "together",
+   "translations": [
+    "вместе"
+   ]
+  },
+  {
+   "id": 1379,
+   "word": "apart",
+   "translations": [
+    "отдельно",
+    "врозь"
+   ]
+  },
+  {
+   "id": 1380,
+   "word": "alone",
+   "translations": [
+    "один",
+    "в одиночестве"
+   ]
+  },
+  {
+   "id": 1381,
+   "word": "hardly",
+   "translations": [
+    "едва"
+   ]
+  },
+  {
+   "id": 1382,
+   "word": "really",
+   "translations": [
+    "действительно"
+   ]
+  },
+  {
+   "id": 1383,
+   "word": "actually",
+   "translations": [
+    "на самом деле"
+   ]
+  },
+  {
+   "id": 1384,
+   "word": "truly",
+   "translations": [
+    "поистине"
+   ]
+  },
+  {
+   "id": 1385,
+   "word": "certainly",
+   "translations": [
+    "конечно",
+    "безусловно"
+   ]
+  },
+  {
+   "id": 1386,
+   "word": "definitely",
+   "translations": [
+    "определённо"
+   ]
+  },
+  {
+   "id": 1387,
+   "word": "probably",
+   "translations": [
+    "вероятно"
+   ]
+  },
+  {
+   "id": 1388,
+   "word": "possibly",
+   "translations": [
+    "возможно"
+   ]
+  },
+  {
+   "id": 1389,
+   "word": "perhaps",
+   "translations": [
+    "может быть"
+   ]
+  },
+  {
+   "id": 1390,
+   "word": "maybe",
+   "translations": [
+    "может быть"
+   ]
+  },
+  {
+   "id": 1391,
+   "word": "surely",
+   "translations": [
+    "несомненно"
+   ]
+  },
+  {
+   "id": 1392,
+   "word": "clearly",
+   "translations": [
+    "ясно",
+    "чётко"
+   ]
+  },
+  {
+   "id": 1393,
+   "word": "exactly",
+   "translations": [
+    "точно"
+   ]
+  },
+  {
+   "id": 1394,
+   "word": "especially",
+   "translations": [
+    "особенно"
+   ]
+  },
+  {
+   "id": 1395,
+   "word": "particularly",
+   "translations": [
+    "особенно"
+   ]
+  },
+  {
+   "id": 1396,
+   "word": "mainly",
+   "translations": [
+    "главным образом"
+   ]
+  },
+  {
+   "id": 1397,
+   "word": "mostly",
+   "translations": [
+    "в основном"
+   ]
+  },
+  {
+   "id": 1398,
+   "word": "generally",
+   "translations": [
+    "в целом",
+    "обычно"
+   ]
+  },
+  {
+   "id": 1399,
+   "word": "simply",
+   "translations": [
+    "просто"
+   ]
+  },
+  {
+   "id": 1400,
+   "word": "well",
+   "translations": [
+    "хорошо"
+   ]
+  },
+  {
+   "id": 1401,
+   "word": "badly",
+   "translations": [
+    "плохо"
+   ]
+  },
+  {
+   "id": 1402,
+   "word": "quickly",
+   "translations": [
+    "быстро"
+   ]
+  },
+  {
+   "id": 1403,
+   "word": "slowly",
+   "translations": [
+    "медленно"
+   ]
+  },
+  {
+   "id": 1404,
+   "word": "easily",
+   "translations": [
+    "легко"
+   ]
+  },
+  {
+   "id": 1405,
+   "word": "carefully",
+   "translations": [
+    "осторожно",
+    "внимательно"
+   ]
+  },
+  {
+   "id": 1406,
+   "word": "suddenly",
+   "translations": [
+    "внезапно"
+   ]
+  },
+  {
+   "id": 1407,
+   "word": "immediately",
+   "translations": [
+    "немедленно"
+   ]
+  },
+  {
+   "id": 1408,
+   "word": "finally",
+   "translations": [
+    "наконец"
+   ]
+  },
+  {
+   "id": 1409,
+   "word": "eventually",
+   "translations": [
+    "в конце концов"
+   ]
+  },
+  {
+   "id": 1410,
+   "word": "recently",
+   "translations": [
+    "недавно"
+   ]
+  },
+  {
+   "id": 1411,
+   "word": "lately",
+   "translations": [
+    "в последнее время"
+   ]
+  },
+  {
+   "id": 1412,
+   "word": "currently",
+   "translations": [
+    "в настоящее время"
+   ]
+  },
+  {
+   "id": 1413,
+   "word": "instead",
+   "translations": [
+    "вместо"
+   ]
+  },
+  {
+   "id": 1414,
+   "word": "anyway",
+   "translations": [
+    "в любом случае"
+   ]
+  },
+  {
+   "id": 1415,
+   "word": "however",
+   "translations": [
+    "однако"
+   ]
+  },
+  {
+   "id": 1416,
+   "word": "therefore",
+   "translations": [
+    "поэтому"
+   ]
+  },
+  {
+   "id": 1417,
+   "word": "thus",
+   "translations": [
+    "таким образом"
+   ]
+  },
+  {
+   "id": 1418,
+   "word": "otherwise",
+   "translations": [
+    "иначе"
+   ]
+  },
+  {
+   "id": 1419,
+   "word": "moreover",
+   "translations": [
+    "более того"
+   ]
+  },
+  {
+   "id": 1420,
+   "word": "besides",
+   "translations": [
+    "кроме того"
+   ]
+  },
+  {
+   "id": 1421,
+   "word": "indeed",
+   "translations": [
+    "действительно"
+   ]
+  },
+  {
+   "id": 1422,
+   "word": "somehow",
+   "translations": [
+    "как-то"
+   ]
+  },
+  {
+   "id": 1423,
+   "word": "somewhat",
+   "translations": [
+    "несколько",
+    "отчасти"
+   ]
+  },
+  {
+   "id": 1424,
+   "word": "approximately",
+   "translations": [
+    "приблизительно"
+   ]
+  },
+  {
+   "id": 1425,
+   "word": "partly",
+   "translations": [
+    "частично"
+   ]
+  },
+  {
+   "id": 1426,
+   "word": "fully",
+   "translations": [
+    "полностью"
+   ]
+  },
+  {
+   "id": 1427,
+   "word": "completely",
+   "translations": [
+    "полностью"
+   ]
+  },
+  {
+   "id": 1428,
+   "word": "totally",
+   "translations": [
+    "совершенно"
+   ]
+  },
+  {
+   "id": 1429,
+   "word": "absolutely",
+   "translations": [
+    "абсолютно"
+   ]
+  },
+  {
+   "id": 1430,
+   "word": "entirely",
+   "translations": [
+    "целиком"
+   ]
+  },
+  {
+   "id": 1431,
+   "word": "directly",
+   "translations": [
+    "прямо",
+    "непосредственно"
+   ]
+  },
+  {
+   "id": 1432,
+   "word": "highly",
+   "translations": [
+    "весьма",
+    "высоко"
+   ]
+  },
+  {
+   "id": 1433,
+   "word": "extremely",
+   "translations": [
+    "крайне"
+   ]
+  },
+  {
+   "id": 1434,
+   "word": "incredibly",
+   "translations": [
+    "невероятно"
+   ]
+  },
+  {
+   "id": 1435,
+   "word": "perfectly",
+   "translations": [
+    "идеально"
+   ]
+  },
+  {
+   "id": 1436,
+   "word": "naturally",
+   "translations": [
+    "естественно"
+   ]
+  },
+  {
+   "id": 1437,
+   "word": "normally",
+   "translations": [
+    "обычно"
+   ]
+  },
+  {
+   "id": 1438,
+   "word": "typically",
+   "translations": [
+    "как правило"
+   ]
+  },
+  {
+   "id": 1439,
+   "word": "frequently",
+   "translations": [
+    "часто"
+   ]
+  },
+  {
+   "id": 1440,
+   "word": "constantly",
+   "translations": [
+    "постоянно"
+   ]
+  },
+  {
+   "id": 1441,
+   "word": "regularly",
+   "translations": [
+    "регулярно"
+   ]
+  },
+  {
+   "id": 1442,
+   "word": "occasionally",
+   "translations": [
+    "иногда",
+    "изредка"
+   ]
+  },
+  {
+   "id": 1443,
+   "word": "zero",
+   "translations": [
+    "ноль"
+   ]
+  },
+  {
+   "id": 1444,
+   "word": "one",
+   "translations": [
+    "один"
+   ]
+  },
+  {
+   "id": 1445,
+   "word": "two",
+   "translations": [
+    "два"
+   ]
+  },
+  {
+   "id": 1446,
+   "word": "three",
+   "translations": [
+    "три"
+   ]
+  },
+  {
+   "id": 1447,
+   "word": "four",
+   "translations": [
+    "четыре"
+   ]
+  },
+  {
+   "id": 1448,
+   "word": "five",
+   "translations": [
+    "пять"
+   ]
+  },
+  {
+   "id": 1449,
+   "word": "six",
+   "translations": [
+    "шесть"
+   ]
+  },
+  {
+   "id": 1450,
+   "word": "seven",
+   "translations": [
+    "семь"
+   ]
+  },
+  {
+   "id": 1451,
+   "word": "eight",
+   "translations": [
+    "восемь"
+   ]
+  },
+  {
+   "id": 1452,
+   "word": "nine",
+   "translations": [
+    "девять"
+   ]
+  },
+  {
+   "id": 1453,
+   "word": "ten",
+   "translations": [
+    "десять"
+   ]
+  },
+  {
+   "id": 1454,
+   "word": "eleven",
+   "translations": [
+    "одиннадцать"
+   ]
+  },
+  {
+   "id": 1455,
+   "word": "twelve",
+   "translations": [
+    "двенадцать"
+   ]
+  },
+  {
+   "id": 1456,
+   "word": "thirteen",
+   "translations": [
+    "тринадцать"
+   ]
+  },
+  {
+   "id": 1457,
+   "word": "fourteen",
+   "translations": [
+    "четырнадцать"
+   ]
+  },
+  {
+   "id": 1458,
+   "word": "fifteen",
+   "translations": [
+    "пятнадцать"
+   ]
+  },
+  {
+   "id": 1459,
+   "word": "sixteen",
+   "translations": [
+    "шестнадцать"
+   ]
+  },
+  {
+   "id": 1460,
+   "word": "seventeen",
+   "translations": [
+    "семнадцать"
+   ]
+  },
+  {
+   "id": 1461,
+   "word": "eighteen",
+   "translations": [
+    "восемнадцать"
+   ]
+  },
+  {
+   "id": 1462,
+   "word": "nineteen",
+   "translations": [
+    "девятнадцать"
+   ]
+  },
+  {
+   "id": 1463,
+   "word": "twenty",
+   "translations": [
+    "двадцать"
+   ]
+  },
+  {
+   "id": 1464,
+   "word": "thirty",
+   "translations": [
+    "тридцать"
+   ]
+  },
+  {
+   "id": 1465,
+   "word": "forty",
+   "translations": [
+    "сорок"
+   ]
+  },
+  {
+   "id": 1466,
+   "word": "fifty",
+   "translations": [
+    "пятьдесят"
+   ]
+  },
+  {
+   "id": 1467,
+   "word": "sixty",
+   "translations": [
+    "шестьдесят"
+   ]
+  },
+  {
+   "id": 1468,
+   "word": "seventy",
+   "translations": [
+    "семьдесят"
+   ]
+  },
+  {
+   "id": 1469,
+   "word": "eighty",
+   "translations": [
+    "восемьдесят"
+   ]
+  },
+  {
+   "id": 1470,
+   "word": "ninety",
+   "translations": [
+    "девяносто"
+   ]
+  },
+  {
+   "id": 1471,
+   "word": "hundred",
+   "translations": [
+    "сто"
+   ]
+  },
+  {
+   "id": 1472,
+   "word": "thousand",
+   "translations": [
+    "тысяча"
+   ]
+  },
+  {
+   "id": 1473,
+   "word": "million",
+   "translations": [
+    "миллион"
+   ]
+  },
+  {
+   "id": 1474,
+   "word": "billion",
+   "translations": [
+    "миллиард"
+   ]
+  },
+  {
+   "id": 1475,
+   "word": "third",
+   "translations": [
+    "третий"
+   ]
+  },
+  {
+   "id": 1476,
+   "word": "fourth",
+   "translations": [
+    "четвёртый"
+   ]
+  },
+  {
+   "id": 1477,
+   "word": "fifth",
+   "translations": [
+    "пятый"
+   ]
+  },
+  {
+   "id": 1478,
+   "word": "dozen",
+   "translations": [
+    "дюжина"
+   ]
+  },
+  {
+   "id": 1479,
+   "word": "red",
+   "translations": [
+    "красный"
+   ]
+  },
+  {
+   "id": 1480,
+   "word": "yellow",
+   "translations": [
+    "жёлтый"
+   ]
+  },
+  {
+   "id": 1481,
+   "word": "green",
+   "translations": [
+    "зелёный"
+   ]
+  },
+  {
+   "id": 1482,
+   "word": "blue",
+   "translations": [
+    "синий",
+    "голубой"
+   ]
+  },
+  {
+   "id": 1483,
+   "word": "purple",
+   "translations": [
+    "фиолетовый"
+   ]
+  },
+  {
+   "id": 1484,
+   "word": "pink",
+   "translations": [
+    "розовый"
+   ]
+  },
+  {
+   "id": 1485,
+   "word": "brown",
+   "translations": [
+    "коричневый"
+   ]
+  },
+  {
+   "id": 1486,
+   "word": "black",
+   "translations": [
+    "чёрный"
+   ]
+  },
+  {
+   "id": 1487,
+   "word": "white",
+   "translations": [
+    "белый"
+   ]
+  },
+  {
+   "id": 1488,
+   "word": "gray",
+   "translations": [
+    "серый"
+   ]
+  },
+  {
+   "id": 1489,
+   "word": "gold",
+   "translations": [
+    "золотой",
+    "золото"
+   ]
+  },
+  {
+   "id": 1490,
+   "word": "silver",
+   "translations": [
+    "серебряный",
+    "серебро"
+   ]
+  },
+  {
+   "id": 1491,
+   "word": "holiday",
+   "translations": [
+    "праздник",
+    "отпуск"
+   ]
+  },
+  {
+   "id": 1492,
+   "word": "vacation",
+   "translations": [
+    "отпуск",
+    "каникулы"
+   ]
+  },
+  {
+   "id": 1493,
+   "word": "gift",
+   "translations": [
+    "подарок"
+   ]
+  },
+  {
+   "id": 1494,
+   "word": "birthday",
+   "translations": [
+    "день рождения"
+   ]
+  },
+  {
+   "id": 1495,
+   "word": "celebration",
+   "translations": [
+    "празднование"
+   ]
+  },
+  {
+   "id": 1496,
+   "word": "festival",
+   "translations": [
+    "фестиваль",
+    "праздник"
+   ]
+  },
+  {
+   "id": 1497,
+   "word": "appointment",
+   "translations": [
+    "встреча",
+    "приём"
+   ],
+   "note": "запись"
+  },
+  {
+   "id": 1498,
+   "word": "ball",
+   "translations": [
+    "мяч",
+    "бал"
+   ]
+  },
+  {
+   "id": 1499,
+   "word": "club",
+   "translations": [
+    "клуб"
+   ]
+  },
+  {
+   "id": 1500,
+   "word": "match",
+   "translations": [
+    "матч",
+    "спичка"
+   ]
+  }
+ ]
+}
