@@ -47,7 +47,7 @@ struct HomeView: View {
                 case .session:
                     SessionView(context: context, settings: settings)
                 case .stats:
-                    NotBuiltYetView(title: "Статистика")
+                    StatsView(context: context)
                 case .settings:
                     SettingsView(store: KeychainStore())
                 }
@@ -103,15 +103,5 @@ private struct CounterTile: View {
         .frame(maxWidth: .infinity)
         .padding(.vertical, 16)
         .background(.quaternary.opacity(0.5), in: RoundedRectangle(cornerRadius: 16))
-    }
-}
-
-/// Temporary destination for routes whose screens arrive in later plan steps.
-struct NotBuiltYetView: View {
-    let title: String
-
-    var body: some View {
-        ContentUnavailableView(title, systemImage: "hammer", description: Text("Этот экран ещё не готов."))
-            .navigationTitle(title)
     }
 }
