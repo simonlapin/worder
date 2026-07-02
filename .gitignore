@@ -32,3 +32,4 @@ Worder.xcodeproj/
 .env
 *.pem
 build/
+.plan/
