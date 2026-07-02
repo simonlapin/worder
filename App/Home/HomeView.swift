@@ -49,7 +49,7 @@ struct HomeView: View {
                 case .stats:
                     StatsView(context: context)
                 case .settings:
-                    SettingsView(store: KeychainStore())
+                    SettingsView(context: context, settings: settings, store: KeychainStore())
                 }
             }
             .task { model.refresh() }

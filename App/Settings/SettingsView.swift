@@ -1,13 +1,19 @@
+import SwiftData
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct SettingsView: View {
     @Environment(AppSettings.self) private var settings
     @Environment(SentenceService.self) private var sentenceService
     @Environment(ReminderScheduler.self) private var reminderScheduler
     @State private var model: SettingsViewModel
+    @State private var backupModel: BackupViewModel
+    @State private var exportDocument: BackupDocument?
+    @State private var isImporterPresented = false
 
-    init(store: any APIKeyStore) {
+    init(context: ModelContext, settings: AppSettings, store: any APIKeyStore) {
         _model = State(initialValue: SettingsViewModel(store: store))
+        _backupModel = State(initialValue: BackupViewModel(context: context, settings: settings))
     }
 
     var body: some View {
@@ -62,11 +68,88 @@ struct SettingsView: View {
             } footer: {
                 Text("Примеры генерируются пачками для слов в изучении и включают упражнение «контекст».")
             }
+
+            backupSection
         }
         .navigationTitle("Настройки")
         .task { model.refresh() }
         .onChange(of: settings.remindersEnabled) { _, _ in syncReminders() }
         .onChange(of: settings.reminderTimes) { _, _ in syncReminders() }
+        .fileExporter(
+            isPresented: Binding(
+                get: { exportDocument != nil },
+                set: { if !$0 { exportDocument = nil } }
+            ),
+            document: exportDocument,
+            contentType: .json,
+            defaultFilename: exportFilename
+        ) { _ in }
+        .fileImporter(isPresented: $isImporterPresented, allowedContentTypes: [.json]) { result in
+            handleImportSelection(result)
+        }
+        .confirmationDialog(
+            "Заменить все данные?",
+            isPresented: Binding(
+                get: { backupModel.importPhase == .needsConfirmation },
+                set: { if !$0, backupModel.importPhase == .needsConfirmation { backupModel.cancelImport() } }
+            ),
+            titleVisibility: .visible
+        ) {
+            Button("Заменить", role: .destructive) { backupModel.confirmOverwrite() }
+            Button("Отмена", role: .cancel) { backupModel.cancelImport() }
+        } message: {
+            Text("Текущий прогресс будет безвозвратно удалён и заменён данными из файла.")
+        }
+    }
+
+    private var backupSection: some View {
+        Section {
+            Button("Экспортировать данные", systemImage: "square.and.arrow.up") {
+                if let data = backupModel.makeExportData() {
+                    exportDocument = BackupDocument(data: data)
+                }
+            }
+            Button("Импортировать данные", systemImage: "square.and.arrow.down") {
+                isImporterPresented = true
+            }
+            switch backupModel.importPhase {
+            case .success(let restoredWords):
+                Label("Восстановлено слов: \(restoredWords)", systemImage: "checkmark.seal.fill")
+                    .foregroundStyle(.green)
+            case .failure(let message):
+                Label(message, systemImage: "exclamationmark.triangle")
+                    .foregroundStyle(.red)
+            case .idle, .needsConfirmation:
+                EmptyView()
+            }
+            if let message = backupModel.exportFailureMessage {
+                Label(message, systemImage: "exclamationmark.triangle")
+                    .foregroundStyle(.red)
+            }
+        } header: {
+            Text("Резервная копия")
+        } footer: {
+            Text("Файл содержит весь прогресс и настройки, кроме API-ключа.")
+        }
+    }
+
+    private var exportFilename: String {
+        "worder-backup-\(Date.now.formatted(.iso8601.year().month().day())).json"
+    }
+
+    private func handleImportSelection(_ result: Result<URL, any Error>) {
+        switch result {
+        case .success(let url):
+            let accessed = url.startAccessingSecurityScopedResource()
+            defer { if accessed { url.stopAccessingSecurityScopedResource() } }
+            do {
+                backupModel.beginImport(data: try Data(contentsOf: url))
+            } catch {
+                backupModel.reportReadFailure(error)
+            }
+        case .failure:
+            break
+        }
     }
 
     private var remindersSection: some View {
@@ -123,6 +206,27 @@ struct SettingsView: View {
     private var isGenerating: Bool {
         if case .running = sentenceService.status { return true }
         return false
+    }
+
+    struct BackupDocument: FileDocument {
+        static let readableContentTypes: [UTType] = [.json]
+
+        let data: Data
+
+        init(data: Data) {
+            self.data = data
+        }
+
+        init(configuration: ReadConfiguration) throws {
+            guard let contents = configuration.file.regularFileContents else {
+                throw CocoaError(.fileReadCorruptFile)
+            }
+            data = contents
+        }
+
+        func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
+            FileWrapper(regularFileWithContents: data)
+        }
     }
 
     private var generationStatusText: String {
