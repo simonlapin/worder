@@ -21,6 +21,26 @@ private struct SplitMix64: RandomNumberGenerator {
 }
 
 @MainActor
+final class MockSpeechService: SpeechService {
+    let isAvailable: Bool
+    private(set) var spokenTexts: [String] = []
+    private(set) var stopCount = 0
+
+    init(isAvailable: Bool = true) {
+        self.isAvailable = isAvailable
+    }
+
+    func speak(_ text: String) {
+        guard isAvailable else { return }
+        spokenTexts.append(text)
+    }
+
+    func stop() {
+        stopCount += 1
+    }
+}
+
+@MainActor
 struct SessionViewModelTests {
     private let sixWordsJSON = Data("""
     {
@@ -62,11 +82,13 @@ struct SessionViewModelTests {
     private func makeModel(
         context: ModelContext,
         configuration: SessionViewModel.Configuration = SessionViewModel.Configuration(),
+        speech: MockSpeechService = MockSpeechService(isAvailable: false),
         seed: UInt64 = 1
     ) -> SessionViewModel {
         SessionViewModel(
             context: context,
             configuration: configuration,
+            speech: speech,
             rng: SplitMix64(seed: seed),
             calendar: Calendar(identifier: .gregorian)
         )
@@ -241,6 +263,112 @@ struct SessionViewModelTests {
 
         let logs = try ModelContext(container).fetch(FetchDescriptor<ReviewLog>())
         #expect(logs.first?.grade == .good)
+    }
+
+    /// Container with shop's EN→RU card mature and due, everything else parked
+    /// in the future; daily-new limit 0 leaves exactly that one exercise queued.
+    private func makeMatureEnToRuSetup() throws -> (ModelContainer, SessionViewModel.Configuration) {
+        let container = try makeContainer(importing: sixWordsJSON)
+        let setup = ModelContext(container)
+        let shop = try #require(setup.fetch(FetchDescriptor<Word>(
+            predicate: #Predicate { $0.wordId == 1 }
+        )).first)
+        let enToRu = try #require(shop.directionState(for: .enToRu))
+        enToRu.state = .review
+        enToRu.stability = 25
+        enToRu.due = t0.addingTimeInterval(-3600)
+        for state in try setup.fetch(FetchDescriptor<DirectionState>()) where state.state == .new {
+            state.due = t0.addingTimeInterval(86_400)
+        }
+        try setup.save()
+
+        var configuration = SessionViewModel.Configuration()
+        configuration.queue = SessionQueue.Configuration(dailyNewWordLimit: 0)
+        return (container, configuration)
+    }
+
+    @Test func listeningJoinsRotationForMatureCardWhenVoiceIsAvailable() throws {
+        var sawListening = false
+        for seed in UInt64(1)...30 {
+            let (container, configuration) = try makeMatureEnToRuSetup()
+            let speech = MockSpeechService(isAvailable: true)
+            let model = makeModel(
+                context: ModelContext(container),
+                configuration: configuration,
+                speech: speech,
+                seed: seed
+            )
+            model.start(now: t0)
+
+            let exercise = try exercise(model)
+            #expect(exercise.direction == .enToRu)
+            guard case .listening(let options) = exercise.input else { continue }
+            sawListening = true
+
+            #expect(speech.spokenTexts == ["shop"])
+            #expect(options.contains("магазин"))
+            #expect(!options.contains("store"))
+
+            model.speakCurrentWord()
+            #expect(speech.spokenTexts == ["shop", "shop"])
+
+            model.submitChoice("магазин", now: t0.addingTimeInterval(5))
+            let result = try feedback(model)
+            #expect(result.verdict == .correct)
+            #expect(result.correctAnswer == "shop — магазин")
+            break
+        }
+        #expect(sawListening)
+    }
+
+    @Test func listeningNeverAppearsWithoutVoice() throws {
+        for seed in UInt64(1)...30 {
+            let (container, configuration) = try makeMatureEnToRuSetup()
+            let model = makeModel(
+                context: ModelContext(container),
+                configuration: configuration,
+                speech: MockSpeechService(isAvailable: false),
+                seed: seed
+            )
+            model.start(now: t0)
+
+            guard case .multipleChoice = try exercise(model).input else {
+                throw TestAbort("expected multiple choice for seed \(seed), got \(model.phase)")
+            }
+        }
+    }
+
+    @Test func wordIsSpokenAutomaticallyAfterEachAnswer() throws {
+        let container = try makeContainer(importing: sixWordsJSON)
+        let speech = MockSpeechService(isAvailable: true)
+        let model = makeModel(context: ModelContext(container), speech: speech)
+
+        model.start(now: t0)
+        #expect(model.canSpeakCurrentWord)
+        model.speakCurrentWord()
+        #expect(speech.spokenTexts == ["shop"])
+
+        model.completeIntroduction(now: t0)
+        model.submitChoice("магазин", now: t0.addingTimeInterval(5))
+        #expect(speech.spokenTexts == ["shop", "shop"])
+    }
+
+    @Test func speakingIsBlockedWhenTheWordIsTheAnswer() throws {
+        let container = try makeContainer(importing: sixWordsJSON)
+        let speech = MockSpeechService(isAvailable: true)
+        let model = makeModel(context: ModelContext(container), speech: speech)
+
+        model.start(now: t0)
+        model.completeIntroduction(now: t0)
+        model.submitChoice("магазин", now: t0.addingTimeInterval(5))
+        model.continueAfterFeedback(now: t0.addingTimeInterval(10))
+
+        let exercise = try exercise(model)
+        #expect(exercise.direction == .ruToEn)
+        #expect(!model.canSpeakCurrentWord)
+        let spokenBefore = speech.spokenTexts
+        model.speakCurrentWord()
+        #expect(speech.spokenTexts == spokenBefore)
     }
 
     @Test func sessionSoftFinishesWhenDurationElapses() throws {

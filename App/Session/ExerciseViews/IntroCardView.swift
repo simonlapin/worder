@@ -2,6 +2,7 @@ import SwiftUI
 
 struct IntroCardView: View {
     let card: SessionViewModel.IntroCard
+    let onListen: (() -> Void)?
     let onContinue: () -> Void
 
     var body: some View {
@@ -11,9 +12,18 @@ struct IntroCardView: View {
                 .font(.caption)
                 .textCase(.uppercase)
                 .foregroundStyle(.secondary)
-            Text(card.text)
-                .font(.system(size: 44, weight: .bold, design: .rounded))
-                .multilineTextAlignment(.center)
+            HStack(spacing: 12) {
+                Text(card.text)
+                    .font(.system(size: 44, weight: .bold, design: .rounded))
+                    .multilineTextAlignment(.center)
+                if let onListen {
+                    Button(action: onListen) {
+                        Image(systemName: "speaker.wave.2.fill")
+                            .font(.title2)
+                    }
+                    .accessibilityLabel("Прослушать")
+                }
+            }
             if let note = card.note {
                 Text(note)
                     .font(.subheadline)

@@ -40,6 +40,8 @@ final class SessionViewModel {
         enum Input: Equatable {
             case multipleChoice(options: [String])
             case typedAnswer
+            /// The word is spoken, not shown; options are translations.
+            case listening(options: [String])
         }
 
         let direction: Direction
@@ -80,6 +82,7 @@ final class SessionViewModel {
     private let context: ModelContext
     private let configuration: Configuration
     private let scheduler: any Scheduler
+    private let speech: any SpeechService
     private let calendar: Calendar
     private var rng: AnyRandomNumberGenerator
 
@@ -106,12 +109,14 @@ final class SessionViewModel {
         context: ModelContext,
         configuration: Configuration = Configuration(),
         scheduler: any Scheduler = FSRSScheduler(),
+        speech: any SpeechService = SystemSpeechService(),
         rng: any RandomNumberGenerator = SystemRandomNumberGenerator(),
         calendar: Calendar = .current
     ) {
         self.context = context
         self.configuration = configuration
         self.scheduler = scheduler
+        self.speech = speech
         self.calendar = calendar
         self.rng = AnyRandomNumberGenerator(rng)
     }
@@ -226,7 +231,7 @@ final class SessionViewModel {
 
         let capabilities = ExerciseSelector.Capabilities(
             hasCachedSentences: !word.sentences.isEmpty,
-            canPlayAudio: false
+            canPlayAudio: speech.isAvailable
         )
         let type = ExerciseSelector(configuration: configuration.selector).exerciseType(
             for: state.schedulerCard,
@@ -236,37 +241,63 @@ final class SessionViewModel {
         )
 
         switch type {
-        case .multipleChoice, .listening:
+        case .multipleChoice:
             presentMultipleChoice(word: word, direction: direction)
+        case .listening:
+            presentListening(word: word)
         case .typedAnswer, .context:
             presentTypedAnswer(word: word, direction: direction)
         }
     }
 
     private func presentMultipleChoice(word: Word, direction: Direction) {
-        guard let correctOption = correctOption(word: word, direction: direction) else {
-            phase = .failed("Word \"\(word.text)\" has no translations.")
-            return
-        }
         do {
-            let distractors = try DistractorGenerator(configuration: configuration.distractors)
-                .distractors(
-                    for: DistractorCandidate(word: word),
-                    direction: direction,
-                    candidates: candidates,
-                    using: &rng
-                )
+            guard let (correctOption, options) = try makeChoiceOptions(word: word, direction: direction) else {
+                phase = .failed("Word \"\(word.text)\" has no translations.")
+                return
+            }
             currentCorrectOption = correctOption
             phase = .exercise(Exercise(
                 direction: direction,
                 prompt: prompt(word: word, direction: direction),
                 note: direction == .enToRu ? word.note : nil,
-                input: .multipleChoice(options: (distractors + [correctOption]).shuffled(using: &rng))
+                input: .multipleChoice(options: options)
             ))
         } catch {
             // Too few disjoint candidates (tiny dictionaries): typing still works.
             presentTypedAnswer(word: word, direction: direction)
         }
+    }
+
+    private func presentListening(word: Word) {
+        do {
+            guard let (correctOption, options) = try makeChoiceOptions(word: word, direction: .enToRu) else {
+                phase = .failed("Word \"\(word.text)\" has no translations.")
+                return
+            }
+            currentCorrectOption = correctOption
+            phase = .exercise(Exercise(
+                direction: .enToRu,
+                prompt: "",
+                note: nil,
+                input: .listening(options: options)
+            ))
+            speech.speak(word.text)
+        } catch {
+            presentMultipleChoice(word: word, direction: .enToRu)
+        }
+    }
+
+    private func makeChoiceOptions(word: Word, direction: Direction) throws -> (correct: String, options: [String])? {
+        guard let correctOption = correctOption(word: word, direction: direction) else { return nil }
+        let distractors = try DistractorGenerator(configuration: configuration.distractors)
+            .distractors(
+                for: DistractorCandidate(word: word),
+                direction: direction,
+                candidates: candidates,
+                using: &rng
+            )
+        return (correctOption, (distractors + [correctOption]).shuffled(using: &rng))
     }
 
     private func presentTypedAnswer(word: Word, direction: Direction) {
@@ -276,6 +307,27 @@ final class SessionViewModel {
             note: direction == .enToRu ? word.note : nil,
             input: .typedAnswer
         ))
+    }
+
+    /// The audible word for the current phase; nil when speaking it would
+    /// give the answer away (RU→EN exercises) or no voice is available.
+    private var speakableWordText: String? {
+        guard speech.isAvailable, let item = currentItem else { return nil }
+        switch phase {
+        case .introduction, .feedback:
+            return item.word.text
+        case .exercise(let exercise):
+            return exercise.direction == .enToRu ? item.word.text : nil
+        case .loading, .finished, .failed:
+            return nil
+        }
+    }
+
+    var canSpeakCurrentWord: Bool { speakableWordText != nil }
+
+    func speakCurrentWord() {
+        guard let text = speakableWordText else { return }
+        speech.speak(text)
     }
 
     private func record(verdict: AnswerVerdict, now: Date) {
@@ -314,6 +366,9 @@ final class SessionViewModel {
             return
         }
 
+        let wasListening = if case .exercise(let exercise) = phase,
+                              case .listening = exercise.input { true } else { false }
+
         let willRetry = grade == .again
         if willRetry {
             queue.markFailed(item, now: now)
@@ -323,12 +378,17 @@ final class SessionViewModel {
         }
         phase = .feedback(Feedback(
             verdict: verdict,
-            correctAnswer: correctAnswerText(word: word, direction: direction),
+            // After a listening exercise the word was never shown — include it.
+            correctAnswer: wasListening
+                ? "\(word.text) — \(correctAnswerText(word: word, direction: direction))"
+                : correctAnswerText(word: word, direction: direction),
             willRetry: willRetry
         ))
+        speech.speak(word.text)
     }
 
     private func finish(now: Date) {
+        speech.stop()
         if let sessionRecord {
             do {
                 if sessionRecord.endedAt == nil {

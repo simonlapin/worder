@@ -44,11 +44,11 @@ struct SessionView: View {
         case .loading:
             ProgressView()
         case .introduction(let card):
-            IntroCardView(card: card) { model.completeIntroduction() }
+            IntroCardView(card: card, onListen: listenAction) { model.completeIntroduction() }
         case .exercise(let exercise):
             exerciseView(exercise)
         case .feedback(let feedback):
-            FeedbackView(feedback: feedback) { model.continueAfterFeedback() }
+            FeedbackView(feedback: feedback, onListen: listenAction) { model.continueAfterFeedback() }
         case .finished:
             finishedView
         case .failed(let message):
@@ -62,16 +62,26 @@ struct SessionView: View {
         }
     }
 
+    private var listenAction: (() -> Void)? {
+        model.canSpeakCurrentWord ? { model.speakCurrentWord() } : nil
+    }
+
     @ViewBuilder
     private func exerciseView(_ exercise: SessionViewModel.Exercise) -> some View {
         switch exercise.input {
         case .multipleChoice(let options):
-            MultipleChoiceView(exercise: exercise, options: options) { option in
+            MultipleChoiceView(exercise: exercise, options: options, onListen: listenAction) { option in
                 model.submitChoice(option)
             }
         case .typedAnswer:
-            TypeAnswerView(exercise: exercise) { input in
+            TypeAnswerView(exercise: exercise, onListen: listenAction) { input in
                 model.submitTypedAnswer(input)
+            }
+        case .listening(let options):
+            ListeningView(options: options) {
+                model.speakCurrentWord()
+            } onSelect: { option in
+                model.submitChoice(option)
             }
         }
     }
@@ -94,6 +104,7 @@ struct SessionView: View {
 
 private struct FeedbackView: View {
     let feedback: SessionViewModel.Feedback
+    let onListen: (() -> Void)?
     let onContinue: () -> Void
 
     var body: some View {
@@ -104,9 +115,18 @@ private struct FeedbackView: View {
                 .foregroundStyle(color)
             Text(title)
                 .font(.title2.bold())
-            Text(detail)
-                .font(.title3)
-                .multilineTextAlignment(.center)
+            HStack(spacing: 12) {
+                Text(detail)
+                    .font(.title3)
+                    .multilineTextAlignment(.center)
+                if let onListen {
+                    Button(action: onListen) {
+                        Image(systemName: "speaker.wave.2.fill")
+                            .font(.title3)
+                    }
+                    .accessibilityLabel("Прослушать")
+                }
+            }
             if feedback.willRetry {
                 Text("Слово вернётся в этой сессии")
                     .font(.footnote)

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct TypeAnswerView: View {
     let exercise: SessionViewModel.Exercise
+    let onListen: (() -> Void)?
     let onSubmit: (String) -> Void
 
     @State private var input = ""
@@ -14,7 +15,7 @@ struct TypeAnswerView: View {
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
-            ExercisePromptView(exercise: exercise)
+            ExercisePromptView(exercise: exercise, onListen: onListen)
             TextField("Ответ", text: $input)
                 .textFieldStyle(.roundedBorder)
                 .font(.title3)
