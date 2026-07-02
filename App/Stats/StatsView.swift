@@ -50,7 +50,7 @@ struct StatsView: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
-            .tint(.green)
+            .tint(Theme.brandBlue)
             LabeledContent("Стрик") {
                 Text("\(model.snapshot.streakDays) дн.")
             }
@@ -138,7 +138,7 @@ private struct StatusTile: View {
     var body: some View {
         VStack(spacing: 4) {
             Text("\(value)")
-                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .font(Theme.counter(size: 28))
                 .foregroundStyle(tint)
             Text(caption)
                 .font(.caption)
